@@ -87,11 +87,15 @@ class AppointmentService {
     }
 
     // Check if date is in the past
-    const appointmentDate = new Date(preferred_date);
-    const today = new Date();
-    today.setHours(0, 0, 0, 0);
+    // Normalize both dates to YYYY-MM-DD format for comparison (timezone-safe)
+    const appointmentDateStr = preferred_date.includes('T')
+      ? preferred_date.split('T')[0]
+      : preferred_date;
 
-    if (appointmentDate < today) {
+    const today = new Date();
+    const todayStr = today.toISOString().split('T')[0];
+
+    if (appointmentDateStr < todayStr) {
       return {
         success: false,
         message: 'Cannot book appointments for past dates'
