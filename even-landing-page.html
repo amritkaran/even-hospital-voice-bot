@@ -1,0 +1,636 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Even Hospital - Doctors who lead your care</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            overflow-x: hidden;
+        }
+
+        /* Header */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 60px;
+            background: white;
+            position: relative;
+            z-index: 100;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 28px;
+            font-weight: 700;
+            color: #1a1a1a;
+        }
+
+        .logo-icon {
+            width: 40px;
+            height: 40px;
+            background: #2D5BFF;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 20px;
+            font-weight: 700;
+        }
+
+        .nav-right {
+            display: flex;
+            align-items: center;
+            gap: 30px;
+        }
+
+        .nav-link {
+            color: #2D5BFF;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 16px;
+            transition: opacity 0.2s;
+        }
+
+        .nav-link:hover {
+            opacity: 0.8;
+        }
+
+        .cart-icon {
+            width: 48px;
+            height: 48px;
+            background: #2D5BFF;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 20px;
+            cursor: pointer;
+            transition: transform 0.2s;
+        }
+
+        .cart-icon:hover {
+            transform: scale(1.05);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(180deg, #E8F0FF 0%, #F5F9FF 100%);
+            padding: 80px 60px 100px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+            min-height: calc(100vh - 88px);
+        }
+
+        .hero-content {
+            max-width: 600px;
+        }
+
+        .hero-title {
+            font-size: 56px;
+            font-weight: 700;
+            line-height: 1.2;
+            color: #1a1a1a;
+            margin-bottom: 24px;
+        }
+
+        .hero-subtitle {
+            font-size: 18px;
+            line-height: 1.6;
+            color: #4a4a4a;
+            margin-bottom: 40px;
+        }
+
+        .hero-image {
+            position: relative;
+            display: flex;
+            align-items: flex-end;
+            justify-content: center;
+        }
+
+        .doctors-container {
+            display: flex;
+            gap: 30px;
+            align-items: flex-end;
+        }
+
+        .doctor-card {
+            text-align: center;
+            position: relative;
+        }
+
+        .doctor-photo {
+            width: 220px;
+            height: 280px;
+            background: linear-gradient(135deg, #e3e9f5 0%, #f0f4fa 100%);
+            border-radius: 20px;
+            margin-bottom: 20px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .doctor-photo img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center top;
+        }
+
+        .doctor-photo::before {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 30%;
+            background: linear-gradient(180deg, transparent 0%, rgba(255,255,255,0.3) 100%);
+            z-index: 1;
+        }
+
+        .stat-badge {
+            background: white;
+            padding: 12px 20px;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            white-space: nowrap;
+        }
+
+        .stat-value {
+            font-size: 24px;
+            font-weight: 700;
+            color: #1a1a1a;
+            display: block;
+        }
+
+        .stat-label {
+            font-size: 13px;
+            color: #666;
+            margin-top: 2px;
+        }
+
+        /* Floating Voice Bot Button */
+        .voice-bot-container {
+            position: fixed;
+            bottom: 40px;
+            right: 40px;
+            z-index: 1000;
+        }
+
+        .voice-btn {
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            border: none;
+            background: linear-gradient(135deg, #2D5BFF 0%, #1E40FF 100%);
+            color: white;
+            font-size: 28px;
+            cursor: pointer;
+            box-shadow: 0 10px 40px rgba(45, 91, 255, 0.5), 0 4px 12px rgba(0, 0, 0, 0.15);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+
+        .voice-btn:hover {
+            transform: translateY(-4px) scale(1.05);
+            box-shadow: 0 15px 50px rgba(45, 91, 255, 0.6), 0 6px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .voice-btn:active {
+            transform: translateY(-2px) scale(1.02);
+        }
+
+        .voice-btn.active {
+            background: linear-gradient(135deg, #e74c3c 0%, #c0392b 100%);
+            animation: pulse 2s infinite;
+        }
+
+        .voice-btn.active:hover {
+            box-shadow: 0 15px 50px rgba(231, 76, 60, 0.6), 0 6px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        @keyframes pulse {
+            0%, 100% {
+                box-shadow: 0 10px 40px rgba(231, 76, 60, 0.5), 0 4px 12px rgba(0, 0, 0, 0.15);
+            }
+            50% {
+                box-shadow: 0 10px 40px rgba(231, 76, 60, 0.7), 0 4px 12px rgba(0, 0, 0, 0.15), 0 0 0 20px rgba(231, 76, 60, 0.1);
+            }
+        }
+
+        /* Ripple effect for active state */
+        .voice-btn.active::before {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            border: 3px solid #e74c3c;
+            animation: ripple 1.5s infinite;
+        }
+
+        @keyframes ripple {
+            0% {
+                transform: scale(1);
+                opacity: 1;
+            }
+            100% {
+                transform: scale(1.8);
+                opacity: 0;
+            }
+        }
+
+        .voice-tooltip {
+            position: absolute;
+            bottom: 85px;
+            right: 0;
+            background: white;
+            padding: 12px 20px;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+            white-space: nowrap;
+            font-size: 14px;
+            font-weight: 500;
+            color: #1a1a1a;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.3s ease;
+        }
+
+        .voice-tooltip.show {
+            opacity: 1;
+        }
+
+        .voice-tooltip::after {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            right: 25px;
+            width: 0;
+            height: 0;
+            border-left: 8px solid transparent;
+            border-right: 8px solid transparent;
+            border-top: 8px solid white;
+        }
+
+        /* Status Indicator */
+        .status-indicator {
+            position: absolute;
+            bottom: 100px;
+            right: 0;
+            background: white;
+            padding: 16px 24px;
+            border-radius: 16px;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+            display: none;
+            align-items: center;
+            gap: 12px;
+            min-width: 200px;
+        }
+
+        .status-indicator.show {
+            display: flex;
+        }
+
+        .status-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: #27ae60;
+            animation: statusPulse 2s infinite;
+        }
+
+        @keyframes statusPulse {
+            0%, 100% {
+                opacity: 1;
+            }
+            50% {
+                opacity: 0.5;
+            }
+        }
+
+        .status-text {
+            font-size: 15px;
+            font-weight: 600;
+            color: #1a1a1a;
+        }
+
+        /* Audio Waveform */
+        .waveform {
+            display: flex;
+            align-items: center;
+            gap: 3px;
+            margin-left: auto;
+        }
+
+        .wave-bar {
+            width: 3px;
+            height: 20px;
+            background: #2D5BFF;
+            border-radius: 3px;
+            animation: wave 1s ease-in-out infinite;
+        }
+
+        .wave-bar:nth-child(1) { animation-delay: 0s; }
+        .wave-bar:nth-child(2) { animation-delay: 0.1s; }
+        .wave-bar:nth-child(3) { animation-delay: 0.2s; }
+        .wave-bar:nth-child(4) { animation-delay: 0.3s; }
+
+        @keyframes wave {
+            0%, 100% {
+                height: 10px;
+            }
+            50% {
+                height: 25px;
+            }
+        }
+
+        /* Responsive */
+        @media (max-width: 1024px) {
+            .hero {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .hero-content {
+                max-width: 100%;
+            }
+
+            .hero-image {
+                justify-content: center;
+            }
+
+            .doctors-container {
+                gap: 20px;
+            }
+
+            .doctor-photo {
+                width: 180px;
+                height: 240px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            header {
+                padding: 15px 30px;
+            }
+
+            .hero {
+                padding: 40px 30px 60px;
+            }
+
+            .hero-title {
+                font-size: 40px;
+            }
+
+            .voice-bot-container {
+                bottom: 30px;
+                right: 30px;
+            }
+
+            .voice-btn {
+                width: 60px;
+                height: 60px;
+                font-size: 24px;
+            }
+
+            .doctor-photo {
+                width: 140px;
+                height: 200px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="logo">
+            <div class="logo-icon">e</div>
+            even
+        </div>
+        <nav class="nav-right">
+            <a href="#" class="nav-link">Download app</a>
+            <a href="#" class="nav-link">Login / Signup</a>
+            <div class="cart-icon">🛒</div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1 class="hero-title">Doctors who don't just treat. They lead your care.</h1>
+            <p class="hero-subtitle">They're independent, experienced, and fully aligned with our preventive, people-first approach to care.</p>
+        </div>
+
+        <div class="hero-image">
+            <div class="doctors-container">
+                <div class="doctor-card">
+                    <div class="doctor-photo">
+                        <img src="https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?w=400&h=600&fit=crop&crop=faces" alt="Doctor" onerror="this.style.display='none'">
+                    </div>
+                    <div class="stat-badge">
+                        <span class="stat-value">97%</span>
+                        <div class="stat-label">patient-reported<br>satisfaction</div>
+                    </div>
+                </div>
+                <div class="doctor-card">
+                    <div class="doctor-photo">
+                        <img src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?w=400&h=600&fit=crop&crop=faces" alt="Doctor" onerror="this.style.display='none'">
+                    </div>
+                    <div class="stat-badge">
+                        <span class="stat-value">500K+</span>
+                        <div class="stat-label">patients<br>recovered</div>
+                    </div>
+                </div>
+                <div class="doctor-card">
+                    <div class="doctor-photo">
+                        <img src="https://images.unsplash.com/photo-1594824476967-48c8b964273f?w=400&h=600&fit=crop&crop=faces" alt="Doctor" onerror="this.style.display='none'">
+                    </div>
+                    <div class="stat-badge">
+                        <span class="stat-value">50%</span>
+                        <div class="stat-label">reduced<br>readmissions</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Floating Voice Bot -->
+    <div class="voice-bot-container">
+        <!-- Status Indicator -->
+        <div class="status-indicator" id="statusIndicator">
+            <div class="status-dot"></div>
+            <span class="status-text">Listening...</span>
+            <div class="waveform">
+                <div class="wave-bar"></div>
+                <div class="wave-bar"></div>
+                <div class="wave-bar"></div>
+                <div class="wave-bar"></div>
+            </div>
+        </div>
+
+        <!-- Voice Button -->
+        <button class="voice-btn" id="voiceBtn" title="Talk to Me">
+            🎤
+        </button>
+        <div class="voice-tooltip" id="voiceTooltip">Talk to Me</div>
+    </div>
+
+    <!-- Import VAPI SDK -->
+    <script type="importmap">
+    {
+      "imports": {
+        "@vapi-ai/web": "https://esm.sh/@vapi-ai/web@2.1.0"
+      }
+    }
+    </script>
+
+    <script type="module">
+        import Vapi from '@vapi-ai/web';
+
+        // VAPI Configuration
+        const VAPI_PUBLIC_KEY = '9fca90ac-bb25-45df-9e2a-2145562075e4';
+        const ASSISTANT_ID = 'd595c5af-588f-4b43-a9ee-01863175608b';
+
+        let vapi = null;
+        let isCallActive = false;
+
+        const voiceBtn = document.getElementById('voiceBtn');
+        const voiceTooltip = document.getElementById('voiceTooltip');
+        const statusIndicator = document.getElementById('statusIndicator');
+
+        // Initialize VAPI
+        try {
+            vapi = new Vapi(VAPI_PUBLIC_KEY);
+            console.log('✅ VAPI initialized');
+
+            // Event listeners
+            vapi.on('call-start', () => {
+                console.log('📞 Call started');
+                isCallActive = true;
+                updateUI(true);
+            });
+
+            vapi.on('call-end', () => {
+                console.log('📞 Call ended');
+                isCallActive = false;
+                updateUI(false);
+            });
+
+            vapi.on('message', (message) => {
+                console.log('📨 Message:', message);
+
+                // Log call details
+                if (message.call?.id) {
+                    console.log('🆔 Call ID:', message.call.id);
+                }
+
+                // Log function calls
+                if (message.type === 'function-call' || message.functionCall) {
+                    console.log('🔧 Function called:', message.functionCall || message);
+                }
+
+                // Log transcript
+                if (message.transcript) {
+                    console.log('💬 Transcript:', message.transcript);
+                }
+            });
+
+            vapi.on('error', (error) => {
+                console.error('❌ Error:', error);
+                isCallActive = false;
+                updateUI(false);
+                alert('Voice assistant error: ' + error.message);
+            });
+
+            vapi.on('speech-start', () => {
+                console.log('🗣️ User started speaking');
+            });
+
+            vapi.on('speech-end', () => {
+                console.log('🤐 User stopped speaking');
+            });
+
+        } catch (error) {
+            console.error('❌ VAPI initialization error:', error);
+        }
+
+        // Button click handler
+        voiceBtn.addEventListener('click', () => {
+            if (!vapi) {
+                alert('Voice assistant not available');
+                return;
+            }
+
+            if (isCallActive) {
+                // End call
+                console.log('🛑 Ending call');
+                vapi.stop();
+            } else {
+                // Start call
+                console.log('🚀 Starting call');
+                try {
+                    vapi.start(ASSISTANT_ID);
+                } catch (error) {
+                    console.error('❌ Start error:', error);
+                    alert('Failed to start voice call: ' + error.message);
+                }
+            }
+        });
+
+        // Show tooltip on hover (only when inactive)
+        voiceBtn.addEventListener('mouseenter', () => {
+            if (!isCallActive) {
+                voiceTooltip.classList.add('show');
+            }
+        });
+
+        voiceBtn.addEventListener('mouseleave', () => {
+            voiceTooltip.classList.remove('show');
+        });
+
+        // Update UI based on call state
+        function updateUI(active) {
+            if (active) {
+                // Active state
+                voiceBtn.classList.add('active');
+                voiceBtn.innerHTML = '☎️';
+                voiceBtn.title = 'End Call';
+                voiceTooltip.textContent = 'End Call';
+                voiceTooltip.classList.remove('show');
+                statusIndicator.classList.add('show');
+            } else {
+                // Inactive state
+                voiceBtn.classList.remove('active');
+                voiceBtn.innerHTML = '🎤';
+                voiceBtn.title = 'Talk to Me';
+                voiceTooltip.textContent = 'Talk to Me';
+                statusIndicator.classList.remove('show');
+            }
+        }
+    </script>
+</body>
+</html>

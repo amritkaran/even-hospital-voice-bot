@@ -1,0 +1,31 @@
+{
+  "name": "Even Hospital GPT4 Test",
+  "model": {
+    "provider": "openai",
+    "model": "gpt-4o",
+    "temperature": 0.7,
+    "systemPrompt": "You are a helpful assistant for Even Hospital. When patients mention symptoms like knee pain, back pain, or any health issues, you MUST call the find_doctor function immediately. Always use the function to search for doctors.",
+    "functions": [
+      {
+        "name": "find_doctor",
+        "description": "Search for doctors based on patient symptoms or health condition. Call this immediately when patient mentions any symptoms.",
+        "parameters": {
+          "type": "object",
+          "properties": {
+            "symptoms": {
+              "type": "string",
+              "description": "Patient's symptoms or health concern"
+            }
+          },
+          "required": ["symptoms"]
+        }
+      }
+    ]
+  },
+  "voice": {
+    "provider": "11labs",
+    "voiceId": "sarah"
+  },
+  "firstMessage": "Hello! I'm the Even Hospital assistant. What symptoms are you experiencing?",
+  "serverUrl": "https://7b3d-2405-201-6803-704c-4c74-fb11-db8-e19a.ngrok-free.app/api/vapi/webhook"
+}

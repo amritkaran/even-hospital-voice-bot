@@ -1,0 +1,109 @@
+╔═══════════════════════════════════════════════════════════════════╗
+║                                                                   ║
+║         EVEN HOSPITAL VOICE BOT - QUICK REFERENCE                ║
+║                                                                   ║
+╚═══════════════════════════════════════════════════════════════════╝
+
+✅ STATUS: FULLY OPERATIONAL
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+SERVER RUNNING
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+URL: http://localhost:3001
+Status: 🟢 HEALTHY
+Services: RAG ✅ | VAPI ✅ | Appointments ✅
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+QUICK TEST COMMANDS (Windows)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+1. CHECK HEALTH:
+   curl http://localhost:3001/health
+
+2. SEARCH DOCTORS (Knee Pain):
+   curl -X POST http://localhost:3001/api/search-doctors ^
+     -H "Content-Type: application/json" ^
+     -d "{\"symptoms\": \"knee pain\"}"
+
+3. SEARCH DOCTORS (Stomach Pain):
+   curl -X POST http://localhost:3001/api/search-doctors ^
+     -H "Content-Type: application/json" ^
+     -d "{\"symptoms\": \"stomach pain\"}"
+
+4. SEARCH DOCTORS (Pregnancy):
+   curl -X POST http://localhost:3001/api/search-doctors ^
+     -H "Content-Type: application/json" ^
+     -d "{\"symptoms\": \"pregnant need prenatal care\"}"
+
+5. BOOK APPOINTMENT:
+   curl -X POST http://localhost:3001/api/appointments/book ^
+     -H "Content-Type: application/json" ^
+     -d "{\"doctor_name\": \"Dr. Harish Puranik\", \"patient_name\": \"Test Patient\", \"patient_phone\": \"+91-9876543210\", \"preferred_date\": \"2025-11-15\", \"preferred_time\": \"morning\"}"
+
+6. CHECK AVAILABILITY:
+   curl "http://localhost:3001/api/appointments/availability/Dr. Harish Puranik?date=2025-11-15"
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+PROJECT STATS
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+✅ 226 Embeddings Generated
+✅ 28 Doctors Indexed
+✅ 12 Specialties Covered
+✅ 134 Symptom Phrases Mapped
+✅ 18 Q&A Pairs Loaded
+✅ 7.3 MB Embeddings File
+✅ 14 API Endpoints Active
+✅ 176 npm Packages Installed
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+NEXT: VAPI INTEGRATION
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+To enable voice calls:
+
+1. Get VAPI private key from: https://vapi.ai/dashboard
+2. Edit: config/.env
+3. Set: VAPI_API_KEY=your_private_key
+4. Run: curl -X POST http://localhost:3001/api/vapi/setup-assistant
+5. Configure webhook in VAPI dashboard
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+COMMON COMMANDS
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Start server:
+  npm start
+
+Stop server:
+  Ctrl+C in terminal
+
+Regenerate embeddings:
+  npm run generate-embeddings
+
+Test RAG system:
+  npm run test-rag
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+FILES LOCATION
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Project: C:\Users\AD\Desktop\Even Hospital
+Server: src/index.js (port 3001)
+Config: config/.env
+Embeddings: data/embeddings/doctor_embeddings.json
+Appointments: data/appointments.json
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+DOCUMENTATION
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+README.md       - Full documentation
+SETUP_GUIDE.md  - Detailed setup steps
+SUCCESS.md      - Current status & test results
+QUICK_START.txt - This file
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Ready to help patients find doctors and book appointments! 🎉

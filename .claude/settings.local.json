@@ -1,0 +1,37 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npm start)",
+      "Bash(start test-gpt4o.html)",
+      "Bash(netstat:*)",
+      "Bash(findstr:*)",
+      "Bash(taskkill:*)",
+      "Bash(tasklist:*)",
+      "Bash(ngrok http:*)",
+      "Bash(curl:*)",
+      "Bash(nul)",
+      "WebSearch",
+      "WebFetch(domain:docs.retellai.com)",
+      "Bash(start test-retell-ai.html)",
+      "WebFetch(domain:github.com)",
+      "Bash(dir:*)",
+      "Bash(start http://localhost:4040)",
+      "Bash(start even-landing-page.html)",
+      "Bash(start http://localhost:3001)",
+      "Bash(timeout 3 bash -c 'curl -s http://localhost:4040/api/tunnels')",
+      "Bash(exit 0)",
+      "Bash(timeout /t 2 /nobreak)",
+      "Bash(git init:*)",
+      "Bash(git add:*)",
+      "Bash(git commit:*)",
+      "Bash(del nul 2)",
+      "Bash(git config:*)",
+      "Bash(git remote add:*)",
+      "Bash(git branch:*)",
+      "Bash(git push:*)",
+      "Bash(rd /s /q .git)"
+    ],
+    "deny": [],
+    "ask": []
+  }
+}

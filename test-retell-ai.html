@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Even Hospital - Retell AI Voice Bot</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 700px;
+            margin: 50px auto;
+            padding: 20px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+        .container {
+            background: white;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+        }
+        h1 {
+            color: #667eea;
+            margin: 0 0 10px 0;
+        }
+        .subtitle {
+            color: #666;
+            margin: 0 0 30px 0;
+            font-size: 14px;
+        }
+        button {
+            width: 100%;
+            padding: 18px;
+            font-size: 18px;
+            font-weight: bold;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            margin: 10px 0;
+            transition: all 0.3s;
+        }
+        #startBtn {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+        #startBtn:hover:not(:disabled) {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+        }
+        #startBtn:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+        #endBtn {
+            background: #e74c3c;
+            color: white;
+            display: none;
+        }
+        #endBtn:hover {
+            background: #c0392b;
+        }
+        .status {
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 8px;
+            text-align: center;
+            font-weight: 500;
+        }
+        .info { background: #d1ecf1; color: #0c5460; border-left: 4px solid #0c5460; }
+        .success { background: #d5f4e6; color: #27ae60; border-left: 4px solid #27ae60; }
+        .error { background: #f8d7da; color: #721c24; border-left: 4px solid #721c24; }
+        .active { background: #fff3cd; color: #856404; border-left: 4px solid #856404; }
+
+        .info-box {
+            background: #f8f9fa;
+            border-radius: 8px;
+            padding: 20px;
+            margin-top: 20px;
+        }
+        .info-box h3 {
+            margin: 0 0 15px 0;
+            color: #333;
+        }
+        .info-box ol {
+            margin: 10px 0;
+            padding-left: 20px;
+        }
+        .info-box li {
+            margin: 8px 0;
+            color: #555;
+        }
+        .badge {
+            display: inline-block;
+            background: #667eea;
+            color: white;
+            padding: 4px 12px;
+            border-radius: 12px;
+            font-size: 12px;
+            font-weight: bold;
+            margin-left: 10px;
+        }
+        .call-info {
+            display: grid;
+            grid-template-columns: 120px 1fr;
+            gap: 10px;
+            margin-top: 15px;
+            padding-top: 15px;
+            border-top: 1px solid #ddd;
+        }
+        .call-info strong {
+            color: #667eea;
+        }
+        .call-info span {
+            color: #333;
+            font-family: monospace;
+            font-size: 13px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🏥 Even Hospital Voice Bot</h1>
+        <p class="subtitle">Powered by Retell AI <span class="badge">NEW</span></p>
+
+        <div id="status" class="status info">
+            Initializing Retell AI...
+        </div>
+
+        <button id="startBtn" onclick="startCall()" disabled>
+            🎤 Start Voice Call
+        </button>
+
+        <button id="endBtn" onclick="endCall()">
+            ❌ End Call
+        </button>
+
+        <div class="info-box">
+            <h3>📋 Test Instructions</h3>
+            <ol>
+                <li>Click <strong>"Start Voice Call"</strong></li>
+                <li>Allow microphone access when prompted</li>
+                <li>Say: <strong>"I have knee pain"</strong></li>
+                <li>The bot should call the function and return doctors with names</li>
+                <li>Watch the console (F12) for detailed logs</li>
+            </ol>
+
+            <div class="call-info">
+                <strong>Server:</strong>
+                <span>http://localhost:3001</span>
+
+                <strong>Webhook:</strong>
+                <span id="webhookUrl">Ngrok URL</span>
+
+                <strong>Call ID:</strong>
+                <span id="callId">Not started</span>
+
+                <strong>Status:</strong>
+                <span id="callStatus">Idle</span>
+            </div>
+        </div>
+    </div>
+
+    <script type="module">
+        import { RetellWebClient } from "https://cdn.jsdelivr.net/npm/retell-client-js-sdk@2.0.7/+esm";
+
+        let retellWebClient = null;
+        let isCallActive = false;
+
+        function updateStatus(message, type = 'info') {
+            const statusEl = document.getElementById('status');
+            statusEl.textContent = message;
+            statusEl.className = `status ${type}`;
+        }
+
+        function updateCallStatus(status) {
+            document.getElementById('callStatus').textContent = status;
+        }
+
+        // Initialize Retell Web Client
+        async function initializeRetell() {
+            try {
+                console.log('🚀 Initializing Retell AI...');
+
+                // Create web call to get access token
+                const response = await fetch('http://localhost:3001/api/retell/create-web-call', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    }
+                });
+
+                const data = await response.json();
+
+                if (!data.success) {
+                    throw new Error(data.error || 'Failed to create web call');
+                }
+
+                console.log('✅ Web call created:', data.webCall);
+
+                const { access_token, call_id, agent_id } = data.webCall;
+
+                // Initialize Retell Web Client
+                retellWebClient = new RetellWebClient();
+
+                // Set up event listeners
+                retellWebClient.on('call_started', () => {
+                    console.log('📞 Call started');
+                    isCallActive = true;
+                    updateStatus('✅ Call Active - Speak now!', 'active');
+                    updateCallStatus('Active');
+                    document.getElementById('startBtn').style.display = 'none';
+                    document.getElementById('endBtn').style.display = 'block';
+                    document.getElementById('callId').textContent = call_id;
+                });
+
+                retellWebClient.on('call_ended', () => {
+                    console.log('📞 Call ended');
+                    isCallActive = false;
+                    updateStatus('Call ended - Click to start new call', 'info');
+                    updateCallStatus('Ended');
+                    document.getElementById('startBtn').style.display = 'block';
+                    document.getElementById('startBtn').disabled = false;
+                    document.getElementById('endBtn').style.display = 'none';
+                    document.getElementById('callId').textContent = 'Not started';
+                });
+
+                retellWebClient.on('agent_start_talking', () => {
+                    console.log('🤖 Agent started talking');
+                });
+
+                retellWebClient.on('agent_stop_talking', () => {
+                    console.log('🤖 Agent stopped talking');
+                });
+
+                retellWebClient.on('audio', (audio) => {
+                    // Audio data received
+                });
+
+                retellWebClient.on('update', (update) => {
+                    console.log('📊 Update:', update);
+                    if (update.transcript) {
+                        console.log('💬 Transcript:', update.transcript);
+                    }
+                });
+
+                retellWebClient.on('error', (error) => {
+                    console.error('❌ Retell Error:', error);
+                    updateStatus('Error: ' + error.message, 'error');
+                    updateCallStatus('Error');
+                });
+
+                // Start the call immediately
+                await retellWebClient.startCall({
+                    accessToken: access_token,
+                    sampleRate: 24000,
+                    enableUpdate: true
+                });
+
+                updateStatus('✅ Ready to speak!', 'success');
+                console.log('✅ Retell AI initialized and call started');
+
+            } catch (error) {
+                console.error('❌ Initialization error:', error);
+                updateStatus('Failed to initialize: ' + error.message, 'error');
+                document.getElementById('startBtn').disabled = true;
+            }
+        }
+
+        window.startCall = async function() {
+            if (retellWebClient && isCallActive) {
+                updateStatus('Call already active', 'info');
+                return;
+            }
+
+            console.log('🚀 Starting new call...');
+            updateStatus('Starting call...', 'info');
+            updateCallStatus('Starting...');
+            document.getElementById('startBtn').disabled = true;
+
+            await initializeRetell();
+        }
+
+        window.endCall = async function() {
+            if (retellWebClient && isCallActive) {
+                console.log('🛑 Ending call');
+                retellWebClient.stopCall();
+            }
+        }
+
+        // Get ngrok URL on load
+        async function getNgrokUrl() {
+            try {
+                const response = await fetch('http://localhost:4040/api/tunnels');
+                const data = await response.json();
+                if (data.tunnels && data.tunnels.length > 0) {
+                    const publicUrl = data.tunnels[0].public_url;
+                    document.getElementById('webhookUrl').textContent = publicUrl + '/api/retell/webhook';
+                    console.log('📡 Webhook URL:', publicUrl + '/api/retell/webhook');
+                }
+            } catch (error) {
+                console.log('ℹ️ Could not fetch ngrok URL');
+            }
+        }
+
+        // Initialize on page load
+        window.onload = async () => {
+            await getNgrokUrl();
+            updateStatus('Ready - Click to start call', 'info');
+            document.getElementById('startBtn').disabled = false;
+        };
+    </script>
+</body>
+</html>

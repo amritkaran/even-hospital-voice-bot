@@ -1,0 +1,916 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Even Hospital Voice Bot - Test</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background: linear-gradient(135deg, #2ecc71 0%, #27ae60 100%);
+            min-height: 100vh;
+        }
+
+        .main-container {
+            max-width: 1600px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 450px 1fr;
+            gap: 20px;
+        }
+
+        .container {
+            background: white;
+            padding: 30px;
+            border-radius: 20px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.3);
+            height: fit-content;
+            position: sticky;
+            top: 20px;
+        }
+
+        .log-panel {
+            background: white;
+            border-radius: 20px;
+            padding: 30px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.3);
+            display: flex;
+            flex-direction: column;
+            max-height: calc(100vh - 40px);
+        }
+
+        h1 {
+            color: #333;
+            margin-bottom: 10px;
+            font-size: 24px;
+        }
+
+        h2 {
+            color: #27ae60;
+            margin-bottom: 20px;
+            font-size: 18px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .subtitle {
+            color: #666;
+            margin-bottom: 20px;
+            font-size: 13px;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+            margin: 20px 0;
+        }
+
+        .stat-card {
+            background: #f8f9fa;
+            padding: 12px;
+            border-radius: 10px;
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: 24px;
+            font-weight: bold;
+            color: #27ae60;
+        }
+
+        .stat-label {
+            font-size: 11px;
+            color: #666;
+            margin-top: 3px;
+        }
+
+        .status {
+            padding: 15px;
+            border-radius: 10px;
+            margin-bottom: 30px;
+            font-weight: 500;
+        }
+
+        .status.ready {
+            background: #e8f5e9;
+            color: #2e7d32;
+        }
+
+        .status.active {
+            background: #fff3e0;
+            color: #e65100;
+            animation: pulse 2s infinite;
+        }
+
+        .status.error {
+            background: #ffebee;
+            color: #c62828;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.7; }
+        }
+
+        .call-button {
+            background: linear-gradient(135deg, #2ecc71 0%, #27ae60 100%);
+            color: white;
+            border: none;
+            padding: 20px 40px;
+            font-size: 18px;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            box-shadow: 0 4px 15px rgba(46, 204, 113, 0.4);
+            width: 100%;
+            justify-content: center;
+        }
+
+        .call-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(46, 204, 113, 0.6);
+        }
+
+        .call-button.calling {
+            background: linear-gradient(135deg, #e74c3c 0%, #c0392b 100%);
+        }
+
+        .call-button:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+
+        .icon {
+            width: 20px;
+            height: 20px;
+            fill: white;
+        }
+
+        .instructions {
+            margin-top: 30px;
+            padding: 20px;
+            background: #e8f4f8;
+            border-radius: 10px;
+            text-align: left;
+            font-size: 14px;
+        }
+
+        .instructions h3 {
+            margin-top: 0;
+            color: #27ae60;
+        }
+
+        .instructions ol, .instructions ul {
+            padding-left: 20px;
+        }
+
+        .instructions li {
+            margin-bottom: 8px;
+        }
+
+        .log-container {
+            flex: 1;
+            overflow-y: auto;
+            background: #1e1e1e;
+            border-radius: 10px;
+            padding: 20px;
+            font-family: 'Courier New', monospace;
+            font-size: 12px;
+            line-height: 1.6;
+        }
+
+        .log-entry {
+            margin-bottom: 15px;
+            padding: 12px;
+            border-radius: 8px;
+            border-left: 4px solid;
+            animation: slideIn 0.3s ease-out;
+        }
+
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateX(-10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        .log-entry.transcript {
+            background: #2d2d30;
+            border-left-color: #4ec9b0;
+        }
+
+        .log-entry.function-call {
+            background: #1e3a5f;
+            border-left-color: #569cd6;
+        }
+
+        .log-entry.function-response {
+            background: #2d4a2c;
+            border-left-color: #4caf50;
+        }
+
+        .log-entry.system {
+            background: #3a2d5f;
+            border-left-color: #9c27b0;
+        }
+
+        .log-entry.error {
+            background: #5a1a1a;
+            border-left-color: #f44336;
+        }
+
+        .log-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 8px;
+        }
+
+        .log-type {
+            font-weight: bold;
+            padding: 3px 10px;
+            border-radius: 15px;
+            font-size: 10px;
+            text-transform: uppercase;
+        }
+
+        .log-type.transcript { background: #4ec9b0; color: #1e1e1e; }
+        .log-type.function-call { background: #569cd6; color: white; }
+        .log-type.function-response { background: #4caf50; color: white; }
+        .log-type.system { background: #9c27b0; color: white; }
+        .log-type.error { background: #f44336; color: white; }
+
+        .log-timestamp {
+            color: #858585;
+            font-size: 11px;
+        }
+
+        .log-content {
+            color: #d4d4d4;
+        }
+
+        .log-content strong {
+            color: #4ec9b0;
+        }
+
+        .log-json {
+            background: #252526;
+            padding: 8px;
+            border-radius: 5px;
+            margin-top: 8px;
+            white-space: pre-wrap;
+            word-wrap: break-word;
+            max-height: 250px;
+            overflow-y: auto;
+            font-size: 11px;
+        }
+
+        .filters {
+            display: flex;
+            gap: 8px;
+            margin-bottom: 15px;
+            flex-wrap: wrap;
+        }
+
+        .filter-checkbox {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            padding: 5px 10px;
+            background: #f8f9fa;
+            border-radius: 5px;
+            cursor: pointer;
+            user-select: none;
+            font-size: 11px;
+        }
+
+        .filter-checkbox input {
+            cursor: pointer;
+        }
+
+        .empty-state {
+            text-align: center;
+            padding: 40px 20px;
+            color: #858585;
+        }
+
+        .badge {
+            display: inline-block;
+            padding: 3px 8px;
+            border-radius: 12px;
+            font-size: 11px;
+            font-weight: 600;
+            margin-left: 5px;
+        }
+
+        .badge.info {
+            background: #d1ecf1;
+            color: #0c5460;
+        }
+
+        .small-button {
+            padding: 8px 16px;
+            font-size: 12px;
+            margin: 5px 5px 5px 0;
+            display: inline-block;
+            background: linear-gradient(135deg, #3498db 0%, #2980b9 100%);
+            color: white;
+            border: none;
+            border-radius: 20px;
+            cursor: pointer;
+        }
+
+        .small-button:hover {
+            transform: translateY(-1px);
+        }
+
+        @media (max-width: 1200px) {
+            .main-container {
+                grid-template-columns: 1fr;
+            }
+            .container {
+                position: relative;
+                top: 0;
+            }
+            .log-panel {
+                max-height: 500px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="main-container">
+        <div class="container">
+            <h1>🏥 Even Hospital Voice Bot</h1>
+            <p class="subtitle">AI-Powered Doctor Booking Assistant</p>
+
+            <div class="status ready" id="status">
+                Loading SDK...
+            </div>
+
+            <button class="call-button" id="callButton" disabled>
+                <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                    <path d="M20.01 15.38c-1.23 0-2.42-.2-3.53-.56-.35-.12-.74-.03-1.01.24l-1.57 1.97c-2.83-1.35-5.48-3.9-6.89-6.83l1.95-1.66c.27-.28.35-.67.24-1.02-.37-1.11-.56-2.3-.56-3.53 0-.54-.45-.99-.99-.99H4.19C3.65 3 3 3.24 3 3.99 3 13.28 10.73 21 20.01 21c.71 0 .99-.63.99-1.18v-3.45c0-.54-.45-.99-.99-.99z"/>
+                </svg>
+                <span id="buttonText">Loading...</span>
+            </button>
+
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-number" id="messageCount">0</div>
+                    <div class="stat-label">Messages</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number" id="functionCount">0</div>
+                    <div class="stat-label">Functions</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number" id="transcriptCount">0</div>
+                    <div class="stat-label">Transcripts</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number" id="callDuration">00:00</div>
+                    <div class="stat-label">Duration</div>
+                </div>
+            </div>
+
+            <div style="margin-top: 15px; padding-top: 15px; border-top: 1px solid #eee;">
+                <button class="small-button" onclick="clearLogs()">🗑️ Clear</button>
+                <button class="small-button" onclick="exportLogs()">📥 Export</button>
+            </div>
+
+            <div class="instructions">
+                <h3>📋 How to Test</h3>
+                <ol>
+                    <li>Click "Start Voice Call"</li>
+                    <li>Allow microphone access</li>
+                    <li>Say: <strong>"I have knee pain"</strong></li>
+                    <li>Bot will recommend orthopedic doctors</li>
+                    <li>Try booking an appointment!</li>
+                </ol>
+
+                <h3>💬 Test Queries</h3>
+                <ul>
+                    <li>"I have stomach pain"</li>
+                    <li>"My knee hurts"</li>
+                    <li>"I need a doctor for pregnancy"</li>
+                    <li>"I have a headache"</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="log-panel">
+            <h2>
+                📋 Conversation Logs
+                <span class="badge info" id="logBadge">Live</span>
+            </h2>
+
+            <div class="filters">
+                <label class="filter-checkbox">
+                    <input type="checkbox" id="filterTranscript" checked onchange="applyFilters()">
+                    <span>💬 Transcripts</span>
+                </label>
+                <label class="filter-checkbox">
+                    <input type="checkbox" id="filterFunction" checked onchange="applyFilters()">
+                    <span>🔧 Functions</span>
+                </label>
+                <label class="filter-checkbox">
+                    <input type="checkbox" id="filterResponse" checked onchange="applyFilters()">
+                    <span>✅ Responses</span>
+                </label>
+                <label class="filter-checkbox">
+                    <input type="checkbox" id="filterSystem" checked onchange="applyFilters()">
+                    <span>⚙️ System</span>
+                </label>
+                <label class="filter-checkbox">
+                    <input type="checkbox" id="filterError" checked onchange="applyFilters()">
+                    <span>❌ Errors</span>
+                </label>
+            </div>
+
+            <div class="log-container" id="logContainer">
+                <div class="empty-state">
+                    <div style="font-size: 40px; margin-bottom: 10px;">📋</div>
+                    <div style="font-size: 16px; margin-bottom: 8px;">No logs yet</div>
+                    <div style="font-size: 12px;">Start a conversation to see logs appear here</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script type="importmap">
+    {
+      "imports": {
+        "@vapi-ai/web": "https://esm.sh/@vapi-ai/web@2.1.0"
+      }
+    }
+    </script>
+
+    <script type="module">
+        // Import Vapi from esm.sh (NPM-to-ESM CDN)
+        import Vapi from '@vapi-ai/web';
+
+        // Configuration - Even Hospital
+        const VAPI_PUBLIC_KEY = '84c85686-fd75-4415-99f1-e71a5270b195';
+        const ASSISTANT_ID = '65abdc38-d96e-4b55-937d-40e439fa8421';
+
+        // Global variables
+        let vapi = null;
+        let isCallActive = false;
+        let logs = [];
+        let callStartTime = null;
+        let durationInterval = null;
+        let stats = {
+            messages: 0,
+            functions: 0,
+            transcripts: 0
+        };
+
+        const logContainer = document.getElementById('logContainer');
+        const messageCount = document.getElementById('messageCount');
+        const functionCount = document.getElementById('functionCount');
+        const transcriptCount = document.getElementById('transcriptCount');
+        const callDurationElem = document.getElementById('callDuration');
+
+        // Update stats
+        function updateStats() {
+            messageCount.textContent = stats.messages;
+            functionCount.textContent = stats.functions;
+            transcriptCount.textContent = stats.transcripts;
+        }
+
+        // Format time
+        function formatTime(timestamp) {
+            const date = new Date(timestamp);
+            return date.toLocaleTimeString('en-US', {
+                hour: '2-digit',
+                minute: '2-digit',
+                second: '2-digit',
+                hour12: false
+            });
+        }
+
+        // Escape HTML
+        function escapeHtml(text) {
+            const div = document.createElement('div');
+            div.textContent = text;
+            return div.innerHTML;
+        }
+
+        // Append log entry
+        function appendLog(logDiv) {
+            const emptyState = logContainer.querySelector('.empty-state');
+            if (emptyState) {
+                emptyState.remove();
+            }
+            logContainer.appendChild(logDiv);
+            logContainer.scrollTop = logContainer.scrollHeight;
+        }
+
+        // Log transcript
+        function logTranscript(role, text, fullMessage) {
+            const entry = {
+                type: 'transcript',
+                timestamp: new Date().toISOString(),
+                role: role,
+                text: text,
+                fullMessage: fullMessage
+            };
+
+            logs.push(entry);
+
+            const logDiv = document.createElement('div');
+            logDiv.className = 'log-entry transcript';
+            logDiv.setAttribute('data-type', 'transcript');
+
+            const roleLabel = role === 'user' ? '👤 User' : '🤖 Assistant';
+            const roleColor = role === 'user' ? '#4ec9b0' : '#569cd6';
+
+            logDiv.innerHTML = `
+                <div class="log-header">
+                    <span class="log-type transcript">${roleLabel}</span>
+                    <span class="log-timestamp">${formatTime(entry.timestamp)}</span>
+                </div>
+                <div class="log-content">
+                    <strong style="color: ${roleColor}">${role.toUpperCase()}:</strong> ${escapeHtml(text)}
+                </div>
+            `;
+
+            appendLog(logDiv);
+        }
+
+        // Log function call
+        function logFunctionCall(functionCall) {
+            const functionName = functionCall.name || functionCall.function?.name || 'unknown';
+            const parameters = functionCall.parameters || functionCall.function?.arguments || functionCall.arguments || {};
+
+            const entry = {
+                type: 'function-call',
+                timestamp: new Date().toISOString(),
+                functionName: functionName,
+                parameters: parameters,
+                fullCall: functionCall
+            };
+
+            logs.push(entry);
+
+            const logDiv = document.createElement('div');
+            logDiv.className = 'log-entry function-call';
+            logDiv.setAttribute('data-type', 'function-call');
+
+            const paramStr = typeof parameters === 'string' ? parameters : JSON.stringify(parameters, null, 2);
+
+            logDiv.innerHTML = `
+                <div class="log-header">
+                    <span class="log-type function-call">🔧 Function</span>
+                    <span class="log-timestamp">${formatTime(entry.timestamp)}</span>
+                </div>
+                <div class="log-content">
+                    <strong>Function:</strong> <span style="color: #ce9178">${escapeHtml(functionName)}</span>
+                    <div class="log-json"><strong>Parameters:</strong>\n${escapeHtml(paramStr)}</div>
+                </div>
+            `;
+
+            appendLog(logDiv);
+        }
+
+        // Log function response
+        function logFunctionResponse(result, fullMessage) {
+            const entry = {
+                type: 'function-response',
+                timestamp: new Date().toISOString(),
+                result: result,
+                fullMessage: fullMessage
+            };
+
+            logs.push(entry);
+
+            const logDiv = document.createElement('div');
+            logDiv.className = 'log-entry function-response';
+            logDiv.setAttribute('data-type', 'function-response');
+
+            let responseHtml = '';
+
+            try {
+                const resultObj = typeof result === 'string' ? JSON.parse(result) : result;
+
+                if (resultObj.doctors && Array.isArray(resultObj.doctors)) {
+                    responseHtml = `
+                        <div><strong>Doctor Recommendations:</strong></div>
+                        ${resultObj.doctors.map((doc, i) => `
+                            <div style="margin-left: 10px; margin-top: 8px;">
+                                <strong>Dr. ${escapeHtml(doc.name)}</strong> - ${escapeHtml(doc.specialty)}
+                                <br><span style="color: #b5cea8;">Experience: ${doc.experience} years</span>
+                                <br><span style="color: #b5cea8;">Fee: ${escapeHtml(doc.consultation_fee)}</span>
+                            </div>
+                        `).join('')}
+                    `;
+                } else if (resultObj.success) {
+                    responseHtml = `<div><strong>✅ Success:</strong> ${escapeHtml(resultObj.message || 'Operation completed')}</div>`;
+                    if (resultObj.appointmentId) {
+                        responseHtml += `<div style="margin-top: 8px;"><strong>Appointment ID:</strong> ${escapeHtml(resultObj.appointmentId)}</div>`;
+                    }
+                } else {
+                    responseHtml = `<div class="log-json">${escapeHtml(JSON.stringify(resultObj, null, 2))}</div>`;
+                }
+            } catch (e) {
+                responseHtml = `<div class="log-json">${escapeHtml(JSON.stringify(result, null, 2))}</div>`;
+            }
+
+            logDiv.innerHTML = `
+                <div class="log-header">
+                    <span class="log-type function-response">✅ Response</span>
+                    <span class="log-timestamp">${formatTime(entry.timestamp)}</span>
+                </div>
+                <div class="log-content">
+                    ${responseHtml}
+                </div>
+            `;
+
+            appendLog(logDiv);
+        }
+
+        // Log system event
+        function logSystemEvent(title, description) {
+            const entry = {
+                type: 'system',
+                timestamp: new Date().toISOString(),
+                title: title,
+                description: description
+            };
+
+            logs.push(entry);
+
+            const logDiv = document.createElement('div');
+            logDiv.className = 'log-entry system';
+            logDiv.setAttribute('data-type', 'system');
+
+            logDiv.innerHTML = `
+                <div class="log-header">
+                    <span class="log-type system">⚙️ System</span>
+                    <span class="log-timestamp">${formatTime(entry.timestamp)}</span>
+                </div>
+                <div class="log-content">
+                    <strong>${escapeHtml(title)}</strong><br>
+                    ${escapeHtml(description)}
+                </div>
+            `;
+
+            appendLog(logDiv);
+        }
+
+        // Log error
+        function logError(title, message) {
+            const entry = {
+                type: 'error',
+                timestamp: new Date().toISOString(),
+                title: title,
+                message: message
+            };
+
+            logs.push(entry);
+
+            const logDiv = document.createElement('div');
+            logDiv.className = 'log-entry error';
+            logDiv.setAttribute('data-type', 'error');
+
+            logDiv.innerHTML = `
+                <div class="log-header">
+                    <span class="log-type error">❌ Error</span>
+                    <span class="log-timestamp">${formatTime(entry.timestamp)}</span>
+                </div>
+                <div class="log-content">
+                    <strong>${escapeHtml(title)}</strong><br>
+                    ${escapeHtml(message)}
+                </div>
+            `;
+
+            appendLog(logDiv);
+        }
+
+        // Handle all Vapi messages
+        function handleMessage(message) {
+            stats.messages++;
+            updateStats();
+
+            console.log('Full message:', message);
+
+            // Transcript messages
+            if (message.type === 'transcript' || message.transcript) {
+                const text = message.transcript || message.transcriptText || '';
+                const role = message.role || 'unknown';
+                logTranscript(role, text, message);
+                stats.transcripts++;
+                updateStats();
+            }
+
+            // Function call messages
+            if (message.type === 'function-call' || message.functionCall) {
+                const functionCall = message.functionCall || message;
+                logFunctionCall(functionCall);
+                stats.functions++;
+                updateStats();
+            }
+
+            // Tool calls
+            if (message.toolCalls && Array.isArray(message.toolCalls)) {
+                message.toolCalls.forEach(toolCall => {
+                    logFunctionCall(toolCall);
+                    stats.functions++;
+                });
+                updateStats();
+            }
+
+            // Function results
+            if (message.type === 'function-call-result' || message.functionCallResult) {
+                const result = message.functionCallResult || message.result;
+                logFunctionResponse(result, message);
+            }
+        }
+
+        // Start duration timer
+        function startDurationTimer() {
+            durationInterval = setInterval(() => {
+                const elapsed = Date.now() - callStartTime;
+                const minutes = Math.floor(elapsed / 60000);
+                const seconds = Math.floor((elapsed % 60000) / 1000);
+                callDurationElem.textContent = `${String(minutes).padStart(2, '0')}:${String(seconds).padStart(2, '0')}`;
+            }, 1000);
+        }
+
+        // Stop duration timer
+        function stopDurationTimer() {
+            if (durationInterval) {
+                clearInterval(durationInterval);
+                durationInterval = null;
+            }
+        }
+
+        // Apply filters
+        window.applyFilters = function() {
+            const filters = {
+                transcript: document.getElementById('filterTranscript').checked,
+                function: document.getElementById('filterFunction').checked,
+                response: document.getElementById('filterResponse').checked,
+                system: document.getElementById('filterSystem').checked,
+                error: document.getElementById('filterError').checked
+            };
+
+            const entries = logContainer.querySelectorAll('.log-entry');
+            entries.forEach(entry => {
+                const type = entry.getAttribute('data-type');
+                const typeMap = {
+                    'transcript': 'transcript',
+                    'function-call': 'function',
+                    'function-response': 'response',
+                    'system': 'system',
+                    'error': 'error'
+                };
+
+                const filterKey = typeMap[type];
+                entry.style.display = filters[filterKey] ? 'block' : 'none';
+            });
+        };
+
+        // Clear logs
+        window.clearLogs = function() {
+            if (confirm('Clear all logs?')) {
+                logs = [];
+                logContainer.innerHTML = `
+                    <div class="empty-state">
+                        <div style="font-size: 40px; margin-bottom: 10px;">📋</div>
+                        <div style="font-size: 16px; margin-bottom: 8px;">No logs yet</div>
+                        <div style="font-size: 12px;">Start a conversation to see logs appear here</div>
+                    </div>
+                `;
+                stats = { messages: 0, functions: 0, transcripts: 0 };
+                updateStats();
+            }
+        };
+
+        // Export logs
+        window.exportLogs = function() {
+            const dataStr = JSON.stringify(logs, null, 2);
+            const dataBlob = new Blob([dataStr], { type: 'application/json' });
+            const url = URL.createObjectURL(dataBlob);
+            const link = document.createElement('a');
+            link.href = url;
+            link.download = `even-hospital-logs-${new Date().toISOString().split('T')[0]}.json`;
+            link.click();
+            URL.revokeObjectURL(url);
+        };
+
+        // Update status
+        function updateStatus(message, type = 'ready') {
+            const statusEl = document.getElementById('status');
+            const buttonEl = document.getElementById('callButton');
+            const buttonText = document.getElementById('buttonText');
+
+            statusEl.textContent = message;
+            statusEl.className = 'status ' + type;
+
+            if (type === 'active') {
+                buttonEl.classList.add('calling');
+                buttonText.textContent = 'End Call';
+                buttonEl.disabled = false;
+            } else if (type === 'ready') {
+                buttonEl.classList.remove('calling');
+                buttonText.textContent = 'Start Voice Call';
+                buttonEl.disabled = false;
+            } else {
+                buttonEl.disabled = true;
+            }
+        }
+
+        // Initialize
+        logSystemEvent('SDK Loading', 'Importing Vapi module from ESM...');
+
+        try {
+            logSystemEvent('Initializing', 'Creating Vapi instance for Even Hospital...');
+            vapi = new Vapi(VAPI_PUBLIC_KEY);
+            logSystemEvent('Ready', 'Vapi instance created successfully');
+
+            // Setup event listeners
+            vapi.on('call-start', () => {
+                logSystemEvent('Call Started', 'Voice conversation with Even Hospital bot initiated');
+                isCallActive = true;
+                callStartTime = Date.now();
+                startDurationTimer();
+                updateStatus('Call in progress - Speak now!', 'active');
+            });
+
+            vapi.on('call-end', () => {
+                logSystemEvent('Call Ended', 'Voice conversation completed');
+                isCallActive = false;
+                stopDurationTimer();
+                updateStatus('Call ended. Click to start again.', 'ready');
+            });
+
+            vapi.on('speech-start', () => {
+                logSystemEvent('Speech Started', 'User started speaking');
+            });
+
+            vapi.on('speech-end', () => {
+                logSystemEvent('Speech Ended', 'User stopped speaking');
+            });
+
+            vapi.on('message', (message) => {
+                handleMessage(message);
+            });
+
+            vapi.on('error', (error) => {
+                logError('Vapi Error', error.message || JSON.stringify(error));
+                isCallActive = false;
+                updateStatus('Error occurred. See logs.', 'error');
+                setTimeout(() => updateStatus('Ready to call', 'ready'), 3000);
+            });
+
+            logSystemEvent('Event Listeners', 'All event listeners registered successfully');
+            updateStatus('Ready to call - Even Hospital Bot!', 'ready');
+
+        } catch (error) {
+            logError('Initialization Failed', error.message + '\n' + error.stack);
+            updateStatus('Failed to initialize. See logs.', 'error');
+        }
+
+        // Button click handler
+        document.getElementById('callButton').addEventListener('click', () => {
+            if (!vapi) {
+                logError('Not Initialized', 'Vapi instance not created');
+                return;
+            }
+
+            if (isCallActive) {
+                logSystemEvent('Ending Call', 'User requested to end call');
+                try {
+                    vapi.stop();
+                } catch (error) {
+                    logError('Stop Error', error.message);
+                }
+            } else {
+                logSystemEvent('Starting Call', `Initiating call with Even Hospital assistant (${ASSISTANT_ID})`);
+                try {
+                    vapi.start(ASSISTANT_ID);
+                    updateStatus('Connecting...', 'active');
+                } catch (error) {
+                    logError('Start Error', error.message);
+                    updateStatus('Failed to start call', 'error');
+                }
+            }
+        });
+
+        logSystemEvent('System Ready', 'Even Hospital Voice Bot is ready to accept calls');
+    </script>
+</body>
+</html>

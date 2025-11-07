@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Even Hospital - CLEAR START Test</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            max-width: 800px;
+            margin: 30px auto;
+            padding: 30px;
+            background: #1a1a2e;
+            color: #eee;
+        }
+        .container {
+            background: #16213e;
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+            border: 2px solid #0f3460;
+        }
+        h1 {
+            color: #e94560;
+            margin: 0 0 10px 0;
+            font-size: 32px;
+        }
+        .subtitle {
+            color: #aaa;
+            margin: 0 0 30px 0;
+            font-size: 14px;
+        }
+        .warning-box {
+            background: #ff6b6b;
+            color: white;
+            padding: 15px;
+            border-radius: 10px;
+            margin: 20px 0;
+            font-weight: bold;
+            text-align: center;
+        }
+        button {
+            width: 100%;
+            padding: 20px;
+            font-size: 18px;
+            font-weight: bold;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            margin: 10px 0;
+            transition: all 0.3s;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        #startBtn {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+        #startBtn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(102, 126, 234, 0.5);
+        }
+        #endBtn {
+            background: #e74c3c;
+            color: white;
+            display: none;
+        }
+        #endBtn:hover {
+            background: #c0392b;
+            transform: translateY(-2px);
+        }
+        .status {
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 10px;
+            text-align: center;
+            font-weight: 600;
+            border-left: 5px solid;
+        }
+        .info {
+            background: #2c3e50;
+            color: #3498db;
+            border-color: #3498db;
+        }
+        .success {
+            background: #1e3a2d;
+            color: #2ecc71;
+            border-color: #2ecc71;
+        }
+        .error {
+            background: #3a1e1e;
+            color: #e74c3c;
+            border-color: #e74c3c;
+        }
+        .active {
+            background: #3a2e1e;
+            color: #f39c12;
+            border-color: #f39c12;
+            animation: pulse 2s ease-in-out infinite;
+        }
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.7; }
+        }
+        .info-grid {
+            display: grid;
+            grid-template-columns: 150px 1fr;
+            gap: 15px;
+            background: #0f1b2e;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+            font-family: 'Courier New', monospace;
+            font-size: 13px;
+        }
+        .info-grid strong {
+            color: #667eea;
+        }
+        .info-grid span {
+            color: #eee;
+            word-break: break-all;
+        }
+        .badge {
+            display: inline-block;
+            background: #e94560;
+            color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 11px;
+            font-weight: bold;
+            margin-left: 10px;
+            animation: glow 2s ease-in-out infinite;
+        }
+        @keyframes glow {
+            0%, 100% { box-shadow: 0 0 5px #e94560; }
+            50% { box-shadow: 0 0 20px #e94560; }
+        }
+        .steps {
+            background: #0f1b2e;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+        }
+        .steps h3 {
+            margin: 0 0 15px 0;
+            color: #e94560;
+        }
+        .steps ol {
+            margin: 0;
+            padding-left: 25px;
+            line-height: 2;
+        }
+        .steps li {
+            color: #ccc;
+        }
+        .steps strong {
+            color: #667eea;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🏥 Even Hospital Voice Bot</h1>
+        <p class="subtitle">Clean Session Test <span class="badge">BRAND NEW</span></p>
+
+        <div class="warning-box">
+            ⚠️ BEFORE CLICKING: Clear browser cache (Ctrl+Shift+Delete) and close all other tabs!
+        </div>
+
+        <div id="status" class="status info">
+            Initializing... Clear all caches first!
+        </div>
+
+        <button id="startBtn" onclick="startCleanCall()">
+            🎤 Start 100% Fresh Call
+        </button>
+
+        <button id="endBtn" onclick="endCall()">
+            ❌ End Call
+        </button>
+
+        <div class="info-grid">
+            <strong>Assistant ID:</strong>
+            <span>a71599be-923d-473b-890e-905aaefe5825</span>
+
+            <strong>Model:</strong>
+            <span>gpt-4o (OpenAI) - NOT Gemini!</span>
+
+            <strong>Call ID:</strong>
+            <span id="callId">Waiting to start...</span>
+
+            <strong>Model in Use:</strong>
+            <span id="modelInUse">Not connected</span>
+
+            <strong>Status:</strong>
+            <span id="callStatus">Idle</span>
+        </div>
+
+        <div class="steps">
+            <h3>📋 Test Protocol</h3>
+            <ol>
+                <li>Clear browser cache: <strong>Ctrl+Shift+Delete</strong> (check "Cached images and files")</li>
+                <li>Close ALL other browser tabs/windows</li>
+                <li>Click <strong>"Start 100% Fresh Call"</strong></li>
+                <li>Allow microphone when prompted</li>
+                <li>Wait for greeting</li>
+                <li>Say clearly: <strong>"I have knee pain"</strong></li>
+                <li>Watch for function call detection in console (Press F12)</li>
+                <li>Bot should return 3 orthopedic doctors</li>
+            </ol>
+        </div>
+    </div>
+
+    <script type="importmap">
+    {
+      "imports": {
+        "@vapi-ai/web": "https://esm.sh/@vapi-ai/web@2.1.0"
+      }
+    }
+    </script>
+
+    <script type="module">
+        import Vapi from '@vapi-ai/web';
+
+        // CRITICAL: NEW GPT-4o ASSISTANT - NOT THE OLD GEMINI ONE!
+        const VAPI_PUBLIC_KEY = '84c85686-fd75-4415-99f1-e71a5270b195';
+        const NEW_ASSISTANT_ID = 'a71599be-923d-473b-890e-905aaefe5825'; // GPT-4o assistant
+
+        let vapi = null;
+        let isCallActive = false;
+
+        function updateStatus(message, type = 'info') {
+            const statusEl = document.getElementById('status');
+            statusEl.textContent = message;
+            statusEl.className = `status ${type}`;
+        }
+
+        function updateCallStatus(status) {
+            document.getElementById('callStatus').textContent = status;
+        }
+
+        function updateModelInUse(model) {
+            const el = document.getElementById('modelInUse');
+            el.textContent = model;
+
+            if (model.toLowerCase().includes('gemini')) {
+                el.style.color = '#e74c3c';
+                el.style.fontWeight = 'bold';
+                updateStatus('❌ ERROR: Gemini detected! Should be GPT-4o!', 'error');
+            } else if (model.toLowerCase().includes('gpt')) {
+                el.style.color = '#2ecc71';
+                el.style.fontWeight = 'bold';
+            }
+        }
+
+        // Clear any existing VAPI state
+        console.log('🧹 Clearing any existing VAPI state...');
+        if (localStorage) {
+            const keys = Object.keys(localStorage);
+            keys.forEach(key => {
+                if (key.includes('vapi') || key.includes('call')) {
+                    console.log(`  Removing: ${key}`);
+                    localStorage.removeItem(key);
+                }
+            });
+        }
+
+        if (sessionStorage) {
+            const keys = Object.keys(sessionStorage);
+            keys.forEach(key => {
+                if (key.includes('vapi') || key.includes('call')) {
+                    console.log(`  Removing: ${key}`);
+                    sessionStorage.removeItem(key);
+                }
+            });
+        }
+
+        // Initialize VAPI with NEW assistant
+        try {
+            vapi = new Vapi(VAPI_PUBLIC_KEY);
+            console.log('✅ VAPI SDK initialized');
+            console.log('📌 Using NEW Assistant ID:', NEW_ASSISTANT_ID);
+            console.log('🤖 Expected Model: GPT-4o (OpenAI)');
+            console.log('⚠️ If you see Gemini anywhere, something is wrong!');
+
+            vapi.on('call-start', () => {
+                console.log('📞 ========== CALL STARTED ==========');
+                isCallActive = true;
+                updateStatus('✅ Call Active - Speak now!', 'active');
+                updateCallStatus('Active');
+                document.getElementById('startBtn').style.display = 'none';
+                document.getElementById('endBtn').style.display = 'block';
+            });
+
+            vapi.on('call-end', () => {
+                console.log('📞 ========== CALL ENDED ==========');
+                isCallActive = false;
+                updateStatus('Call ended - Reload page for new test', 'info');
+                updateCallStatus('Ended');
+                document.getElementById('startBtn').style.display = 'block';
+                document.getElementById('endBtn').style.display = 'none';
+                document.getElementById('callId').textContent = 'Ended';
+                updateModelInUse('Not connected');
+            });
+
+            vapi.on('message', (message) => {
+                console.log('📨 ========== VAPI MESSAGE ==========');
+                console.log(JSON.stringify(message, null, 2));
+
+                // Extract and display call ID
+                if (message.call?.id) {
+                    const callId = message.call.id;
+                    document.getElementById('callId').textContent = callId;
+                    console.log('🆔 Call ID:', callId);
+                }
+
+                // Extract and display assistant ID from message
+                if (message.call?.assistantId) {
+                    const assistantId = message.call.assistantId;
+                    console.log('🤖 Assistant ID in call:', assistantId);
+
+                    if (assistantId !== NEW_ASSISTANT_ID) {
+                        console.error('❌ ========== WRONG ASSISTANT ==========');
+                        console.error(`Expected: ${NEW_ASSISTANT_ID}`);
+                        console.error(`Got: ${assistantId}`);
+                        updateStatus(`❌ ERROR: Using wrong assistant! (${assistantId})`, 'error');
+                    } else {
+                        console.log('✅ Correct assistant ID confirmed');
+                    }
+                }
+
+                // Extract and check model
+                if (message.model || message.assistant?.model) {
+                    const model = message.model || message.assistant?.model;
+                    const modelName = model.model || model;
+                    const provider = model.provider || 'unknown';
+
+                    console.log('🤖 ========== MODEL INFO ==========');
+                    console.log('  Model:', modelName);
+                    console.log('  Provider:', provider);
+
+                    updateModelInUse(`${modelName} (${provider})`);
+
+                    if (modelName.toLowerCase().includes('gemini')) {
+                        console.error('❌ ========== GEMINI DETECTED ==========');
+                        console.error('This is WRONG! Should be GPT-4o!');
+                        console.error('The call is using the OLD assistant configuration!');
+                    } else if (modelName.toLowerCase().includes('gpt')) {
+                        console.log('✅ ========== GPT CONFIRMED ==========');
+                        console.log('Correct model in use!');
+                    }
+                }
+
+                // Check for function calls
+                if (message.type === 'function-call' || message.functionCall) {
+                    console.log('🔧 ========== FUNCTION CALL DETECTED ==========');
+                    console.log(JSON.stringify(message.functionCall || message, null, 2));
+                    updateStatus('✅ Function called! Searching doctors...', 'success');
+                }
+
+                // Check for function results
+                if (message.type === 'function-call-result') {
+                    console.log('✅ ========== FUNCTION RESULT ==========');
+                    console.log(JSON.stringify(message, null, 2));
+                }
+
+                // Log transcript
+                if (message.transcript) {
+                    console.log('💬 Transcript:', message.transcript);
+                }
+
+                // Log message type
+                if (message.type) {
+                    console.log('📋 Message Type:', message.type);
+                }
+            });
+
+            vapi.on('error', (error) => {
+                console.error('❌ ========== ERROR ==========');
+                console.error(error);
+                updateStatus('Error: ' + error.message, 'error');
+                updateCallStatus('Error');
+            });
+
+            vapi.on('speech-start', () => {
+                console.log('🗣️ User started speaking');
+            });
+
+            vapi.on('speech-end', () => {
+                console.log('🤐 User stopped speaking');
+            });
+
+            updateStatus('✅ Ready - Clear cache first, then click start!', 'info');
+
+        } catch (error) {
+            console.error('❌ Init error:', error);
+            updateStatus('Failed to initialize: ' + error.message, 'error');
+        }
+
+        window.startCleanCall = function() {
+            if (!vapi) {
+                updateStatus('VAPI not initialized', 'error');
+                return;
+            }
+
+            console.log('🚀 ========== STARTING CLEAN CALL ==========');
+            console.log('Assistant ID:', NEW_ASSISTANT_ID);
+            console.log('This should create a completely new call with GPT-4o');
+
+            updateStatus('Starting call with GPT-4o assistant...', 'info');
+            updateCallStatus('Connecting...');
+
+            try {
+                // Start with the NEW assistant ID
+                vapi.start(NEW_ASSISTANT_ID);
+                console.log('✅ Call start requested with NEW assistant');
+            } catch (error) {
+                console.error('❌ Start error:', error);
+                updateStatus('Failed to start: ' + error.message, 'error');
+                updateCallStatus('Failed');
+            }
+        };
+
+        window.endCall = function() {
+            if (vapi && isCallActive) {
+                console.log('🛑 Ending call');
+                vapi.stop();
+            }
+        };
+
+        // Log page load
+        console.log('========================================');
+        console.log('🔄 PAGE LOADED');
+        console.log('========================================');
+        console.log('NEW Assistant ID:', NEW_ASSISTANT_ID);
+        console.log('Expected model: GPT-4o');
+        console.log('========================================');
+    </script>
+</body>
+</html>

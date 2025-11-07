@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Even Hospital - Fresh Call Test</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 600px;
+            margin: 50px auto;
+            padding: 20px;
+            background: #f5f5f5;
+        }
+        .container {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #27ae60;
+        }
+        button {
+            width: 100%;
+            padding: 15px;
+            font-size: 18px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 10px 0;
+        }
+        #startBtn {
+            background: #27ae60;
+            color: white;
+        }
+        #endBtn {
+            background: #e74c3c;
+            color: white;
+            display: none;
+        }
+        .status {
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 5px;
+            text-align: center;
+        }
+        .info { background: #d1ecf1; color: #0c5460; }
+        .success { background: #d5f4e6; color: #27ae60; }
+        .error { background: #f8d7da; color: #721c24; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🏥 Even Hospital - Fresh Call Test</h1>
+
+        <div id="status" class="status info">
+            Ready to start a fresh call
+        </div>
+
+        <button id="startBtn" onclick="startFreshCall()">
+            Start Fresh Call
+        </button>
+
+        <button id="endBtn" onclick="endCall()">
+            End Call
+        </button>
+
+        <div style="margin-top: 20px; padding: 15px; background: #f8f9fa; border-radius: 5px;">
+            <strong>Instructions:</strong>
+            <ol>
+                <li>Click "Start Fresh Call" - this creates a completely new call</li>
+                <li>Allow microphone access</li>
+                <li>Say: "I have knee pain"</li>
+                <li>The bot should call the function and return doctors</li>
+            </ol>
+            <p><strong>Call ID:</strong> <span id="callId">Not started</span></p>
+        </div>
+    </div>
+
+    <script type="importmap">
+    {
+      "imports": {
+        "@vapi-ai/web": "https://esm.sh/@vapi-ai/web@2.1.0"
+      }
+    }
+    </script>
+
+    <script type="module">
+        import Vapi from '@vapi-ai/web';
+
+        const VAPI_PUBLIC_KEY = '84c85686-fd75-4415-99f1-e71a5270b195';
+        const ASSISTANT_ID = '65abdc38-d96e-4b55-937d-40e439fa8421';
+
+        let vapi = null;
+        let isCallActive = false;
+
+        function updateStatus(message, type = 'info') {
+            const statusEl = document.getElementById('status');
+            statusEl.textContent = message;
+            statusEl.className = `status ${type}`;
+        }
+
+        // Initialize VAPI
+        try {
+            vapi = new Vapi(VAPI_PUBLIC_KEY);
+            console.log('✓ VAPI initialized');
+
+            vapi.on('call-start', () => {
+                console.log('Call started');
+                isCallActive = true;
+                updateStatus('Call active - Speak now!', 'success');
+                document.getElementById('startBtn').style.display = 'none';
+                document.getElementById('endBtn').style.display = 'block';
+            });
+
+            vapi.on('call-end', () => {
+                console.log('Call ended');
+                isCallActive = false;
+                updateStatus('Call ended', 'info');
+                document.getElementById('startBtn').style.display = 'block';
+                document.getElementById('endBtn').style.display = 'none';
+                document.getElementById('callId').textContent = 'Not started';
+            });
+
+            vapi.on('message', (message) => {
+                console.log('VAPI Message:', message);
+
+                // Show call ID
+                if (message.call?.id) {
+                    document.getElementById('callId').textContent = message.call.id;
+                }
+
+                // Log function calls
+                if (message.type === 'function-call' || message.functionCall) {
+                    console.log('🔧 Function Call:', message.functionCall || message);
+                    updateStatus('Function called! Check console for details', 'success');
+                }
+            });
+
+            vapi.on('error', (error) => {
+                console.error('VAPI Error:', error);
+                updateStatus('Error: ' + error.message, 'error');
+            });
+
+            updateStatus('Ready - Click to start fresh call', 'info');
+
+        } catch (error) {
+            console.error('Init error:', error);
+            updateStatus('Failed to initialize: ' + error.message, 'error');
+        }
+
+        window.startFreshCall = function() {
+            if (!vapi) {
+                updateStatus('VAPI not initialized', 'error');
+                return;
+            }
+
+            updateStatus('Starting fresh call...', 'info');
+
+            try {
+                // Force stop any existing call first
+                if (isCallActive) {
+                    vapi.stop();
+                }
+
+                // Small delay to ensure clean state
+                setTimeout(() => {
+                    vapi.start(ASSISTANT_ID);
+                    console.log('Started call with assistant:', ASSISTANT_ID);
+                }, 500);
+
+            } catch (error) {
+                console.error('Start error:', error);
+                updateStatus('Failed to start: ' + error.message, 'error');
+            }
+        };
+
+        window.endCall = function() {
+            if (vapi && isCallActive) {
+                vapi.stop();
+            }
+        };
+    </script>
+</body>
+</html>

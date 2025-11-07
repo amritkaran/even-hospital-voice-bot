@@ -1,0 +1,39 @@
+{
+  "name": "even-hospital-voice-bot",
+  "version": "1.0.0",
+  "description": "AI-powered voice bot for Even Hospital doctor appointment booking with RAG-based doctor recommendations",
+  "main": "src/index.js",
+  "type": "module",
+  "scripts": {
+    "start": "node src/index.js",
+    "generate-embeddings": "node src/utils/generateEmbeddings.js",
+    "test-rag": "node src/services/ragService.js",
+    "dev": "node --watch src/index.js"
+  },
+  "keywords": [
+    "voice-bot",
+    "healthcare",
+    "appointment-booking",
+    "RAG",
+    "OpenAI",
+    "VAPI"
+  ],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "@vapi-ai/web": "^2.4.0",
+    "openai": "^4.62.1",
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "cors": "^2.8.5",
+    "axios": "^1.7.7",
+    "vectordb": "^0.4.12",
+    "uuid": "^10.0.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.4"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}
