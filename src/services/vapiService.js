@@ -506,14 +506,25 @@ Remember: You represent a preventive, people-first healthcare facility. Every in
       parameters.date
     );
 
+    // Convert date to speech-friendly format
+    let dateForSpeech = 'that date';
+    if (parameters.date) {
+      try {
+        const dateObj = new Date(parameters.date);
+        const options = { weekday: 'long', month: 'long', day: 'numeric' };
+        dateForSpeech = dateObj.toLocaleDateString('en-US', options);
+      } catch (e) {
+        dateForSpeech = 'that date';
+      }
+    }
+
     return {
       success: true,
       doctor: parameters.doctor_name,
-      date: parameters.date || 'next available date',
       availableSlots: availability,
       message: availability.length > 0
         ? `${parameters.doctor_name} is available at: ${availability.slice(0, 6).join(', ')}${availability.length > 6 ? ` and ${availability.length - 6} more slots` : ''}`
-        : `${parameters.doctor_name} is fully booked for that date. Would you like to try another date?`
+        : `${parameters.doctor_name} is fully booked on ${dateForSpeech}, would you like to try another date?`
     };
   }
 
