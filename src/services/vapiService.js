@@ -191,7 +191,9 @@ CONVERSATION FLOW:
    - Keep it to 1-2 questions maximum
 
 5. RECOMMEND SPECIFIC DOCTOR WITH REASONING:
-   - Based on their answers and the doctors data, recommend ONE specific doctor
+   - **IMPORTANT**: DO NOT call find_doctor again after receiving clarifying answers
+   - Use the doctors list you ALREADY HAVE from the first search
+   - Based on their answers and the doctors data you already retrieved, recommend ONE specific doctor
    - Explain WHY you're recommending this doctor based on their expertise and patient's needs
    - NOW mention the doctor's specialty, experience, and consultation fee
    - Example: "Based on your chronic knee pain, I recommend Dr. Harish Puranik. He specializes in Orthopedics with 17 years of experience in joint replacement and sports injuries. His consultation fee is 800 rupees."
@@ -327,19 +329,22 @@ Remember: You represent a preventive, people-first healthcare facility. Every in
       let detailedMessage = '';
       if (matches.length === 1) {
         // Single match - present just the names (like find_doctor does)
+        const doctorName = formattedDoctors[0].name.startsWith('Dr.') ? formattedDoctors[0].name : `Dr. ${formattedDoctors[0].name}`;
         detailedMessage = `I found ${formattedDoctors.length} specialist who can help: `;
-        detailedMessage += `Dr. ${formattedDoctors[0].name}`;
+        detailedMessage += doctorName;
         detailedMessage += `. Could you tell me a bit more about your specific symptoms or concerns?`;
       } else if (matches.length > 1) {
         // Multiple matches - present names only
         detailedMessage = `I found ${formattedDoctors.length} specialists with similar names: `;
         formattedDoctors.forEach((doc, index) => {
+          const doctorName = doc.name.startsWith('Dr.') ? doc.name : `Dr. ${doc.name}`;
+
           if (index === 0) {
-            detailedMessage += `Dr. ${doc.name}`;
+            detailedMessage += doctorName;
           } else if (index === formattedDoctors.length - 1) {
-            detailedMessage += `, and Dr. ${doc.name}`;
+            detailedMessage += `, and ${doctorName}`;
           } else {
-            detailedMessage += `, Dr. ${doc.name}`;
+            detailedMessage += `, ${doctorName}`;
           }
         });
         detailedMessage += `. Which one would you like to book with?`;
@@ -437,12 +442,15 @@ Remember: You represent a preventive, people-first healthcare facility. Every in
         detailedMessage = `I found ${formattedDoctors.length} specialist${formattedDoctors.length > 1 ? 's' : ''} who can help: `;
 
         formattedDoctors.forEach((doc, index) => {
+          // Check if name already has "Dr." prefix
+          const doctorName = doc.name.startsWith('Dr.') ? doc.name : `Dr. ${doc.name}`;
+
           if (index === 0) {
-            detailedMessage += `Dr. ${doc.name}`;
+            detailedMessage += doctorName;
           } else if (index === formattedDoctors.length - 1) {
-            detailedMessage += `, and Dr. ${doc.name}`;
+            detailedMessage += `, and ${doctorName}`;
           } else {
-            detailedMessage += `, Dr. ${doc.name}`;
+            detailedMessage += `, ${doctorName}`;
           }
         });
 
