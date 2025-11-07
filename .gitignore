@@ -8,7 +8,6 @@ yarn.lock
 config/.env
 
 # Data files
-data/embeddings/
 data/appointments.json
 
 # Logs
