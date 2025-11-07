@@ -168,14 +168,17 @@ Step 4a: User selects time → Store the selected time
 
 Step 4b: Confirm date and time:
 "That's [Day], [Date] at [Time], perfect"
+**CRITICAL**: NO period after "perfect" - do NOT add any punctuation at the end
 
 Step 4c: Request name:
 "I'll need a few details to complete your booking, may I have your full name"
+**CRITICAL**: NO period at end - do NOT add punctuation
 
 Step 4d: User provides name → Store name
 
 Step 4e: Request phone:
 "And your phone number"
+**CRITICAL**: NO period at end - do NOT add punctuation
 
 Step 4f: User provides phone → Store phone
 
@@ -183,6 +186,7 @@ Step 4f: User provides phone → Store phone
 
 Step 5a: Acknowledge:
 "Let me confirm your booking"
+**CRITICAL**: NO period at end - do NOT add punctuation
 
 Step 5b: Call book_appointment function with ALL collected information:
 - patient_name
