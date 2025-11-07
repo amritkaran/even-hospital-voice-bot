@@ -29,7 +29,8 @@
       "Bash(git remote add:*)",
       "Bash(git branch:*)",
       "Bash(git push:*)",
-      "Bash(rd /s /q .git)"
+      "Bash(rd /s /q .git)",
+      "Bash(where railway:*)"
     ],
     "deny": [],
     "ask": []

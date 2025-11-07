@@ -1,0 +1,1499 @@
+{
+  "hospital": {
+    "name": "Even Hospital Bangalore",
+    "location": "29/2, Race Course Rd, Madhava Nagar, Gandhi Nagar, Bengaluru, Karnataka 560001",
+    "philosophy": "Preventive, people-first approach to care. Doctors are evaluated by results, not procedure count. Care is collaborative with continuous follow-up and post-discharge support."
+  },
+  "document_info": {
+    "total_doctors": 28,
+    "total_specialties": 12,
+    "structure": "Symptom-First (Condition → Specialty → Doctor)",
+    "created": "November 2025"
+  },
+  "specialties_and_conditions": [
+    {
+      "specialty": "General Surgery",
+      "description": "Surgical treatment of conditions affecting the abdomen, digestive system, and general surgical emergencies",
+      "doctors_in_specialty": 6,
+      "common_conditions": [
+        {
+          "condition": "Abdominal Pain/Acute Abdomen",
+          "patient_phrases": [
+            "I have severe stomach pain",
+            "My abdomen is hurting badly",
+            "I have sudden pain in my belly",
+            "My stomach feels tender and swollen",
+            "I have acute abdominal pain"
+          ],
+          "recommended_doctors": [
+            "Dr. K N Srikanth",
+            "Dr. Sunil Kumar V",
+            "Dr. Venkateshu Devendran"
+          ],
+          "qa_pairs": [
+            {
+              "question": "I have severe abdominal pain, who should I see?",
+              "answer": "For acute abdominal pain, consult our General Surgeons. Dr. K N Srikanth has 33+ years and is a renowned laparoscopic surgeon. Dr. Sunil Kumar V brings 20+ years of expertise. Dr. Venkateshu Devendran specializes in emergency surgical cases with 100% patient recommendation."
+            }
+          ]
+        },
+        {
+          "condition": "Gallstones/Cholecystitis",
+          "patient_phrases": [
+            "I have pain under my right rib cage",
+            "My gallbladder area hurts",
+            "I feel pain after eating fatty foods",
+            "I have cholecystitis",
+            "I was diagnosed with gallstones"
+          ],
+          "recommended_doctors": [
+            "Dr. Poornima Parasuraman",
+            "Dr. K N Srikanth",
+            "Dr. Sunil Kumar V"
+          ],
+          "qa_pairs": [
+            {
+              "question": "I think I have gallstones, who treats this?",
+              "answer": "Gallstone treatment is handled by our General Surgeons. Dr. Poornima Parasuraman specializes in laparoscopic cholecystectomy with 11+ years. Dr. K N Srikanth, with 33+ years as a leading laparoscopic surgeon, is excellent for complex cases."
+            }
+          ]
+        },
+        {
+          "condition": "Appendicitis",
+          "patient_phrases": [
+            "I have pain in my lower right abdomen",
+            "My appendix might be inflamed",
+            "I have pain near my belly button",
+            "I have acute appendicitis pain",
+            "My right lower abdomen hurts"
+          ],
+          "recommended_doctors": [
+            "Dr. K N Srikanth",
+            "Dr. Venkateshu Devendran",
+            "Dr. Sunil Kumar V"
+          ],
+          "qa_pairs": []
+        },
+        {
+          "condition": "Hernia (Inguinal/Femoral/Hiatal)",
+          "patient_phrases": [
+            "I have a bulge in my groin",
+            "I feel a lump in my abdomen",
+            "My hernia is getting painful",
+            "I have an inguinal hernia",
+            "I have a hernia that needs fixing"
+          ],
+          "recommended_doctors": [
+            "Dr. Prateek Patil",
+            "Dr. Venkateshu Devendran",
+            "Dr. Sunil Kumar V"
+          ],
+          "qa_pairs": []
+        },
+        {
+          "condition": "Piles/Hemorrhoids",
+          "patient_phrases": [
+            "I have bleeding during bowel movements",
+            "I have itching in my anal area",
+            "I have pain while passing stool",
+            "I have internal or external piles",
+            "I need piles treatment"
+          ],
+          "recommended_doctors": [
+            "Dr. Prateek Patil",
+            "Dr. Poornima Parasuraman"
+          ],
+          "qa_pairs": [
+            {
+              "question": "I have bleeding piles, who is the best doctor?",
+              "answer": "Dr. Prateek Patil is our proctology specialist with 17+ years and 96% recommendation rating. He specializes in laser surgery for piles with minimal pain, no stitches, 1-2 days recovery, and same-day discharge."
+            }
+          ]
+        },
+        {
+          "condition": "Fissure/Fistula",
+          "patient_phrases": [
+            "I have severe pain during bowel movements",
+            "I have a tear in my anal canal",
+            "I have an anal fistula",
+            "I have continuous pain in anal area"
+          ],
+          "recommended_doctors": [
+            "Dr. Prateek Patil"
+          ],
+          "qa_pairs": []
+        },
+        {
+          "condition": "Colorectal Conditions",
+          "patient_phrases": [
+            "I have blood in my stool",
+            "I suspect colorectal cancer",
+            "I have polyps that need removal",
+            "I have familial history of colon cancer"
+          ],
+          "recommended_doctors": [
+            "Dr. Poornima Parasuraman",
+            "Dr. K N Srikanth"
+          ],
+          "qa_pairs": []
+        },
+        {
+          "condition": "Diverticulitis",
+          "patient_phrases": [
+            "I have lower abdomen pain and fever",
+            "I was diagnosed with diverticulitis",
+            "I have recurrent colon inflammation"
+          ],
+          "recommended_doctors": [
+            "Dr. Sunil Kumar V",
+            "Dr. Venkateshu Devendran"
+          ],
+          "qa_pairs": []
+        },
+        {
+          "condition": "Breast Surgery",
+          "patient_phrases": [
+            "I have a breast lump",
+            "I need breast surgery",
+            "I have breast pain",
+            "I was diagnosed with fibroadenoma"
+          ],
+          "recommended_doctors": [
+            "Dr. Poornima Parasuraman"
+          ],
+          "qa_pairs": []
+        },
+        {
+          "condition": "Thyroid Surgery",
+          "patient_phrases": [
+            "I have a thyroid nodule",
+            "I need thyroid surgery",
+            "I was diagnosed with thyroid cancer",
+            "I have a thyroid goiter"
+          ],
+          "recommended_doctors": [
+            "Dr. Poornima Parasuraman"
+          ],
+          "qa_pairs": []
+        }
+      ]
+    },
+    {
+      "specialty": "Orthopedic Surgery",
+      "description": "Treatment of bone, joint, and musculoskeletal disorders including arthritis, fractures, and sports injuries",
+      "doctors_in_specialty": 5,
+      "common_conditions": [
+        {
+          "condition": "Joint Pain (Knee/Shoulder/Hip/Elbow)",
+          "patient_phrases": [
+            "My knee is painful and swollen",
+            "I have shoulder pain",
+            "My hip hurts when I walk",
+            "I have chronic joint pain",
+            "My joints feel stiff and painful"
+          ],
+          "recommended_doctors": [
+            "Dr. Harish Puranik",
+            "Dr. Prashanth Nagaraj",
+            "Dr. Mithun N Oswal"
+          ],
+          "qa_pairs": [
+            {
+              "question": "I have severe knee pain, who should I see?",
+              "answer": "For joint pain, consult our orthopedic specialists. Dr. Harish Puranik has 17+ years with international training in joint replacement and arthroscopy. Dr. Prashanth Nagaraj brings 20+ years with international MRCS qualification. Both excel in joint pain diagnosis and treatment."
+            }
+          ]
+        },
+        {
+          "condition": "Arthritis (Osteoarthritis/Rheumatoid)",
+          "patient_phrases": [
+            "I have osteoarthritis pain",
+            "My joints are degenerating",
+            "I have arthritis and need pain relief",
+            "I have rheumatoid arthritis affecting my joints"
+          ],
+          "recommended_doctors": [
+            "Dr. Harish Puranik",
+            "Dr. Mithun N Oswal",
+            "Dr. Prashanth Nagaraj"
+          ],
+          "qa_pairs": []
+        },
+        {
+          "condition": "Fractures & Trauma",
+          "patient_phrases": [
+            "I have a broken bone",
+            "I fell and think I have a fracture",
+            "I need fracture treatment",
+            "I have a traumatic injury"
+          ],
+          "recommended_doctors": [
+            "Dr. Prashanth Nagaraj",
+            "Dr. Harish Puranik",
+            "Dr. Mithun N Oswal"
+          ],
+          "qa_pairs": []
+        },
+        {
+          "condition": "Sports Injuries",
+          "patient_phrases": [
+            "I have a sports-related injury",
+            "My ligament is injured",
+            "I have an ACL tear",
+            "I injured myself playing sports"
+          ],
+          "recommended_doctors": [
+            "Dr. Harish Puranik",
+            "Dr. Vikas Chavan",
+            "Dr. Prashanth Nagaraj"
+          ],
+          "qa_pairs": [
+            {
+              "question": "I have a sports injury, how is it treated?",
+              "answer": "Dr. Harish Puranik specializes in sports medicine with 17+ years and international training. He diagnoses ligament tears and sports injuries using physical examination and imaging. Treatment ranges from conservative rehabilitation to arthroscopic surgery for return to athletic function."
+            }
+          ]
+        },
+        {
+          "condition": "Spinal Disorders",
+          "patient_phrases": [
+            "I have back pain",
+            "I have neck pain and stiffness",
+            "I have spinal pain with numbness",
+            "I need spine evaluation"
+          ],
+          "recommended_doctors": [
+            "Dr. Vikas Chavan",
+            "Dr. Prashanth Nagaraj"
+          ],
+          "qa_pairs": [
+            {
+              "question": "I have chronic back pain, what should I do?",
+              "answer": "For spinal concerns, Dr. Vikas Chavan specializes in spine surgery with advanced training in minimally invasive techniques. He has 8+ years with Fellowship in Spine Surgery. Expert in both conservative and surgical spine disorder management."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "specialty": "Pediatrics",
+      "description": "Comprehensive healthcare for infants, children, and adolescents including neonatal care and pediatric emergencies",
+      "doctors_in_specialty": 2,
+      "common_conditions": [
+        {
+          "condition": "Child Health & Development",
+          "patient_phrases": [
+            "My child needs regular health checkup",
+            "I need immunization for my baby",
+            "I'm concerned about my child's growth",
+            "I need pediatric assessment"
+          ],
+          "recommended_doctors": [
+            "Dr. Sharil Hegde P",
+            "Dr. Nishita Das"
+          ],
+          "qa_pairs": [
+            {
+              "question": "I need comprehensive care for my child, who should I consult?",
+              "answer": "Dr. Sharil Hegde P brings 24+ years of pediatric expertise with 99% recommendation rating. Dr. Nishita Das has 10+ years with international MRCPCH qualification. Both provide comprehensive child health, immunization, and development monitoring."
+            }
+          ]
+        },
+        {
+          "condition": "Newborn & Neonatal Care",
+          "patient_phrases": [
+            "I just had a baby and need follow-up",
+            "My newborn needs screening tests",
+            "I need neonatal care guidance",
+            "My baby has feeding issues"
+          ],
+          "recommended_doctors": [
+            "Dr. Sharil Hegde P",
+            "Dr. Nishita Das"
+          ],
+          "qa_pairs": []
+        },
+        {
+          "condition": "Pediatric Emergencies",
+          "patient_phrases": [
+            "My child has high fever",
+            "My child has acute symptoms",
+            "I need emergency pediatric care",
+            "My child is critically ill"
+          ],
+          "recommended_doctors": [
+            "Dr. Sharil Hegde P",
+            "Dr. Nishita Das"
+          ],
+          "qa_pairs": []
+        }
+      ]
+    },
+    {
+      "specialty": "Gynecology & Obstetrics",
+      "description": "Comprehensive reproductive healthcare for women including pregnancy, childbirth, fertility, and gynecological conditions",
+      "doctors_in_specialty": 3,
+      "common_conditions": [
+        {
+          "condition": "Pregnancy & Prenatal Care",
+          "patient_phrases": [
+            "I'm pregnant and need prenatal care",
+            "I need pregnancy monitoring",
+            "I'm in my first/second/third trimester",
+            "I need an obstetric consultation"
+          ],
+          "recommended_doctors": [
+            "Dr. Rashmi Nagaraja Naik",
+            "Dr. Nivedita Jha",
+            "Dr. Yashika S"
+          ],
+          "qa_pairs": [
+            {
+              "question": "I'm pregnant, who should I consult for prenatal care?",
+              "answer": "Dr. Rashmi Nagaraja Naik brings 22+ years with 97% recommendation rating and expertise in high-risk pregnancies. She has international training and advanced minimal access surgery skills. Dr. Nivedita Jha offers 14+ years of comprehensive prenatal care. Both provide complete pregnancy monitoring and delivery management."
+            }
+          ]
+        },
+        {
+          "condition": "Delivery & Childbirth",
+          "patient_phrases": [
+            "I'm due soon and need delivery arrangements",
+            "I need obstetric care for delivery",
+            "I'm planning vaginal or cesarean delivery"
+          ],
+          "recommended_doctors": [
+            "Dr. Rashmi Nagaraja Naik",
+            "Dr. Nivedita Jha"
+          ],
+          "qa_pairs": []
+        },
+        {
+          "condition": "Menstrual Irregularities",
+          "patient_phrases": [
+            "I have irregular periods",
+            "My periods are very heavy",
+            "I have missed periods",
+            "I have painful periods"
+          ],
+          "recommended_doctors": [
+            "Dr. Rashmi Nagaraja Naik",
+            "Dr. Nivedita Jha",
+            "Dr. Yashika S"
+          ],
+          "qa_pairs": []
+        },
+        {
+          "condition": "Infertility & Fertility Issues",
+          "patient_phrases": [
+            "I'm unable to conceive",
+            "I need fertility evaluation",
+            "I need infertility treatment",
+            "I want to discuss fertility options"
+          ],
+          "recommended_doctors": [
+            "Dr. Rashmi Nagaraja Naik"
+          ],
+          "qa_pairs": [
+            {
+              "question": "I've been unable to conceive, who can help?",
+              "answer": "Dr. Rashmi Nagaraja Naik specializes in reproductive medicine and infertility management with 22+ years. She has comprehensive expertise in fertility evaluation and treatment options with holistic approach."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "specialty": "Cardiology (Non-Interventional)",
+      "description": "Diagnosis and medical management of heart and cardiovascular diseases",
+      "doctors_in_specialty": 1,
+      "common_conditions": [
+        {
+          "condition": "Heart Disease & Cardiac Assessment",
+          "patient_phrases": [
+            "I have chest pain",
+            "I'm concerned about my heart health",
+            "I need cardiac evaluation",
+            "I have shortness of breath",
+            "I need heart checkup"
+          ],
+          "recommended_doctors": [
+            "Dr. Basavaraj Utagi"
+          ],
+          "qa_pairs": [
+            {
+              "question": "I have chest pain and need cardiac evaluation, who should I see?",
+              "answer": "Dr. Basavaraj Utagi is our cardiologist with 17+ years training from AIIMS Delhi. He holds international fellowships (FSCAI, IFESC) and specializes in comprehensive cardiac assessment. Expert in heart disease diagnosis and management."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "specialty": "ENT (Ear, Nose & Throat)",
+      "description": "Treatment of disorders affecting the ear, nose, throat, and related structures",
+      "doctors_in_specialty": 1,
+      "common_conditions": [
+        {
+          "condition": "ENT Disorders",
+          "patient_phrases": [
+            "I have throat pain",
+            "I have hearing problems",
+            "I have nasal issues",
+            "I need ENT evaluation",
+            "I have ear infection"
+          ],
+          "recommended_doctors": [
+            "Dr. Animesh Banerjee"
+          ],
+          "qa_pairs": [
+            {
+              "question": "I have ENT problems, who should I consult?",
+              "answer": "Dr. Animesh Banerjee is our ENT specialist with exceptional 35+ years of experience. One of Bangalore's most experienced ENT doctors with comprehensive knowledge across all ear, nose, and throat conditions."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "specialty": "Internal Medicine",
+      "description": "Comprehensive medical care for adult patients with various health conditions",
+      "doctors_in_specialty": 3,
+      "common_conditions": [
+        {
+          "condition": "General Health & Preventive Care",
+          "patient_phrases": [
+            "I need general health checkup",
+            "I want preventive health screening",
+            "I need health consultation",
+            "I'm not feeling well but unsure why"
+          ],
+          "recommended_doctors": [
+            "Dr. Ankit P Bhojani",
+            "Dr. Sriharee Kulkarni",
+            "Dr. Binita Priyambada"
+          ],
+          "qa_pairs": [
+            {
+              "question": "I need comprehensive health evaluation, who should I see?",
+              "answer": "Our internal medicine specialists offer comprehensive health assessment. Dr. Ankit P Bhojani brings 10+ years with excellent diagnostic skills. Dr. Sriharee Kulkarni has 17+ years. Dr. Binita Priyambada brings 22+ years of clinical expertise. All provide thorough health evaluation and preventive care."
+            }
+          ]
+        },
+        {
+          "condition": "Chronic Disease Management",
+          "patient_phrases": [
+            "I have diabetes",
+            "I have hypertension",
+            "I have chronic health conditions",
+            "I need disease management",
+            "I need medication management"
+          ],
+          "recommended_doctors": [
+            "Dr. Binita Priyambada",
+            "Dr. Sriharee Kulkarni",
+            "Dr. Ankit P Bhojani"
+          ],
+          "qa_pairs": []
+        }
+      ]
+    },
+    {
+      "specialty": "Urology",
+      "description": "Diagnosis and treatment of urological disorders affecting the urinary and reproductive systems",
+      "doctors_in_specialty": 1,
+      "common_conditions": [
+        {
+          "condition": "Urological Disorders",
+          "patient_phrases": [
+            "I have urinary problems",
+            "I have kidney issues",
+            "I need urology evaluation",
+            "I have prostate problems"
+          ],
+          "recommended_doctors": [
+            "Dr. Vishal Naik"
+          ],
+          "qa_pairs": [
+            {
+              "question": "I have urological problems, who should I consult?",
+              "answer": "Dr. Vishal Naik is our urologist with 14+ years of comprehensive urology expertise. Skilled in managing diverse urological conditions with patient-centric approach and advanced surgical techniques."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "specialty": "Dietetics & Nutrition",
+      "description": "Professional nutrition guidance and therapeutic diet planning for health optimization",
+      "doctors_in_specialty": 2,
+      "common_conditions": [
+        {
+          "condition": "Nutrition & Diet Planning",
+          "patient_phrases": [
+            "I need dietary guidance",
+            "I want to improve my nutrition",
+            "I need diet plan for weight management",
+            "I have nutritional deficiencies"
+          ],
+          "recommended_doctors": [
+            "Ms. Kamar Afshan M",
+            "Dr. Sonali Kulkarni"
+          ],
+          "qa_pairs": [
+            {
+              "question": "I need personalized nutrition guidance, who should I see?",
+              "answer": "Our registered dietitians provide expert nutrition counseling. Ms. Kamar Afshan M brings 7+ years with personalized diet planning expertise. Dr. Sonali Kulkarni has 20+ years of comprehensive clinical dietetics experience. Both provide therapeutic nutrition management."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "specialty": "Emergency Medicine",
+      "description": "Immediate medical care for acute medical emergencies and critical conditions",
+      "doctors_in_specialty": 1,
+      "common_conditions": [
+        {
+          "condition": "Medical Emergencies",
+          "patient_phrases": [
+            "I have a medical emergency",
+            "I need urgent medical care",
+            "I have acute symptoms requiring emergency evaluation"
+          ],
+          "recommended_doctors": [
+            "Dr. Gautham Shankar Saseendran"
+          ],
+          "qa_pairs": [
+            {
+              "question": "I need emergency medical care, who is available?",
+              "answer": "Dr. Gautham Shankar Saseendran specializes in emergency medicine with 11+ years. Expert in rapid assessment and management of acute medical emergencies with multilingual communication skills."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "specialty": "Gastroenterology (Medical)",
+      "description": "Diagnosis and medical management of gastrointestinal and digestive system disorders",
+      "doctors_in_specialty": 1,
+      "common_conditions": [
+        {
+          "condition": "GI Disorders",
+          "patient_phrases": [
+            "I have digestive problems",
+            "I have GI symptoms",
+            "I need gastroenterology evaluation",
+            "I have stomach/intestinal issues"
+          ],
+          "recommended_doctors": [
+            "Dr. Puneeth B S"
+          ],
+          "qa_pairs": [
+            {
+              "question": "I have digestive problems, who treats gastroenterology issues?",
+              "answer": "Dr. Puneeth B S is our medical gastroenterologist with 6+ years of specialization. Skilled in diagnosing and managing diverse gastrointestinal disorders with evidence-based approach."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "specialty": "Nephrology",
+      "description": "Diagnosis and management of kidney and renal system disorders",
+      "doctors_in_specialty": 2,
+      "common_conditions": [
+        {
+          "condition": "Kidney Disease & Renal Disorders",
+          "patient_phrases": [
+            "I have kidney problems",
+            "I have renal disease",
+            "I need kidney evaluation",
+            "I need dialysis management"
+          ],
+          "recommended_doctors": [
+            "Dr. Naveen Kumar K L",
+            "Dr. Girish Namagondlu Seetharamaiah"
+          ],
+          "qa_pairs": [
+            {
+              "question": "I have kidney problems, who should I see?",
+              "answer": "Our nephrologists specialize in kidney disease management. Dr. Naveen Kumar K L brings 4+ years of focused nephrology training. Dr. Girish Namagondlu Seetharamaiah is recently certified with current nephrology knowledge. Both provide comprehensive renal care and management."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "specialty": "Psychiatry",
+      "description": "Diagnosis and treatment of mental health disorders and psychological conditions",
+      "doctors_in_specialty": 1,
+      "common_conditions": [
+        {
+          "condition": "Mental Health & Psychological Wellness",
+          "patient_phrases": [
+            "I have mental health concerns",
+            "I need psychological support",
+            "I have anxiety or depression",
+            "I need psychiatric evaluation"
+          ],
+          "recommended_doctors": [
+            "Dr. Harshitha V Handral"
+          ],
+          "qa_pairs": [
+            {
+              "question": "I have mental health concerns, who should I consult?",
+              "answer": "Dr. Harshitha V Handral is our psychiatrist with 5+ years of specialization. Dedicated to comprehensive mental health support and evidence-based psychological treatment."
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "doctor_profiles": [
+    {
+      "doctor_id": "GS_001",
+      "name": "Dr. Poornima Parasuraman",
+      "specialty": "General Surgery",
+      "experience_years": 11,
+      "credentials": [
+        "MBBS",
+        "MS - General Surgery"
+      ],
+      "education": "Rajiv Gandhi University of Health Sciences",
+      "professional_memberships": [
+        "Karnataka Medical Council"
+      ],
+      "languages": [
+        "English",
+        "Hindi"
+      ],
+      "consultation_fee": "₹700-₹1,000",
+      "key_expertise": [
+        "Laparoscopic surgery",
+        "Gallbladder surgery",
+        "Thyroid surgery",
+        "Breast surgery",
+        "Hernia repair"
+      ],
+      "why_recommend": "11+ years of expertise in minimally invasive procedures. Specializes in complex gallbladder, thyroid, and breast surgeries with focus on patient recovery and minimal scarring."
+    },
+    {
+      "doctor_id": "GS_002",
+      "name": "Dr. K N Srikanth",
+      "specialty": "General Surgery",
+      "experience_years": 33,
+      "credentials": [
+        "MBBS",
+        "MS - General Surgery",
+        "FRCS - General Surgery"
+      ],
+      "education": [
+        "Government Medical College Bellary (1987)",
+        "JSS Medical College Mysore (1992)",
+        "Royal College of Physicians and Surgeons Glasgow (1996)"
+      ],
+      "professional_memberships": [
+        "Association of Surgeons of India (ASI)"
+      ],
+      "languages": [
+        "English",
+        "Hindi",
+        "Kannada",
+        "Telugu",
+        "Tamil"
+      ],
+      "consultation_fee": "₹850-₹900",
+      "key_expertise": [
+        "Laparoscopic surgery",
+        "GI surgery",
+        "Bariatric surgery",
+        "Inguinal hernia repair",
+        "Cholecystectomy"
+      ],
+      "why_recommend": "Over 3 decades of specialized laparoscopic expertise. Recognized as one of nation's leading laparoscopic surgeons with extensive publications and international FRCS credentials."
+    },
+    {
+      "doctor_id": "GS_003",
+      "name": "Dr. V Shiva Kumar",
+      "specialty": "General Surgery",
+      "experience_years": 19,
+      "credentials": [
+        "MBBS",
+        "MPH",
+        "DNB - General Surgery",
+        "FIAGES",
+        "FACRSI"
+      ],
+      "education": [
+        "Bangalore Medical College (2001)",
+        "University of Illinois USA (2005)",
+        "DNB General Surgery (2012)"
+      ],
+      "professional_memberships": [
+        "Multiple international surgical societies"
+      ],
+      "languages": [
+        "English"
+      ],
+      "consultation_fee": "₹850-₹900",
+      "key_expertise": [
+        "Laparoscopic surgery",
+        "GI surgery",
+        "Bariatric surgery",
+        "General surgical procedures"
+      ],
+      "why_recommend": "19+ years combining Indian surgical expertise with international standards. Trained at Bangalore Medical College and University of Illinois."
+    },
+    {
+      "doctor_id": "GS_004",
+      "name": "Dr. Sunil Kumar V",
+      "specialty": "General Surgery",
+      "experience_years": 20,
+      "credentials": [
+        "MBBS",
+        "MS - General Surgery"
+      ],
+      "education": "MBBS, MS General Surgery",
+      "professional_memberships": [
+        "Surgical organizations"
+      ],
+      "languages": [
+        "English",
+        "Hindi",
+        "Kannada"
+      ],
+      "consultation_fee": "₹700-₹1,000",
+      "key_expertise": [
+        "Laparoscopic surgery",
+        "General surgery",
+        "Hernia repair",
+        "Cholecystectomy",
+        "Bariatric procedures"
+      ],
+      "why_recommend": "20+ years of comprehensive surgical experience. Known for meticulous surgical technique and compassionate patient care."
+    },
+    {
+      "doctor_id": "GS_005",
+      "name": "Dr. Venkateshu Devendran",
+      "specialty": "General Surgery",
+      "experience_years": 13,
+      "credentials": [
+        "MBBS",
+        "DNB - General Surgery"
+      ],
+      "education": "NTR University of Health Sciences, National Board of Examinations",
+      "professional_memberships": [
+        "Surgical associations"
+      ],
+      "languages": [
+        "Kannada",
+        "English"
+      ],
+      "consultation_fee": "₹850-₹900",
+      "key_expertise": [
+        "Minimal access surgery",
+        "Laparoscopic surgery",
+        "Proctology",
+        "Bariatric surgery",
+        "Emergency surgery"
+      ],
+      "why_recommend": "13+ years with 100% recommendation rating. Specializes in minimal access procedures with focus on patient comfort and rapid recovery."
+    },
+    {
+      "doctor_id": "GS_006",
+      "name": "Dr. Prateek Patil",
+      "specialty": "General Surgery",
+      "experience_years": 17,
+      "credentials": [
+        "MBBS",
+        "MS - General Surgery"
+      ],
+      "education": [
+        "Bangalore Medical College",
+        "Kilpauk Medical College Chennai"
+      ],
+      "professional_memberships": [
+        "AMASI",
+        "IMA"
+      ],
+      "languages": [
+        "Kannada"
+      ],
+      "consultation_fee": "₹850-₹900",
+      "key_expertise": [
+        "Laparoscopic surgery",
+        "Proctology",
+        "Piles treatment",
+        "Fissure surgery",
+        "Laser proctology"
+      ],
+      "why_recommend": "17+ years with 96% recommendation rating. Specialized proctology expertise with advanced laser surgery training."
+    },
+    {
+      "doctor_id": "OS_001",
+      "name": "Dr. Prashanth Nagaraj",
+      "specialty": "Orthopedic Surgery",
+      "experience_years": 20,
+      "credentials": [
+        "MBBS",
+        "MS - Orthopaedics",
+        "MRCS",
+        "FRCS (Tr & Ortho)"
+      ],
+      "education": [
+        "JJM Medical College Davangere",
+        "Government Medical College Mysore",
+        "MRCS and FRCS from Royal College of Surgeons UK"
+      ],
+      "professional_memberships": [
+        "Royal College of Surgeons UK"
+      ],
+      "languages": [
+        "English",
+        "Hindi",
+        "Kannada"
+      ],
+      "consultation_fee": "₹850-₹900",
+      "key_expertise": [
+        "Lower limb reconstruction",
+        "Sports injuries",
+        "Cartilage repair",
+        "Arthroplasty",
+        "Ilizarov surgery"
+      ],
+      "why_recommend": "20+ years with international credentials. Pioneering figure in limb reconstruction with expertise in complex deformities and sports injuries."
+    },
+    {
+      "doctor_id": "OS_002",
+      "name": "Dr. Vikas Chavan",
+      "specialty": "Orthopedic Surgery",
+      "experience_years": 8,
+      "credentials": [
+        "MBBS",
+        "MS - Orthopaedics",
+        "Fellow in Spine Surgery"
+      ],
+      "education": [
+        "KIMS Hubli",
+        "JMC Jhalawar Rajasthan",
+        "Fellowship in Spine Surgery"
+      ],
+      "professional_memberships": [
+        "Spine surgery associations"
+      ],
+      "languages": [
+        "English",
+        "Hindi",
+        "Kannada"
+      ],
+      "consultation_fee": "₹850-₹900",
+      "key_expertise": [
+        "Spine surgery",
+        "Minimally invasive spine surgery",
+        "Spinal disorders",
+        "Back pain management"
+      ],
+      "why_recommend": "8+ years with specialized spine surgery fellowship. Expert in minimally invasive spine procedures."
+    },
+    {
+      "doctor_id": "OS_003",
+      "name": "Dr. Harish Puranik",
+      "specialty": "Orthopedic Surgery",
+      "experience_years": 17,
+      "credentials": [
+        "MBBS",
+        "MS - Orthopaedics",
+        "Fellowship in Hip and Knee Replacements"
+      ],
+      "education": [
+        "BLDEA's Shri B M Patil Medical College Bijapur",
+        "KIMS Hubli",
+        "Fellowship training in Germany and UK"
+      ],
+      "professional_memberships": [
+        "Multiple orthopedic societies"
+      ],
+      "languages": [
+        "English",
+        "Hindi",
+        "Kannada"
+      ],
+      "consultation_fee": "₹850-₹900",
+      "key_expertise": [
+        "Joint replacement",
+        "Arthroscopy",
+        "Sports medicine",
+        "Ligament reconstruction"
+      ],
+      "why_recommend": "17+ years with 100% recommendation rating. International training in joint replacements from Germany."
+    },
+    {
+      "doctor_id": "OS_004",
+      "name": "Dr. Mithun N Oswal",
+      "specialty": "Orthopedic Surgery",
+      "experience_years": 13,
+      "credentials": [
+        "MBBS",
+        "MS Orthopaedics"
+      ],
+      "education": "Advanced orthopedic training",
+      "professional_memberships": [
+        "Karnataka Orthopaedic Association"
+      ],
+      "languages": [
+        "English",
+        "Hindi",
+        "Telugu",
+        "Kannada",
+        "Marathi"
+      ],
+      "consultation_fee": "₹850-₹900",
+      "key_expertise": [
+        "Joint replacements",
+        "Arthroscopy",
+        "Sports injury",
+        "Arthritis management"
+      ],
+      "why_recommend": "13+ years with 97% recommendation rating. Skilled in diverse orthopedic conditions from joint replacement to sports medicine."
+    },
+    {
+      "doctor_id": "OS_005",
+      "name": "Dr. Vinit Oswal",
+      "specialty": "Orthopedic Surgery",
+      "experience_years": 6,
+      "credentials": [
+        "MBBS",
+        "MS - Orthopaedics"
+      ],
+      "education": "Orthopedic specialization",
+      "professional_memberships": [
+        "Orthopedic associations"
+      ],
+      "languages": [
+        "English",
+        "Hindi"
+      ],
+      "consultation_fee": "₹850-₹900",
+      "key_expertise": [
+        "Orthopedic surgery",
+        "Joint management",
+        "Trauma care"
+      ],
+      "why_recommend": "6+ years of growing expertise in orthopedic surgery with dedication to comprehensive patient care."
+    },
+    {
+      "doctor_id": "PED_001",
+      "name": "Dr. Sharil Hegde P",
+      "specialty": "Pediatrics",
+      "experience_years": 24,
+      "credentials": [
+        "MBBS",
+        "MD - Pediatrics",
+        "FIAP"
+      ],
+      "education": [
+        "JMM Medical College",
+        "FMMC Mangalore"
+      ],
+      "professional_memberships": [
+        "Fellow of Indian Academy of Pediatrics"
+      ],
+      "languages": [
+        "English",
+        "Kannada",
+        "Hindi"
+      ],
+      "consultation_fee": "₹850-₹900",
+      "key_expertise": [
+        "General pediatrics",
+        "Neonatology",
+        "Pediatric emergency",
+        "Child health"
+      ],
+      "why_recommend": "24+ years with 99% recommendation rating. Specializes in neonatology and emergency pediatric care."
+    },
+    {
+      "doctor_id": "PED_002",
+      "name": "Dr. Nishita Das",
+      "specialty": "Pediatrics",
+      "experience_years": 10,
+      "credentials": [
+        "MBBS",
+        "Diploma in Child Health",
+        "MRCPCH"
+      ],
+      "education": [
+        "Rajiv Gandhi University",
+        "Royal College of Pediatrics and Child Health London/Glasgow/Edinburgh"
+      ],
+      "professional_memberships": [
+        "Royal College of Pediatrics and Child Health"
+      ],
+      "languages": [
+        "English",
+        "Hindi",
+        "Kannada",
+        "Malayalam"
+      ],
+      "consultation_fee": "₹850-₹900",
+      "key_expertise": [
+        "Pediatrics",
+        "Neonatology",
+        "Newborn care",
+        "Pediatric emergency"
+      ],
+      "why_recommend": "10+ years with 98% recommendation rating and international MRCPCH qualification."
+    },
+    {
+      "doctor_id": "GO_001",
+      "name": "Dr. Rashmi Nagaraja Naik",
+      "specialty": "Gynecology & Obstetrics",
+      "experience_years": 22,
+      "credentials": [
+        "MBBS",
+        "DGO",
+        "FMAS",
+        "DRM",
+        "Certified Robotic Laparoscopic Surgeon"
+      ],
+      "education": [
+        "Bangalore Medical College",
+        "Multiple specialized training programs"
+      ],
+      "professional_memberships": [
+        "Bangalore Society of Obstetrics & Gynaecology",
+        "FOGSI",
+        "RCOG"
+      ],
+      "languages": [
+        "Hindi",
+        "English",
+        "Kannada"
+      ],
+      "consultation_fee": "₹850-₹900",
+      "key_expertise": [
+        "Prenatal care",
+        "High-risk pregnancy",
+        "Delivery management",
+        "Gynecological surgery",
+        "Infertility management"
+      ],
+      "why_recommend": "22+ years with 97% recommendation rating. Comprehensive expertise in reproductive medicine with advanced minimal access surgery."
+    },
+    {
+      "doctor_id": "GO_002",
+      "name": "Dr. Nivedita Jha",
+      "specialty": "Gynecology & Obstetrics",
+      "experience_years": 14,
+      "credentials": [
+        "MBBS",
+        "DNB - Obstetrics & Gynecology"
+      ],
+      "education": "Gynecology and obstetrics training",
+      "professional_memberships": [
+        "Gynecology associations"
+      ],
+      "languages": [
+        "English",
+        "Hindi",
+        "Kannada",
+        "Tamil"
+      ],
+      "consultation_fee": "₹850-₹900",
+      "key_expertise": [
+        "Prenatal care",
+        "Delivery",
+        "Gynecological procedures",
+        "Women's health"
+      ],
+      "why_recommend": "14+ years of comprehensive gynecology experience with focus on patient-centered care."
+    },
+    {
+      "doctor_id": "GO_003",
+      "name": "Dr. Yashika S",
+      "specialty": "Gynecology & Obstetrics",
+      "experience_years": 6,
+      "credentials": [
+        "MBBS",
+        "DNB - Gynecology & Obstetrics"
+      ],
+      "education": "Gynecology specialization",
+      "professional_memberships": [
+        "Gynecology associations"
+      ],
+      "languages": [
+        "English",
+        "Kannada",
+        "Hindi",
+        "Bengali"
+      ],
+      "consultation_fee": "₹850-₹900",
+      "key_expertise": [
+        "Obstetrics",
+        "Gynecological care",
+        "Women's health"
+      ],
+      "why_recommend": "6+ years with multilingual capabilities and comprehensive women's health care."
+    },
+    {
+      "doctor_id": "CARD_001",
+      "name": "Dr. Basavaraj Utagi",
+      "specialty": "Cardiology (Non-Interventional)",
+      "experience_years": 17,
+      "credentials": [
+        "MBBS",
+        "MD - General Medicine",
+        "DM - Cardiology",
+        "FSCAI",
+        "IFESC"
+      ],
+      "education": [
+        "Rajiv Gandhi University of Health Sciences",
+        "AIIMS Delhi - MD",
+        "AIIMS Delhi - DM Cardiology"
+      ],
+      "professional_memberships": [
+        "International cardiology fellowships"
+      ],
+      "languages": [
+        "Kannada",
+        "Hindi",
+        "English"
+      ],
+      "consultation_fee": "₹850-₹900",
+      "key_expertise": [
+        "Cardiac care",
+        "Heart disease",
+        "Structural heart",
+        "Cardiac assessment"
+      ],
+      "why_recommend": "17+ years from AIIMS with international fellowships FSCAI and IFESC."
+    },
+    {
+      "doctor_id": "ENT_001",
+      "name": "Dr. Animesh Banerjee",
+      "specialty": "ENT",
+      "experience_years": 35,
+      "credentials": [
+        "MBBS",
+        "MS - ENT"
+      ],
+      "education": [
+        "Government Medical College Nagpur",
+        "Nagpur University"
+      ],
+      "professional_memberships": [
+        "ENT associations"
+      ],
+      "languages": [
+        "English",
+        "Hindi",
+        "Marathi",
+        "Punjabi"
+      ],
+      "consultation_fee": "₹850-₹900",
+      "key_expertise": [
+        "ENT procedures",
+        "Nasal disorders",
+        "Throat conditions",
+        "Hearing problems"
+      ],
+      "why_recommend": "35+ years of extensive ENT expertise. One of most experienced in Bangalore."
+    },
+    {
+      "doctor_id": "IM_001",
+      "name": "Dr. Ankit P Bhojani",
+      "specialty": "Internal Medicine",
+      "experience_years": 10,
+      "credentials": [
+        "MBBS",
+        "MD - General Medicine"
+      ],
+      "education": [
+        "Vydehi Institute",
+        "KIMS Bangalore"
+      ],
+      "professional_memberships": [
+        "Internal medicine associations"
+      ],
+      "languages": [
+        "English",
+        "Hindi",
+        "Kannada"
+      ],
+      "consultation_fee": "₹850-₹900",
+      "key_expertise": [
+        "Internal medicine",
+        "Diabetes care",
+        "Critical care",
+        "Preventive health"
+      ],
+      "why_recommend": "10+ years with excellent diagnostic skills and compassionate patient care."
+    },
+    {
+      "doctor_id": "IM_002",
+      "name": "Dr. Sriharee Kulkarni",
+      "specialty": "Internal Medicine",
+      "experience_years": 17,
+      "credentials": [
+        "MBBS",
+        "MD - General Medicine"
+      ],
+      "education": "Advanced internal medicine training",
+      "professional_memberships": [
+        "Internal medicine associations"
+      ],
+      "languages": [
+        "English",
+        "Hindi",
+        "Kannada"
+      ],
+      "consultation_fee": "₹850-₹900",
+      "key_expertise": [
+        "Internal medicine",
+        "Chronic disease",
+        "Health screening"
+      ],
+      "why_recommend": "17+ years with expertise in managing diverse medical conditions."
+    },
+    {
+      "doctor_id": "IM_003",
+      "name": "Dr. Binita Priyambada",
+      "specialty": "Internal Medicine",
+      "experience_years": 22,
+      "credentials": [
+        "MBBS",
+        "MD - General Medicine"
+      ],
+      "education": "Extensive medical training",
+      "professional_memberships": [
+        "Internal medicine associations"
+      ],
+      "languages": [
+        "Hindi",
+        "English",
+        "Punjabi"
+      ],
+      "consultation_fee": "₹850-₹900",
+      "key_expertise": [
+        "Internal medicine",
+        "Clinical management",
+        "Medical emergencies"
+      ],
+      "why_recommend": "22+ years of clinical expertise in managing complex medical conditions."
+    },
+    {
+      "doctor_id": "UROL_001",
+      "name": "Dr. Vishal Naik",
+      "specialty": "Urology",
+      "experience_years": 14,
+      "credentials": [
+        "MBBS",
+        "MS - Urology"
+      ],
+      "education": "Urology specialization",
+      "professional_memberships": [
+        "Urology associations"
+      ],
+      "languages": [
+        "English",
+        "Hindi",
+        "Kannada",
+        "Tamil"
+      ],
+      "consultation_fee": "₹850-₹900",
+      "key_expertise": [
+        "Urology",
+        "Urological procedures",
+        "Kidney disorders",
+        "Prostate conditions"
+      ],
+      "why_recommend": "14+ years of urology expertise with patient-centric approach."
+    },
+    {
+      "doctor_id": "DIET_001",
+      "name": "Ms. Kamar Afshan M",
+      "specialty": "Dietetics",
+      "experience_years": 7,
+      "credentials": [
+        "Registered Dietitian"
+      ],
+      "education": "Dietetics specialization",
+      "professional_memberships": [
+        "Dietetics associations"
+      ],
+      "languages": [
+        "English",
+        "Hindi",
+        "Tamil",
+        "Kannada"
+      ],
+      "consultation_fee": "₹850-₹900",
+      "key_expertise": [
+        "Nutrition counseling",
+        "Diet planning",
+        "Medical nutrition therapy"
+      ],
+      "why_recommend": "7+ years with personalized nutrition expertise."
+    },
+    {
+      "doctor_id": "DIET_002",
+      "name": "Dr. Sonali Kulkarni",
+      "specialty": "Dietetics",
+      "experience_years": 20,
+      "credentials": [
+        "Registered Dietitian"
+      ],
+      "education": "Advanced dietetics training",
+      "professional_memberships": [
+        "Dietetics associations"
+      ],
+      "languages": [
+        "English",
+        "Hindi",
+        "Marathi",
+        "Kannada"
+      ],
+      "consultation_fee": "₹850-₹900",
+      "key_expertise": [
+        "Clinical nutrition",
+        "Therapeutic diets",
+        "Nutritional management"
+      ],
+      "why_recommend": "20+ years of comprehensive clinical dietetics expertise."
+    },
+    {
+      "doctor_id": "EM_001",
+      "name": "Dr. Gautham Shankar Saseendran",
+      "specialty": "Emergency Medicine",
+      "experience_years": 11,
+      "credentials": [
+        "MBBS",
+        "MD - Emergency Medicine"
+      ],
+      "education": "Emergency medicine training",
+      "professional_memberships": [
+        "Emergency medicine associations"
+      ],
+      "languages": [
+        "English",
+        "Malayalam",
+        "Kannada",
+        "Hindi",
+        "Tamil"
+      ],
+      "consultation_fee": "₹850-₹900",
+      "key_expertise": [
+        "Emergency medicine",
+        "Acute emergencies",
+        "Trauma care",
+        "Critical management"
+      ],
+      "why_recommend": "11+ years with multilingual expertise in emergency care."
+    },
+    {
+      "doctor_id": "GASTRO_001",
+      "name": "Dr. Puneeth B S",
+      "specialty": "Gastroenterology (Medical)",
+      "experience_years": 6,
+      "credentials": [
+        "MBBS",
+        "MD - General Medicine with Gastroenterology"
+      ],
+      "education": "Gastroenterology specialization",
+      "professional_memberships": [
+        "Gastroenterology associations"
+      ],
+      "languages": [
+        "English",
+        "Kannada",
+        "Hindi"
+      ],
+      "consultation_fee": "₹850-₹900",
+      "key_expertise": [
+        "Medical gastroenterology",
+        "GI disorders",
+        "Digestive health"
+      ],
+      "why_recommend": "6+ years in medical gastroenterology with focus on digestive health."
+    },
+    {
+      "doctor_id": "NEPH_001",
+      "name": "Dr. Naveen Kumar K L",
+      "specialty": "Nephrology",
+      "experience_years": 4,
+      "credentials": [
+        "MBBS",
+        "DNB - Nephrology"
+      ],
+      "education": "Nephrology specialization",
+      "professional_memberships": [
+        "Nephrology associations"
+      ],
+      "languages": [
+        "English",
+        "Hindi",
+        "Kannada",
+        "Telugu"
+      ],
+      "consultation_fee": "₹850-₹900",
+      "key_expertise": [
+        "Nephrology",
+        "Kidney disease",
+        "Renal disorders",
+        "Dialysis management"
+      ],
+      "why_recommend": "4+ years of focused nephrology with dedication to kidney disease management."
+    },
+    {
+      "doctor_id": "NEPH_002",
+      "name": "Dr. Girish Namagondlu Seetharamaiah",
+      "specialty": "Nephrology",
+      "experience_years": 0,
+      "credentials": [
+        "MBBS",
+        "DNB - Nephrology"
+      ],
+      "education": "Nephrology training",
+      "professional_memberships": [
+        "Nephrology associations"
+      ],
+      "languages": [
+        "Regional languages"
+      ],
+      "consultation_fee": "₹850-₹900",
+      "key_expertise": [
+        "Nephrology",
+        "Kidney disease"
+      ],
+      "why_recommend": "Recently certified with contemporary nephrology training."
+    },
+    {
+      "doctor_id": "PSY_001",
+      "name": "Dr. Harshitha V Handral",
+      "specialty": "Psychiatry",
+      "experience_years": 5,
+      "credentials": [
+        "MBBS",
+        "MD - Psychiatry"
+      ],
+      "education": "Psychiatry specialization",
+      "professional_memberships": [
+        "Psychiatric associations"
+      ],
+      "languages": [
+        "English",
+        "Hindi",
+        "Kannada"
+      ],
+      "consultation_fee": "₹850-₹900",
+      "key_expertise": [
+        "Psychiatry",
+        "Mental health",
+        "Psychological counseling",
+        "Mental wellness"
+      ],
+      "why_recommend": "5+ years with focus on comprehensive mental health support."
+    }
+  ]
+}

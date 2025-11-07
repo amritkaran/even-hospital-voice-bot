@@ -17,7 +17,7 @@ dotenv.config({ path: path.join(__dirname, '../../config/.env') });
 class RAGService {
   constructor() {
     const ragDocumentPath = process.env.RAG_DOCUMENT_PATH ||
-      'C:\\Users\\AD\\Desktop\\Even Voice Bot\\even_hospital_comprehensive_rag_document.json';
+      path.join(__dirname, '../../data/even_hospital_comprehensive_rag_document.json');
     const embeddingsPath = process.env.EMBEDDINGS_PATH ||
       path.join(__dirname, '../../data/embeddings/doctor_embeddings.json');
 
