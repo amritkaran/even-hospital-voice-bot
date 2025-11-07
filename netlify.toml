@@ -1,0 +1,22 @@
+# Netlify Configuration for Even Hospital Voice Bot
+
+[build]
+  # No build command needed for static HTML
+  publish = "."
+
+[[redirects]]
+  from = "/"
+  to = "/even-landing-page.html"
+  status = 200
+
+[[redirects]]
+  from = "/index.html"
+  to = "/even-landing-page.html"
+  status = 200
+
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Frame-Options = "DENY"
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"
