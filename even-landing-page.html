@@ -195,6 +195,30 @@
             bottom: 40px;
             right: 40px;
             z-index: 1000;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .voice-btn-label {
+            background: #e74c3c;
+            color: white;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 14px;
+            font-weight: 600;
+            box-shadow: 0 4px 12px rgba(231, 76, 60, 0.3);
+            opacity: 0;
+            transform: translateY(10px);
+            transition: all 0.3s ease;
+            pointer-events: none;
+            white-space: nowrap;
+        }
+
+        .voice-btn-label.show {
+            opacity: 1;
+            transform: translateY(0);
         }
 
         .voice-btn {
@@ -492,6 +516,9 @@
             </div>
         </div>
 
+        <!-- End Call Label -->
+        <div class="voice-btn-label" id="voiceBtnLabel">End Call</div>
+
         <!-- Voice Button -->
         <button class="voice-btn" id="voiceBtn" title="Talk to Me">
             🎤
@@ -520,6 +547,7 @@
 
         const voiceBtn = document.getElementById('voiceBtn');
         const voiceTooltip = document.getElementById('voiceTooltip');
+        const voiceBtnLabel = document.getElementById('voiceBtnLabel');
         const statusIndicator = document.getElementById('statusIndicator');
 
         // Initialize VAPI
@@ -621,6 +649,7 @@
                 voiceBtn.title = 'End Call';
                 voiceTooltip.textContent = 'End Call';
                 voiceTooltip.classList.remove('show');
+                voiceBtnLabel.classList.add('show');
                 statusIndicator.classList.add('show');
             } else {
                 // Inactive state
@@ -628,6 +657,7 @@
                 voiceBtn.innerHTML = '🎤';
                 voiceBtn.title = 'Talk to Me';
                 voiceTooltip.textContent = 'Talk to Me';
+                voiceBtnLabel.classList.remove('show');
                 statusIndicator.classList.remove('show');
             }
         }
