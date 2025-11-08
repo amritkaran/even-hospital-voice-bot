@@ -210,18 +210,26 @@
         }
 
         .voice-btn-label {
-            background: #e74c3c;
             color: white;
             padding: 8px 16px;
             border-radius: 20px;
             font-size: 14px;
             font-weight: 600;
-            box-shadow: 0 4px 12px rgba(231, 76, 60, 0.3);
             opacity: 0;
             transform: translateY(10px);
             transition: all 0.3s ease;
             pointer-events: none;
             white-space: nowrap;
+        }
+
+        .voice-btn-label.connecting {
+            background: #FFA500;
+            box-shadow: 0 4px 12px rgba(255, 165, 0, 0.3);
+        }
+
+        .voice-btn-label.active {
+            background: #e74c3c;
+            box-shadow: 0 4px 12px rgba(231, 76, 60, 0.3);
         }
 
         .voice-btn-label.show {
@@ -252,22 +260,24 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            gap: 3px;
-            height: 30px;
+            gap: 5px;
+            height: 40px;
         }
 
         .wave-bar {
-            width: 3px;
+            width: 6px;
             background: white;
-            border-radius: 2px;
+            border-radius: 3px;
             transition: height 0.2s ease;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.4),
+                        0 0 0 1px rgba(255, 255, 255, 0.3);
         }
 
-        .wave-bar:nth-child(1) { height: 12px; }
-        .wave-bar:nth-child(2) { height: 18px; }
-        .wave-bar:nth-child(3) { height: 24px; }
-        .wave-bar:nth-child(4) { height: 18px; }
-        .wave-bar:nth-child(5) { height: 12px; }
+        .wave-bar:nth-child(1) { height: 16px; }
+        .wave-bar:nth-child(2) { height: 24px; }
+        .wave-bar:nth-child(3) { height: 32px; }
+        .wave-bar:nth-child(4) { height: 24px; }
+        .wave-bar:nth-child(5) { height: 16px; }
 
         .voice-btn:hover {
             transform: translateY(-4px) scale(1.05);
@@ -278,6 +288,15 @@
             transform: translateY(-2px) scale(1.02);
         }
 
+        .voice-btn.connecting {
+            background: linear-gradient(135deg, #FFA500 0%, #FF8C00 100%);
+            animation: pulse 2s infinite;
+        }
+
+        .voice-btn.connecting:hover {
+            box-shadow: 0 15px 50px rgba(255, 165, 0, 0.6), 0 6px 20px rgba(0, 0, 0, 0.2);
+        }
+
         .voice-btn.active {
             background: linear-gradient(135deg, #e74c3c 0%, #c0392b 100%);
             animation: pulse 2s infinite;
@@ -286,6 +305,17 @@
         .voice-btn.active:hover {
             box-shadow: 0 15px 50px rgba(231, 76, 60, 0.6), 0 6px 20px rgba(0, 0, 0, 0.2);
         }
+
+        /* Animate wave bars when connecting */
+        .voice-btn.connecting .wave-bar {
+            animation: wave-pulse 1.2s ease-in-out infinite;
+        }
+
+        .voice-btn.connecting .wave-bar:nth-child(1) { animation-delay: 0s; }
+        .voice-btn.connecting .wave-bar:nth-child(2) { animation-delay: 0.1s; }
+        .voice-btn.connecting .wave-bar:nth-child(3) { animation-delay: 0.2s; }
+        .voice-btn.connecting .wave-bar:nth-child(4) { animation-delay: 0.3s; }
+        .voice-btn.connecting .wave-bar:nth-child(5) { animation-delay: 0.4s; }
 
         /* Animate wave bars when active */
         .voice-btn.active .wave-bar {
@@ -300,10 +330,10 @@
 
         @keyframes wave-pulse {
             0%, 100% {
-                height: 12px;
+                height: 16px;
             }
             50% {
-                height: 26px;
+                height: 34px;
             }
         }
 
@@ -681,11 +711,15 @@
 
         let vapi = null;
         let isCallActive = false;
+        let isConnecting = false;
+        let connectingStartTime = null;
+        const MIN_CONNECTING_DURATION = 800; // Minimum time to show connecting state (ms)
 
         const voiceBtn = document.getElementById('voiceBtn');
         const voiceTooltip = document.getElementById('voiceTooltip');
         const voiceBtnLabel = document.getElementById('voiceBtnLabel');
         const statusIndicator = document.getElementById('statusIndicator');
+        const statusText = statusIndicator.querySelector('.status-text');
 
         // Initialize VAPI
         try {
@@ -695,13 +729,23 @@
             // Event listeners
             vapi.on('call-start', () => {
                 console.log('📞 Call started');
-                isCallActive = true;
-                updateUI(true);
+
+                // Ensure minimum connecting state display time
+                const elapsed = Date.now() - connectingStartTime;
+                const remainingTime = Math.max(0, MIN_CONNECTING_DURATION - elapsed);
+
+                setTimeout(() => {
+                    isConnecting = false;
+                    isCallActive = true;
+                    updateUI('active');
+                }, remainingTime);
             });
 
             vapi.on('call-end', () => {
                 console.log('📞 Call ended');
+                isConnecting = false;
                 isCallActive = false;
+                connectingStartTime = null;
                 updateUI(false);
             });
 
@@ -726,7 +770,9 @@
 
             vapi.on('error', (error) => {
                 console.error('❌ Error:', error);
+                isConnecting = false;
                 isCallActive = false;
+                connectingStartTime = null;
                 updateUI(false);
                 alert('Voice assistant error: ' + error.message);
             });
@@ -755,12 +801,20 @@
                 console.log('🛑 Ending call');
                 vapi.stop();
             } else {
+                // Show connecting state immediately
+                isConnecting = true;
+                connectingStartTime = Date.now();
+                updateUI('connecting');
+
                 // Start call
                 console.log('🚀 Starting call');
                 try {
                     vapi.start(ASSISTANT_ID);
                 } catch (error) {
                     console.error('❌ Start error:', error);
+                    isConnecting = false;
+                    connectingStartTime = null;
+                    updateUI(false);
                     alert('Failed to start voice call: ' + error.message);
                 }
             }
@@ -768,7 +822,7 @@
 
         // Show tooltip on hover (only when inactive)
         voiceBtn.addEventListener('mouseenter', () => {
-            if (!isCallActive) {
+            if (!isCallActive && !isConnecting) {
                 voiceTooltip.classList.add('show');
             }
         });
@@ -778,18 +832,32 @@
         });
 
         // Update UI based on call state
-        function updateUI(active) {
-            if (active) {
+        function updateUI(state) {
+            // Remove all state classes
+            voiceBtn.classList.remove('connecting', 'active');
+            voiceBtnLabel.classList.remove('connecting', 'active', 'show');
+
+            if (state === 'connecting') {
+                // Connecting state
+                voiceBtn.classList.add('connecting');
+                voiceBtn.title = 'Connecting...';
+                voiceTooltip.classList.remove('show');
+                voiceBtnLabel.textContent = 'Connecting...';
+                voiceBtnLabel.classList.add('connecting', 'show');
+                statusText.textContent = 'Connecting...';
+                statusIndicator.classList.add('show');
+            } else if (state === true || state === 'active') {
                 // Active state
                 voiceBtn.classList.add('active');
                 voiceBtn.title = 'End Call';
                 voiceTooltip.textContent = 'End Call';
                 voiceTooltip.classList.remove('show');
-                voiceBtnLabel.classList.add('show');
+                voiceBtnLabel.textContent = 'End Call';
+                voiceBtnLabel.classList.add('active', 'show');
+                statusText.textContent = 'Listening...';
                 statusIndicator.classList.add('show');
             } else {
                 // Inactive state
-                voiceBtn.classList.remove('active');
                 voiceBtn.title = 'Talk to Me';
                 voiceTooltip.textContent = 'Talk to Me';
                 voiceBtnLabel.classList.remove('show');
