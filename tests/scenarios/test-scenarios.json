@@ -1,0 +1,1169 @@
+{
+  "metadata": {
+    "total_scenarios": 60,
+    "categories": [
+      "happy_path",
+      "complex_medical",
+      "edge_cases",
+      "error_handling",
+      "multi_turn",
+      "specialty_specific"
+    ],
+    "created": "2025-11-10",
+    "description": "Comprehensive test scenarios for Even Hospital Voice Bot"
+  },
+  "test_scenarios": [
+    {
+      "testId": "TC001",
+      "category": "happy_path",
+      "specialty": "Orthopedic Surgery",
+      "scenario": {
+        "patientProfile": {
+          "age": 45,
+          "gender": "male",
+          "language": "English"
+        },
+        "symptoms": "knee pain and difficulty walking",
+        "expectedOutcome": {
+          "specialty": "Orthopedic Surgery",
+          "recommendedDoctors": ["Dr. Harish Puranik", "Dr. Prashanth Nagaraj", "Dr. Mithun N Oswal"],
+          "bookingSuccess": true
+        }
+      }
+    },
+    {
+      "testId": "TC002",
+      "category": "happy_path",
+      "specialty": "General Surgery",
+      "scenario": {
+        "patientProfile": {
+          "age": 38,
+          "gender": "female",
+          "language": "English"
+        },
+        "symptoms": "severe stomach pain",
+        "expectedOutcome": {
+          "specialty": "General Surgery",
+          "recommendedDoctors": ["Dr. K N Srikanth", "Dr. Sunil Kumar V", "Dr. Venkateshu Devendran"],
+          "bookingSuccess": true
+        }
+      }
+    },
+    {
+      "testId": "TC003",
+      "category": "happy_path",
+      "specialty": "Cardiology",
+      "scenario": {
+        "patientProfile": {
+          "age": 55,
+          "gender": "male",
+          "language": "English"
+        },
+        "symptoms": "chest pain and shortness of breath",
+        "expectedOutcome": {
+          "specialty": "Cardiology (Non-Interventional)",
+          "recommendedDoctors": ["Dr. Basavaraj Utagi"],
+          "bookingSuccess": true
+        }
+      }
+    },
+    {
+      "testId": "TC004",
+      "category": "happy_path",
+      "specialty": "Pediatrics",
+      "scenario": {
+        "patientProfile": {
+          "age": 30,
+          "gender": "female",
+          "language": "English",
+          "note": "Mother calling for child"
+        },
+        "symptoms": "my child has high fever",
+        "expectedOutcome": {
+          "specialty": "Pediatrics",
+          "recommendedDoctors": ["Dr. Sharil Hegde P", "Dr. Nishita Das"],
+          "bookingSuccess": true
+        }
+      }
+    },
+    {
+      "testId": "TC005",
+      "category": "happy_path",
+      "specialty": "Gynecology & Obstetrics",
+      "scenario": {
+        "patientProfile": {
+          "age": 28,
+          "gender": "female",
+          "language": "English"
+        },
+        "symptoms": "I'm pregnant and need prenatal care",
+        "expectedOutcome": {
+          "specialty": "Gynecology & Obstetrics",
+          "recommendedDoctors": ["Dr. Rashmi Nagaraja Naik", "Dr. Nivedita Jha", "Dr. Yashika S"],
+          "bookingSuccess": true
+        }
+      }
+    },
+    {
+      "testId": "TC006",
+      "category": "happy_path",
+      "specialty": "General Surgery",
+      "scenario": {
+        "patientProfile": {
+          "age": 42,
+          "gender": "male",
+          "language": "English"
+        },
+        "symptoms": "I have pain under my right rib cage after eating",
+        "expectedOutcome": {
+          "specialty": "General Surgery",
+          "recommendedDoctors": ["Dr. Poornima Parasuraman", "Dr. K N Srikanth", "Dr. Sunil Kumar V"],
+          "bookingSuccess": true,
+          "condition": "Gallstones/Cholecystitis"
+        }
+      }
+    },
+    {
+      "testId": "TC007",
+      "category": "happy_path",
+      "specialty": "Orthopedic Surgery",
+      "scenario": {
+        "patientProfile": {
+          "age": 25,
+          "gender": "male",
+          "language": "English"
+        },
+        "symptoms": "I injured my ACL playing football",
+        "expectedOutcome": {
+          "specialty": "Orthopedic Surgery",
+          "recommendedDoctors": ["Dr. Harish Puranik", "Dr. Vikas Chavan", "Dr. Prashanth Nagaraj"],
+          "bookingSuccess": true,
+          "condition": "Sports Injuries"
+        }
+      }
+    },
+    {
+      "testId": "TC008",
+      "category": "happy_path",
+      "specialty": "ENT",
+      "scenario": {
+        "patientProfile": {
+          "age": 35,
+          "gender": "female",
+          "language": "English"
+        },
+        "symptoms": "I have throat pain and hearing problems",
+        "expectedOutcome": {
+          "specialty": "ENT (Ear, Nose & Throat)",
+          "recommendedDoctors": ["Dr. Animesh Banerjee"],
+          "bookingSuccess": true
+        }
+      }
+    },
+    {
+      "testId": "TC009",
+      "category": "happy_path",
+      "specialty": "Internal Medicine",
+      "scenario": {
+        "patientProfile": {
+          "age": 50,
+          "gender": "male",
+          "language": "English"
+        },
+        "symptoms": "I have diabetes and hypertension that needs management",
+        "expectedOutcome": {
+          "specialty": "Internal Medicine",
+          "recommendedDoctors": ["Dr. Binita Priyambada", "Dr. Sriharee Kulkarni", "Dr. Ankit P Bhojani"],
+          "bookingSuccess": true,
+          "condition": "Chronic Disease Management"
+        }
+      }
+    },
+    {
+      "testId": "TC010",
+      "category": "happy_path",
+      "specialty": "Urology",
+      "scenario": {
+        "patientProfile": {
+          "age": 60,
+          "gender": "male",
+          "language": "English"
+        },
+        "symptoms": "I have urinary problems and prostate issues",
+        "expectedOutcome": {
+          "specialty": "Urology",
+          "recommendedDoctors": ["Dr. Vishal Naik"],
+          "bookingSuccess": true
+        }
+      }
+    },
+    {
+      "testId": "TC011",
+      "category": "complex_medical",
+      "specialty": "General Surgery",
+      "scenario": {
+        "patientProfile": {
+          "age": 48,
+          "gender": "male",
+          "language": "English"
+        },
+        "symptoms": "I have bleeding during bowel movements and severe pain",
+        "expectedOutcome": {
+          "specialty": "General Surgery",
+          "recommendedDoctors": ["Dr. Prateek Patil", "Dr. Poornima Parasuraman"],
+          "bookingSuccess": true,
+          "condition": "Piles/Hemorrhoids"
+        }
+      }
+    },
+    {
+      "testId": "TC012",
+      "category": "complex_medical",
+      "specialty": "Orthopedic Surgery",
+      "scenario": {
+        "patientProfile": {
+          "age": 65,
+          "gender": "female",
+          "language": "English"
+        },
+        "symptoms": "My joints are degenerating and I have chronic osteoarthritis pain",
+        "expectedOutcome": {
+          "specialty": "Orthopedic Surgery",
+          "recommendedDoctors": ["Dr. Harish Puranik", "Dr. Mithun N Oswal", "Dr. Prashanth Nagaraj"],
+          "bookingSuccess": true,
+          "condition": "Arthritis"
+        }
+      }
+    },
+    {
+      "testId": "TC013",
+      "category": "complex_medical",
+      "specialty": "Gynecology & Obstetrics",
+      "scenario": {
+        "patientProfile": {
+          "age": 35,
+          "gender": "female",
+          "language": "English"
+        },
+        "symptoms": "I've been unable to conceive for 2 years",
+        "expectedOutcome": {
+          "specialty": "Gynecology & Obstetrics",
+          "recommendedDoctors": ["Dr. Rashmi Nagaraja Naik"],
+          "bookingSuccess": true,
+          "condition": "Infertility"
+        }
+      }
+    },
+    {
+      "testId": "TC014",
+      "category": "complex_medical",
+      "specialty": "Orthopedic Surgery",
+      "scenario": {
+        "patientProfile": {
+          "age": 40,
+          "gender": "male",
+          "language": "English"
+        },
+        "symptoms": "I have chronic back pain and neck stiffness with numbness",
+        "expectedOutcome": {
+          "specialty": "Orthopedic Surgery",
+          "recommendedDoctors": ["Dr. Vikas Chavan", "Dr. Prashanth Nagaraj"],
+          "bookingSuccess": true,
+          "condition": "Spinal Disorders"
+        }
+      }
+    },
+    {
+      "testId": "TC015",
+      "category": "complex_medical",
+      "specialty": "General Surgery",
+      "scenario": {
+        "patientProfile": {
+          "age": 52,
+          "gender": "female",
+          "language": "English"
+        },
+        "symptoms": "I have a breast lump that needs evaluation",
+        "expectedOutcome": {
+          "specialty": "General Surgery",
+          "recommendedDoctors": ["Dr. Poornima Parasuraman"],
+          "bookingSuccess": true,
+          "condition": "Breast Surgery"
+        }
+      }
+    },
+    {
+      "testId": "TC016",
+      "category": "edge_cases",
+      "specialty": "Multiple",
+      "scenario": {
+        "patientProfile": {
+          "age": 45,
+          "gender": "male",
+          "language": "English"
+        },
+        "symptoms": "I'm not feeling well but I'm not sure what's wrong",
+        "expectedOutcome": {
+          "specialty": "Internal Medicine",
+          "recommendedDoctors": ["Dr. Ankit P Bhojani", "Dr. Sriharee Kulkarni", "Dr. Binita Priyambada"],
+          "bookingSuccess": true,
+          "note": "Vague symptoms should route to Internal Medicine"
+        }
+      }
+    },
+    {
+      "testId": "TC017",
+      "category": "edge_cases",
+      "specialty": "Orthopedic Surgery",
+      "scenario": {
+        "patientProfile": {
+          "age": 30,
+          "gender": "male",
+          "language": "English"
+        },
+        "symptoms": "I fell and I think I broke my arm",
+        "expectedOutcome": {
+          "specialty": "Orthopedic Surgery",
+          "recommendedDoctors": ["Dr. Prashanth Nagaraj", "Dr. Harish Puranik", "Dr. Mithun N Oswal"],
+          "bookingSuccess": true,
+          "condition": "Fractures & Trauma"
+        }
+      }
+    },
+    {
+      "testId": "TC018",
+      "category": "edge_cases",
+      "specialty": "General Surgery",
+      "scenario": {
+        "patientProfile": {
+          "age": 22,
+          "gender": "male",
+          "language": "English"
+        },
+        "symptoms": "I have severe pain in my lower right abdomen",
+        "expectedOutcome": {
+          "specialty": "General Surgery",
+          "recommendedDoctors": ["Dr. K N Srikanth", "Dr. Venkateshu Devendran", "Dr. Sunil Kumar V"],
+          "bookingSuccess": true,
+          "condition": "Appendicitis",
+          "note": "Potential emergency"
+        }
+      }
+    },
+    {
+      "testId": "TC019",
+      "category": "specialty_specific",
+      "specialty": "Psychiatry",
+      "scenario": {
+        "patientProfile": {
+          "age": 28,
+          "gender": "female",
+          "language": "English"
+        },
+        "symptoms": "I have anxiety and depression",
+        "expectedOutcome": {
+          "specialty": "Psychiatry",
+          "recommendedDoctors": ["Dr. Harshitha V Handral"],
+          "bookingSuccess": true
+        }
+      }
+    },
+    {
+      "testId": "TC020",
+      "category": "specialty_specific",
+      "specialty": "Nephrology",
+      "scenario": {
+        "patientProfile": {
+          "age": 58,
+          "gender": "male",
+          "language": "English"
+        },
+        "symptoms": "I have kidney problems and need dialysis management",
+        "expectedOutcome": {
+          "specialty": "Nephrology",
+          "recommendedDoctors": ["Dr. Naveen Kumar K L", "Dr. Girish Namagondlu Seetharamaiah"],
+          "bookingSuccess": true
+        }
+      }
+    },
+    {
+      "testId": "TC021",
+      "category": "specialty_specific",
+      "specialty": "Gastroenterology",
+      "scenario": {
+        "patientProfile": {
+          "age": 40,
+          "gender": "male",
+          "language": "English"
+        },
+        "symptoms": "I have digestive problems and stomach issues",
+        "expectedOutcome": {
+          "specialty": "Gastroenterology (Medical)",
+          "recommendedDoctors": ["Dr. Puneeth B S"],
+          "bookingSuccess": true
+        }
+      }
+    },
+    {
+      "testId": "TC022",
+      "category": "specialty_specific",
+      "specialty": "Dietetics & Nutrition",
+      "scenario": {
+        "patientProfile": {
+          "age": 32,
+          "gender": "female",
+          "language": "English"
+        },
+        "symptoms": "I need diet plan for weight management",
+        "expectedOutcome": {
+          "specialty": "Dietetics & Nutrition",
+          "recommendedDoctors": ["Ms. Kamar Afshan M", "Dr. Sonali Kulkarni"],
+          "bookingSuccess": true
+        }
+      }
+    },
+    {
+      "testId": "TC023",
+      "category": "specialty_specific",
+      "specialty": "Emergency Medicine",
+      "scenario": {
+        "patientProfile": {
+          "age": 45,
+          "gender": "male",
+          "language": "English"
+        },
+        "symptoms": "I have a medical emergency with acute symptoms",
+        "expectedOutcome": {
+          "specialty": "Emergency Medicine",
+          "recommendedDoctors": ["Dr. Gautham Shankar Saseendran"],
+          "bookingSuccess": true
+        }
+      }
+    },
+    {
+      "testId": "TC024",
+      "category": "happy_path",
+      "specialty": "General Surgery",
+      "scenario": {
+        "patientProfile": {
+          "age": 35,
+          "gender": "male",
+          "language": "English"
+        },
+        "symptoms": "I have a bulge in my groin area",
+        "expectedOutcome": {
+          "specialty": "General Surgery",
+          "recommendedDoctors": ["Dr. Prateek Patil", "Dr. Venkateshu Devendran", "Dr. Sunil Kumar V"],
+          "bookingSuccess": true,
+          "condition": "Hernia"
+        }
+      }
+    },
+    {
+      "testId": "TC025",
+      "category": "happy_path",
+      "specialty": "General Surgery",
+      "scenario": {
+        "patientProfile": {
+          "age": 44,
+          "gender": "female",
+          "language": "English"
+        },
+        "symptoms": "I have a thyroid nodule that needs surgery",
+        "expectedOutcome": {
+          "specialty": "General Surgery",
+          "recommendedDoctors": ["Dr. Poornima Parasuraman"],
+          "bookingSuccess": true,
+          "condition": "Thyroid Surgery"
+        }
+      }
+    },
+    {
+      "testId": "TC026",
+      "category": "happy_path",
+      "specialty": "Pediatrics",
+      "scenario": {
+        "patientProfile": {
+          "age": 28,
+          "gender": "female",
+          "language": "English",
+          "note": "Mother calling for newborn"
+        },
+        "symptoms": "my newborn needs screening tests and follow-up",
+        "expectedOutcome": {
+          "specialty": "Pediatrics",
+          "recommendedDoctors": ["Dr. Sharil Hegde P", "Dr. Nishita Das"],
+          "bookingSuccess": true,
+          "condition": "Neonatal Care"
+        }
+      }
+    },
+    {
+      "testId": "TC027",
+      "category": "happy_path",
+      "specialty": "Gynecology & Obstetrics",
+      "scenario": {
+        "patientProfile": {
+          "age": 26,
+          "gender": "female",
+          "language": "English"
+        },
+        "symptoms": "I have irregular periods and heavy menstrual bleeding",
+        "expectedOutcome": {
+          "specialty": "Gynecology & Obstetrics",
+          "recommendedDoctors": ["Dr. Rashmi Nagaraja Naik", "Dr. Nivedita Jha", "Dr. Yashika S"],
+          "bookingSuccess": true,
+          "condition": "Menstrual Irregularities"
+        }
+      }
+    },
+    {
+      "testId": "TC028",
+      "category": "complex_medical",
+      "specialty": "General Surgery",
+      "scenario": {
+        "patientProfile": {
+          "age": 55,
+          "gender": "male",
+          "language": "English"
+        },
+        "symptoms": "I have blood in my stool and suspect colorectal issues",
+        "expectedOutcome": {
+          "specialty": "General Surgery",
+          "recommendedDoctors": ["Dr. Poornima Parasuraman", "Dr. K N Srikanth"],
+          "bookingSuccess": true,
+          "condition": "Colorectal Conditions",
+          "note": "Potentially serious condition"
+        }
+      }
+    },
+    {
+      "testId": "TC029",
+      "category": "multi_turn",
+      "specialty": "Orthopedic Surgery",
+      "scenario": {
+        "patientProfile": {
+          "age": 50,
+          "gender": "female",
+          "language": "English"
+        },
+        "symptoms": "My shoulder hurts",
+        "expectedClarifications": [
+          "How long have you had the shoulder pain?",
+          "Does the pain worsen with movement?"
+        ],
+        "expectedOutcome": {
+          "specialty": "Orthopedic Surgery",
+          "recommendedDoctors": ["Dr. Harish Puranik", "Dr. Prashanth Nagaraj", "Dr. Mithun N Oswal"],
+          "bookingSuccess": true,
+          "condition": "Joint Pain"
+        }
+      }
+    },
+    {
+      "testId": "TC030",
+      "category": "multi_turn",
+      "specialty": "Internal Medicine",
+      "scenario": {
+        "patientProfile": {
+          "age": 60,
+          "gender": "male",
+          "language": "English"
+        },
+        "symptoms": "I need a general health checkup",
+        "expectedClarifications": [
+          "Do you have any specific health concerns?",
+          "When was your last health screening?"
+        ],
+        "expectedOutcome": {
+          "specialty": "Internal Medicine",
+          "recommendedDoctors": ["Dr. Ankit P Bhojani", "Dr. Sriharee Kulkarni", "Dr. Binita Priyambada"],
+          "bookingSuccess": true,
+          "condition": "Preventive Care"
+        }
+      }
+    },
+    {
+      "testId": "TC031",
+      "category": "error_handling",
+      "specialty": "Unknown",
+      "scenario": {
+        "patientProfile": {
+          "age": 35,
+          "gender": "male",
+          "language": "English"
+        },
+        "symptoms": "I need a dental checkup",
+        "expectedOutcome": {
+          "specialty": null,
+          "recommendedDoctors": [],
+          "bookingSuccess": false,
+          "errorMessage": "We don't have dental specialists",
+          "note": "Should gracefully handle unavailable specialty"
+        }
+      }
+    },
+    {
+      "testId": "TC032",
+      "category": "error_handling",
+      "specialty": "Multiple",
+      "scenario": {
+        "patientProfile": {
+          "age": 40,
+          "gender": "male",
+          "language": "English"
+        },
+        "symptoms": "xyz abc random words",
+        "expectedOutcome": {
+          "specialty": "Internal Medicine",
+          "bookingSuccess": false,
+          "note": "Should ask for clarification on unclear symptoms",
+          "expectedBehavior": "Request clearer description"
+        }
+      }
+    },
+    {
+      "testId": "TC033",
+      "category": "happy_path",
+      "specialty": "General Surgery",
+      "scenario": {
+        "patientProfile": {
+          "age": 39,
+          "gender": "male",
+          "language": "English"
+        },
+        "symptoms": "I have severe pain during bowel movements and anal fissure",
+        "expectedOutcome": {
+          "specialty": "General Surgery",
+          "recommendedDoctors": ["Dr. Prateek Patil"],
+          "bookingSuccess": true,
+          "condition": "Fissure/Fistula"
+        }
+      }
+    },
+    {
+      "testId": "TC034",
+      "category": "happy_path",
+      "specialty": "Orthopedic Surgery",
+      "scenario": {
+        "patientProfile": {
+          "age": 55,
+          "gender": "female",
+          "language": "English"
+        },
+        "symptoms": "My hip hurts when I walk",
+        "expectedOutcome": {
+          "specialty": "Orthopedic Surgery",
+          "recommendedDoctors": ["Dr. Harish Puranik", "Dr. Prashanth Nagaraj", "Dr. Mithun N Oswal"],
+          "bookingSuccess": true,
+          "condition": "Joint Pain"
+        }
+      }
+    },
+    {
+      "testId": "TC035",
+      "category": "happy_path",
+      "specialty": "Pediatrics",
+      "scenario": {
+        "patientProfile": {
+          "age": 32,
+          "gender": "female",
+          "language": "English",
+          "note": "Parent calling"
+        },
+        "symptoms": "my child needs immunization and regular checkup",
+        "expectedOutcome": {
+          "specialty": "Pediatrics",
+          "recommendedDoctors": ["Dr. Sharil Hegde P", "Dr. Nishita Das"],
+          "bookingSuccess": true,
+          "condition": "Child Health & Development"
+        }
+      }
+    },
+    {
+      "testId": "TC036",
+      "category": "complex_medical",
+      "specialty": "Gynecology & Obstetrics",
+      "scenario": {
+        "patientProfile": {
+          "age": 32,
+          "gender": "female",
+          "language": "English"
+        },
+        "symptoms": "I'm in my third trimester and need delivery arrangements",
+        "expectedOutcome": {
+          "specialty": "Gynecology & Obstetrics",
+          "recommendedDoctors": ["Dr. Rashmi Nagaraja Naik", "Dr. Nivedita Jha"],
+          "bookingSuccess": true,
+          "condition": "Delivery & Childbirth"
+        }
+      }
+    },
+    {
+      "testId": "TC037",
+      "category": "happy_path",
+      "specialty": "General Surgery",
+      "scenario": {
+        "patientProfile": {
+          "age": 47,
+          "gender": "male",
+          "language": "English"
+        },
+        "symptoms": "I have lower abdomen pain and fever",
+        "expectedOutcome": {
+          "specialty": "General Surgery",
+          "recommendedDoctors": ["Dr. Sunil Kumar V", "Dr. Venkateshu Devendran"],
+          "bookingSuccess": true,
+          "condition": "Diverticulitis"
+        }
+      }
+    },
+    {
+      "testId": "TC038",
+      "category": "happy_path",
+      "specialty": "ENT",
+      "scenario": {
+        "patientProfile": {
+          "age": 42,
+          "gender": "male",
+          "language": "English"
+        },
+        "symptoms": "I have nasal issues and ear infection",
+        "expectedOutcome": {
+          "specialty": "ENT (Ear, Nose & Throat)",
+          "recommendedDoctors": ["Dr. Animesh Banerjee"],
+          "bookingSuccess": true
+        }
+      }
+    },
+    {
+      "testId": "TC039",
+      "category": "multi_turn",
+      "specialty": "Cardiology",
+      "scenario": {
+        "patientProfile": {
+          "age": 62,
+          "gender": "male",
+          "language": "English"
+        },
+        "symptoms": "I feel chest discomfort sometimes",
+        "expectedClarifications": [
+          "When do you experience the chest discomfort?",
+          "Do you have shortness of breath along with it?"
+        ],
+        "expectedOutcome": {
+          "specialty": "Cardiology (Non-Interventional)",
+          "recommendedDoctors": ["Dr. Basavaraj Utagi"],
+          "bookingSuccess": true,
+          "note": "Should gather more details for cardiac concerns"
+        }
+      }
+    },
+    {
+      "testId": "TC040",
+      "category": "multi_turn",
+      "specialty": "General Surgery",
+      "scenario": {
+        "patientProfile": {
+          "age": 50,
+          "gender": "male",
+          "language": "English"
+        },
+        "symptoms": "I have piles",
+        "expectedClarifications": [
+          "Are you experiencing bleeding?",
+          "How long have you had this condition?"
+        ],
+        "expectedOutcome": {
+          "specialty": "General Surgery",
+          "recommendedDoctors": ["Dr. Prateek Patil", "Dr. Poornima Parasuraman"],
+          "bookingSuccess": true,
+          "condition": "Piles/Hemorrhoids"
+        }
+      }
+    },
+    {
+      "testId": "TC041",
+      "category": "specialty_specific",
+      "specialty": "Orthopedic Surgery",
+      "scenario": {
+        "patientProfile": {
+          "age": 28,
+          "gender": "male",
+          "language": "Hindi"
+        },
+        "symptoms": "mera ghutna me bahut dard hai",
+        "expectedOutcome": {
+          "specialty": "Orthopedic Surgery",
+          "recommendedDoctors": ["Dr. Harish Puranik", "Dr. Prashanth Nagaraj", "Dr. Mithun N Oswal"],
+          "bookingSuccess": true,
+          "note": "Test multilingual capability",
+          "translation": "I have severe knee pain"
+        }
+      }
+    },
+    {
+      "testId": "TC042",
+      "category": "happy_path",
+      "specialty": "Internal Medicine",
+      "scenario": {
+        "patientProfile": {
+          "age": 45,
+          "gender": "female",
+          "language": "English"
+        },
+        "symptoms": "I want preventive health screening",
+        "expectedOutcome": {
+          "specialty": "Internal Medicine",
+          "recommendedDoctors": ["Dr. Ankit P Bhojani", "Dr. Sriharee Kulkarni", "Dr. Binita Priyambada"],
+          "bookingSuccess": true,
+          "condition": "Preventive Care"
+        }
+      }
+    },
+    {
+      "testId": "TC043",
+      "category": "edge_cases",
+      "specialty": "Multiple",
+      "scenario": {
+        "patientProfile": {
+          "age": 70,
+          "gender": "male",
+          "language": "English"
+        },
+        "symptoms": "I have multiple health issues - diabetes, kidney problems, and heart concerns",
+        "expectedOutcome": {
+          "specialty": "Internal Medicine",
+          "recommendedDoctors": ["Dr. Binita Priyambada", "Dr. Sriharee Kulkarni"],
+          "bookingSuccess": true,
+          "note": "Should handle multiple conditions appropriately"
+        }
+      }
+    },
+    {
+      "testId": "TC044",
+      "category": "complex_medical",
+      "specialty": "Orthopedic Surgery",
+      "scenario": {
+        "patientProfile": {
+          "age": 32,
+          "gender": "male",
+          "language": "English"
+        },
+        "symptoms": "I injured my ligament while playing cricket",
+        "expectedOutcome": {
+          "specialty": "Orthopedic Surgery",
+          "recommendedDoctors": ["Dr. Harish Puranik", "Dr. Vikas Chavan", "Dr. Prashanth Nagaraj"],
+          "bookingSuccess": true,
+          "condition": "Sports Injuries"
+        }
+      }
+    },
+    {
+      "testId": "TC045",
+      "category": "happy_path",
+      "specialty": "Urology",
+      "scenario": {
+        "patientProfile": {
+          "age": 65,
+          "gender": "male",
+          "language": "English"
+        },
+        "symptoms": "I have kidney issues and urinary tract problems",
+        "expectedOutcome": {
+          "specialty": "Urology",
+          "recommendedDoctors": ["Dr. Vishal Naik"],
+          "bookingSuccess": true
+        }
+      }
+    },
+    {
+      "testId": "TC046",
+      "category": "error_handling",
+      "specialty": "Unknown",
+      "scenario": {
+        "patientProfile": {
+          "age": 40,
+          "gender": "male",
+          "language": "English"
+        },
+        "symptoms": "I want to book an appointment but don't remember doctor's name",
+        "expectedOutcome": {
+          "bookingSuccess": false,
+          "note": "Should ask for symptoms or doctor details",
+          "expectedBehavior": "Guide user to provide symptoms"
+        }
+      }
+    },
+    {
+      "testId": "TC047",
+      "category": "happy_path",
+      "specialty": "Gynecology & Obstetrics",
+      "scenario": {
+        "patientProfile": {
+          "age": 29,
+          "gender": "female",
+          "language": "English"
+        },
+        "symptoms": "I'm in my second trimester and need pregnancy monitoring",
+        "expectedOutcome": {
+          "specialty": "Gynecology & Obstetrics",
+          "recommendedDoctors": ["Dr. Rashmi Nagaraja Naik", "Dr. Nivedita Jha", "Dr. Yashika S"],
+          "bookingSuccess": true,
+          "condition": "Pregnancy & Prenatal Care"
+        }
+      }
+    },
+    {
+      "testId": "TC048",
+      "category": "specialty_specific",
+      "specialty": "Dietetics & Nutrition",
+      "scenario": {
+        "patientProfile": {
+          "age": 38,
+          "gender": "female",
+          "language": "English"
+        },
+        "symptoms": "I need dietary guidance and personalized nutrition plan",
+        "expectedOutcome": {
+          "specialty": "Dietetics & Nutrition",
+          "recommendedDoctors": ["Ms. Kamar Afshan M", "Dr. Sonali Kulkarni"],
+          "bookingSuccess": true
+        }
+      }
+    },
+    {
+      "testId": "TC049",
+      "category": "multi_turn",
+      "specialty": "Pediatrics",
+      "scenario": {
+        "patientProfile": {
+          "age": 30,
+          "gender": "female",
+          "language": "English",
+          "note": "Mother calling"
+        },
+        "symptoms": "my baby is not feeding well",
+        "expectedClarifications": [
+          "How old is your baby?",
+          "Are there any other symptoms?"
+        ],
+        "expectedOutcome": {
+          "specialty": "Pediatrics",
+          "recommendedDoctors": ["Dr. Sharil Hegde P", "Dr. Nishita Das"],
+          "bookingSuccess": true,
+          "condition": "Neonatal Care"
+        }
+      }
+    },
+    {
+      "testId": "TC050",
+      "category": "happy_path",
+      "specialty": "Psychiatry",
+      "scenario": {
+        "patientProfile": {
+          "age": 25,
+          "gender": "male",
+          "language": "English"
+        },
+        "symptoms": "I need psychological support and mental health evaluation",
+        "expectedOutcome": {
+          "specialty": "Psychiatry",
+          "recommendedDoctors": ["Dr. Harshitha V Handral"],
+          "bookingSuccess": true
+        }
+      }
+    },
+    {
+      "testId": "TC051",
+      "category": "complex_medical",
+      "specialty": "Nephrology",
+      "scenario": {
+        "patientProfile": {
+          "age": 56,
+          "gender": "female",
+          "language": "English"
+        },
+        "symptoms": "I have chronic kidney disease and need renal evaluation",
+        "expectedOutcome": {
+          "specialty": "Nephrology",
+          "recommendedDoctors": ["Dr. Naveen Kumar K L", "Dr. Girish Namagondlu Seetharamaiah"],
+          "bookingSuccess": true
+        }
+      }
+    },
+    {
+      "testId": "TC052",
+      "category": "happy_path",
+      "specialty": "Gastroenterology",
+      "scenario": {
+        "patientProfile": {
+          "age": 43,
+          "gender": "male",
+          "language": "English"
+        },
+        "symptoms": "I have GI symptoms and intestinal issues",
+        "expectedOutcome": {
+          "specialty": "Gastroenterology (Medical)",
+          "recommendedDoctors": ["Dr. Puneeth B S"],
+          "bookingSuccess": true
+        }
+      }
+    },
+    {
+      "testId": "TC053",
+      "category": "edge_cases",
+      "specialty": "Orthopedic Surgery",
+      "scenario": {
+        "patientProfile": {
+          "age": 35,
+          "gender": "female",
+          "language": "Kannada"
+        },
+        "symptoms": "nanna kai melu aagide",
+        "expectedOutcome": {
+          "specialty": "Orthopedic Surgery",
+          "recommendedDoctors": ["Dr. Prashanth Nagaraj", "Dr. Harish Puranik", "Dr. Mithun N Oswal"],
+          "bookingSuccess": true,
+          "note": "Test Kannada language support",
+          "translation": "My hand is swollen"
+        }
+      }
+    },
+    {
+      "testId": "TC054",
+      "category": "happy_path",
+      "specialty": "Emergency Medicine",
+      "scenario": {
+        "patientProfile": {
+          "age": 50,
+          "gender": "male",
+          "language": "English"
+        },
+        "symptoms": "I need urgent medical care for acute symptoms",
+        "expectedOutcome": {
+          "specialty": "Emergency Medicine",
+          "recommendedDoctors": ["Dr. Gautham Shankar Saseendran"],
+          "bookingSuccess": true
+        }
+      }
+    },
+    {
+      "testId": "TC055",
+      "category": "multi_turn",
+      "specialty": "Internal Medicine",
+      "scenario": {
+        "patientProfile": {
+          "age": 55,
+          "gender": "male",
+          "language": "English"
+        },
+        "symptoms": "I don't feel good",
+        "expectedClarifications": [
+          "Can you describe your symptoms?",
+          "Where exactly do you feel unwell?"
+        ],
+        "expectedOutcome": {
+          "specialty": "Internal Medicine",
+          "recommendedDoctors": ["Dr. Ankit P Bhojani", "Dr. Sriharee Kulkarni", "Dr. Binita Priyambada"],
+          "bookingSuccess": true,
+          "note": "Should handle vague symptoms"
+        }
+      }
+    },
+    {
+      "testId": "TC056",
+      "category": "complex_medical",
+      "specialty": "General Surgery",
+      "scenario": {
+        "patientProfile": {
+          "age": 60,
+          "gender": "male",
+          "language": "English"
+        },
+        "symptoms": "I need bariatric surgery for weight loss",
+        "expectedOutcome": {
+          "specialty": "General Surgery",
+          "recommendedDoctors": ["Dr. K N Srikanth", "Dr. V Shiva Kumar", "Dr. Sunil Kumar V"],
+          "bookingSuccess": true,
+          "condition": "Bariatric Surgery"
+        }
+      }
+    },
+    {
+      "testId": "TC057",
+      "category": "edge_cases",
+      "specialty": "Multiple",
+      "scenario": {
+        "patientProfile": {
+          "age": 72,
+          "gender": "female",
+          "language": "English"
+        },
+        "symptoms": "I'm a senior citizen and need comprehensive health evaluation",
+        "expectedOutcome": {
+          "specialty": "Internal Medicine",
+          "recommendedDoctors": ["Dr. Binita Priyambada", "Dr. Sriharee Kulkarni"],
+          "bookingSuccess": true,
+          "note": "Should handle elderly patient care appropriately"
+        }
+      }
+    },
+    {
+      "testId": "TC058",
+      "category": "happy_path",
+      "specialty": "Orthopedic Surgery",
+      "scenario": {
+        "patientProfile": {
+          "age": 48,
+          "gender": "male",
+          "language": "English"
+        },
+        "symptoms": "I have elbow pain and stiffness",
+        "expectedOutcome": {
+          "specialty": "Orthopedic Surgery",
+          "recommendedDoctors": ["Dr. Harish Puranik", "Dr. Prashanth Nagaraj", "Dr. Mithun N Oswal"],
+          "bookingSuccess": true,
+          "condition": "Joint Pain"
+        }
+      }
+    },
+    {
+      "testId": "TC059",
+      "category": "error_handling",
+      "specialty": "Unknown",
+      "scenario": {
+        "patientProfile": {
+          "age": 35,
+          "gender": "male",
+          "language": "English"
+        },
+        "symptoms": "Can I get a doctor's appointment for tomorrow at 9 AM?",
+        "expectedOutcome": {
+          "bookingSuccess": false,
+          "note": "Should first ask for symptoms/condition",
+          "expectedBehavior": "Ask what health concern they want to address"
+        }
+      }
+    },
+    {
+      "testId": "TC060",
+      "category": "complex_medical",
+      "specialty": "Cardiology",
+      "scenario": {
+        "patientProfile": {
+          "age": 58,
+          "gender": "male",
+          "language": "English"
+        },
+        "symptoms": "I'm concerned about my heart health and need cardiac evaluation with ECG",
+        "expectedOutcome": {
+          "specialty": "Cardiology (Non-Interventional)",
+          "recommendedDoctors": ["Dr. Basavaraj Utagi"],
+          "bookingSuccess": true,
+          "condition": "Heart Disease & Cardiac Assessment"
+        }
+      }
+    }
+  ]
+}

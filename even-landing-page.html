@@ -205,8 +205,246 @@
             z-index: 1000;
             display: flex;
             flex-direction: column;
+            align-items: flex-end;
+            gap: 12px;
+        }
+
+        /* Incoming Call Card */
+        .incoming-call-card {
+            background: white;
+            border-radius: 20px;
+            padding: 24px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+            display: none;
+            flex-direction: column;
+            align-items: center;
+            gap: 16px;
+            min-width: 280px;
+            animation: slideUp 0.4s ease-out;
+        }
+
+        .incoming-call-card.show {
+            display: flex;
+        }
+
+        .incoming-call-header {
+            text-align: center;
+        }
+
+        .incoming-call-title {
+            font-size: 16px;
+            font-weight: 600;
+            color: #1a1a1a;
+            margin-bottom: 4px;
+        }
+
+        .incoming-call-subtitle {
+            font-size: 13px;
+            color: #666;
+        }
+
+        .ringer-animation {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #2D5BFF 0%, #1E40FF 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            animation: softRing 1.5s ease-in-out infinite;
+            position: relative;
+        }
+
+        .ringer-animation::before,
+        .ringer-animation::after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            border: 2px solid #2D5BFF;
+            opacity: 0;
+            animation: ripple 1.5s ease-out infinite;
+        }
+
+        .ringer-animation::after {
+            animation-delay: 0.5s;
+        }
+
+        @keyframes softRing {
+            0%, 100% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.05);
+            }
+        }
+
+        @keyframes ripple {
+            0% {
+                transform: scale(1);
+                opacity: 0.6;
+            }
+            100% {
+                transform: scale(1.8);
+                opacity: 0;
+            }
+        }
+
+        .call-action-buttons {
+            display: flex;
+            gap: 16px;
+        }
+
+        .call-btn {
+            width: 56px;
+            height: 56px;
+            border-radius: 50%;
+            border: none;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+            font-size: 24px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        }
+
+        .call-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .call-btn:active {
+            transform: translateY(0);
+        }
+
+        .accept-btn {
+            background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+            color: white;
+        }
+
+        .reject-btn {
+            background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%);
+            color: white;
+        }
+
+        /* Active Call Controls */
+        .call-controls {
+            background: white;
+            border-radius: 20px;
+            padding: 16px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+            display: none;
+            flex-direction: column;
+            gap: 12px;
+            min-width: 240px;
+        }
+
+        .call-controls.show {
+            display: flex;
+        }
+
+        .call-status {
+            display: flex;
             align-items: center;
             gap: 12px;
+            padding-bottom: 12px;
+            border-bottom: 1px solid #e5e7eb;
+        }
+
+        .status-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: #10b981;
+            animation: pulse-dot 2s ease-in-out infinite;
+        }
+
+        @keyframes pulse-dot {
+            0%, 100% {
+                opacity: 1;
+            }
+            50% {
+                opacity: 0.5;
+            }
+        }
+
+        .call-status-text {
+            font-size: 14px;
+            font-weight: 600;
+            color: #1a1a1a;
+            flex: 1;
+        }
+
+        .close-btn {
+            background: none;
+            border: none;
+            color: #9ca3af;
+            cursor: pointer;
+            font-size: 18px;
+            padding: 4px;
+            line-height: 1;
+            transition: color 0.2s ease;
+        }
+
+        .close-btn:hover {
+            color: #ef4444;
+        }
+
+        .control-buttons {
+            display: flex;
+            gap: 12px;
+        }
+
+        .control-btn {
+            flex: 1;
+            padding: 12px;
+            border: none;
+            border-radius: 12px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            font-size: 14px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .mute-btn {
+            background: #f3f4f6;
+            color: #4b5563;
+        }
+
+        .mute-btn:hover {
+            background: #e5e7eb;
+        }
+
+        .mute-btn.active {
+            background: #fef3c7;
+            color: #f59e0b;
+        }
+
+        .end-call-btn {
+            background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%);
+            color: white;
+        }
+
+        .end-call-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(239, 68, 68, 0.3);
+        }
+
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
 
         .voice-btn-label {

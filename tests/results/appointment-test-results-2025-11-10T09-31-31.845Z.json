@@ -1,0 +1,214 @@
+{
+  "totalTests": 10,
+  "passed": 10,
+  "failed": 0,
+  "testDetails": [
+    {
+      "test": "Check Doctor Availability",
+      "status": "PASSED",
+      "details": "Found 13 slots",
+      "data": {
+        "success": true,
+        "doctor": "Dr. Harish Puranik",
+        "date": "2025-11-11",
+        "availableSlots": [
+          "9:30 AM",
+          "10:00 AM",
+          "10:30 AM",
+          "11:00 AM",
+          "11:30 AM",
+          "2:00 PM",
+          "2:30 PM",
+          "3:00 PM",
+          "3:30 PM",
+          "4:00 PM",
+          "4:30 PM",
+          "5:00 PM",
+          "5:30 PM"
+        ]
+      }
+    },
+    {
+      "test": "Create Appointment with Specific Time",
+      "status": "PASSED",
+      "data": {
+        "success": true,
+        "appointmentId": "APT67091779FB0O",
+        "appointment": {
+          "appointmentId": "APT67091779FB0O",
+          "doctorName": "Dr. Harish Puranik",
+          "patientName": "John Doe",
+          "patientPhone": "+91-9876543210",
+          "appointmentDate": "2025-11-11",
+          "appointmentTime": "9:30 AM",
+          "status": "confirmed",
+          "createdAt": "2025-11-10T09:31:31.779Z",
+          "notes": ""
+        },
+        "message": "Appointment confirmed with Dr. Harish Puranik on 2025-11-11 at 9:30 AM"
+      }
+    },
+    {
+      "test": "Create Appointment Auto-assign Time",
+      "status": "PASSED",
+      "appointmentId": "APT6709178616CL",
+      "assignedTime": "10:00 AM",
+      "data": {
+        "success": true,
+        "appointmentId": "APT6709178616CL",
+        "appointment": {
+          "appointmentId": "APT6709178616CL",
+          "doctorName": "Dr. Harish Puranik",
+          "patientName": "Jane Smith",
+          "patientPhone": "+91-9876543211",
+          "appointmentDate": "2025-11-12",
+          "appointmentTime": "10:00 AM",
+          "status": "confirmed",
+          "createdAt": "2025-11-10T09:31:31.786Z",
+          "notes": ""
+        },
+        "message": "Appointment confirmed with Dr. Harish Puranik on 2025-11-12 at 10:00 AM"
+      }
+    },
+    {
+      "test": "Retrieve Appointment",
+      "status": "PASSED",
+      "data": {
+        "success": true,
+        "appointment": {
+          "appointmentId": "APT67091779FB0O",
+          "doctorName": "Dr. Harish Puranik",
+          "patientName": "John Doe",
+          "patientPhone": "+91-9876543210",
+          "appointmentDate": "2025-11-11",
+          "appointmentTime": "9:30 AM",
+          "status": "confirmed",
+          "createdAt": "2025-11-10T09:31:31.779Z",
+          "notes": ""
+        }
+      }
+    },
+    {
+      "test": "Get Upcoming Appointments",
+      "status": "PASSED",
+      "count": 5,
+      "data": {
+        "success": true,
+        "count": 5,
+        "appointments": [
+          {
+            "appointmentId": "APT664614218ZOQ",
+            "doctorName": "Dr. Harish Puranik",
+            "patientName": "John Doe",
+            "patientPhone": "+91-9876543210",
+            "appointmentDate": "2025-11-11",
+            "appointmentTime": "9:00 AM",
+            "status": "confirmed",
+            "createdAt": "2025-11-10T09:21:01.421Z",
+            "notes": ""
+          },
+          {
+            "appointmentId": "APT67091779FB0O",
+            "doctorName": "Dr. Harish Puranik",
+            "patientName": "John Doe",
+            "patientPhone": "+91-9876543210",
+            "appointmentDate": "2025-11-11",
+            "appointmentTime": "9:30 AM",
+            "status": "confirmed",
+            "createdAt": "2025-11-10T09:31:31.779Z",
+            "notes": ""
+          },
+          {
+            "appointmentId": "APT6646142640BB",
+            "doctorName": "Dr. Harish Puranik",
+            "patientName": "Jane Smith",
+            "patientPhone": "+91-9876543211",
+            "appointmentDate": "2025-11-12",
+            "appointmentTime": "9:00 AM",
+            "status": "confirmed",
+            "createdAt": "2025-11-10T09:21:01.426Z",
+            "notes": ""
+          },
+          {
+            "appointmentId": "APT66493175X6ZM",
+            "doctorName": "Dr. Harish Puranik",
+            "patientName": "Test Patient",
+            "patientPhone": "+91-1234567890",
+            "appointmentDate": "2025-11-12",
+            "appointmentTime": "9:30 AM",
+            "status": "confirmed",
+            "createdAt": "2025-11-10T09:21:33.175Z",
+            "notes": ""
+          },
+          {
+            "appointmentId": "APT6709178616CL",
+            "doctorName": "Dr. Harish Puranik",
+            "patientName": "Jane Smith",
+            "patientPhone": "+91-9876543211",
+            "appointmentDate": "2025-11-12",
+            "appointmentTime": "10:00 AM",
+            "status": "confirmed",
+            "createdAt": "2025-11-10T09:31:31.786Z",
+            "notes": ""
+          }
+        ]
+      }
+    },
+    {
+      "test": "Double Booking Prevention",
+      "status": "PASSED",
+      "message": "Double booking prevented as expected"
+    },
+    {
+      "test": "Reject Past Date",
+      "status": "PASSED",
+      "message": "Past date rejected as expected"
+    },
+    {
+      "test": "Reject Missing Required Fields",
+      "status": "PASSED",
+      "message": "Missing fields rejected as expected"
+    },
+    {
+      "test": "Cancel Appointment",
+      "status": "PASSED",
+      "data": {
+        "success": true,
+        "message": "Appointment cancelled successfully",
+        "appointment": {
+          "appointmentId": "APT67091779FB0O",
+          "doctorName": "Dr. Harish Puranik",
+          "patientName": "John Doe",
+          "patientPhone": "+91-9876543210",
+          "appointmentDate": "2025-11-11",
+          "appointmentTime": "9:30 AM",
+          "status": "cancelled",
+          "createdAt": "2025-11-10T09:31:31.779Z",
+          "notes": "",
+          "cancellationReason": "",
+          "cancelledAt": "2025-11-10T09:31:31.825Z"
+        }
+      }
+    },
+    {
+      "test": "Retrieve Cancelled Appointment",
+      "status": "PASSED",
+      "data": {
+        "success": true,
+        "appointment": {
+          "appointmentId": "APT67091779FB0O",
+          "doctorName": "Dr. Harish Puranik",
+          "patientName": "John Doe",
+          "patientPhone": "+91-9876543210",
+          "appointmentDate": "2025-11-11",
+          "appointmentTime": "9:30 AM",
+          "status": "cancelled",
+          "createdAt": "2025-11-10T09:31:31.779Z",
+          "notes": "",
+          "cancellationReason": "",
+          "cancelledAt": "2025-11-10T09:31:31.825Z"
+        }
+      }
+    }
+  ]
+}

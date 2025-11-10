@@ -1,0 +1,1214 @@
+{
+  "totalScenarios": 10,
+  "passed": 10,
+  "failed": 0,
+  "scenarios": [
+    {
+      "scenarioId": "CONV001",
+      "scenarioName": "Clear Symptoms - Happy Path",
+      "conversationHistory": [
+        {
+          "role": "assistant",
+          "content": "Hello! I'm the virtual assistant for Even Hospital. I'm here to help you book an appointment with one of our specialist doctors. Could you please tell me what health concern or symptoms you're experiencing today?"
+        },
+        {
+          "role": "user",
+          "content": "Hello. I've been experiencing pain in my knee for the past couple of days. I think I might need to see a specialist about it."
+        },
+        {
+          "role": "assistant",
+          "content": "Based on your symptoms, I recommend seeing one of our specialists:\n\n1. Dr. Dr. Harish Puranik - Orthopedic Surgery\n   17 years experience, Fee: ₹850-₹900\n   Specializes in: Joint replacement, Arthroscopy, Sports medicine\n\n2. Dr. Dr. Prashanth Nagaraj - Orthopedic Surgery\n   20 years experience, Fee: ₹850-₹900\n   Specializes in: Lower limb reconstruction, Sports injuries, Cartilage repair\n\n3. Dr. Dr. Mithun N Oswal - Orthopedic Surgery\n   13 years experience, Fee: ₹850-₹900\n   Specializes in: Joint replacements, Arthroscopy, Sports injury\n\nWould you like to book an appointment with any of these doctors?"
+        },
+        {
+          "role": "user",
+          "content": "I'm considering Dr. Prashanth Nagaraj since he has experience in sports injuries. Can you tell me what his current availability is?"
+        },
+        {
+          "role": "assistant",
+          "content": "Prashanth Nagaraj has the following available slots: 9:00 AM, 9:30 AM, 10:00 AM, 10:30 AM, 11:00 AM and 9 more. Would you like to book one of these times?"
+        },
+        {
+          "role": "user",
+          "content": "Yes, I'll go with the 10:30 AM slot. Could you tell me the date for this appointment?"
+        },
+        {
+          "role": "assistant",
+          "content": "Prashanth Nagaraj has the following available slots: 9:00 AM, 9:30 AM, 10:00 AM, 10:30 AM, 11:00 AM and 9 more. Would you like to book one of these times?"
+        },
+        {
+          "role": "user",
+          "content": "Yes, I'll go with the 10:30 AM slot. Could you tell me the date for this appointment?"
+        },
+        {
+          "role": "assistant",
+          "content": "Prashanth Nagaraj has the following available slots: 9:00 AM, 9:30 AM, 10:00 AM, 10:30 AM, 11:00 AM and 9 more. Would you like to book one of these times?"
+        },
+        {
+          "role": "user",
+          "content": "Yes, I'll go with the 10:30 AM slot. Could you tell me the date for this appointment?"
+        },
+        {
+          "role": "assistant",
+          "content": "Prashanth Nagaraj has the following available slots: 9:00 AM, 9:30 AM, 10:00 AM, 10:30 AM, 11:00 AM and 9 more. Would you like to book one of these times?"
+        },
+        {
+          "role": "user",
+          "content": "The 10:30 AM slot is available for this upcoming Monday, Tuesday, and Wednesday. Which day would work best for you?"
+        },
+        {
+          "role": "assistant",
+          "content": "Prashanth Nagaraj has the following available slots: 9:00 AM, 9:30 AM, 10:00 AM, 10:30 AM, 11:00 AM and 9 more. Would you like to book one of these times?"
+        },
+        {
+          "role": "user",
+          "content": "The 10:30 AM slot is available for this upcoming Monday, Tuesday, and Wednesday. Which day would work best for you?"
+        },
+        {
+          "role": "assistant",
+          "content": "Prashanth Nagaraj has the following available slots: 9:00 AM, 9:30 AM, 10:00 AM, 10:30 AM, 11:00 AM and 9 more. Would you like to book one of these times?"
+        },
+        {
+          "role": "user",
+          "content": "The 10:30 AM slot is available for this upcoming Monday, Tuesday, and Wednesday. Which day would work best for you?"
+        },
+        {
+          "role": "assistant",
+          "content": "Prashanth Nagaraj has the following available slots: 9:00 AM, 9:30 AM, 10:00 AM, 10:30 AM, 11:00 AM and 9 more. Would you like to book one of these times?"
+        },
+        {
+          "role": "user",
+          "content": "Let's go with Tuesday for the appointment. Is there anything else I need to know or prepare for the visit?"
+        },
+        {
+          "role": "assistant",
+          "content": "Perfect! I'll book your appointment with Prashanth Nagaraj. Could you please provide your full name, phone number, and preferred date?"
+        },
+        {
+          "role": "user",
+          "content": "Perfect! I'll book your appointment with Prashanth Nagaraj. Could you please provide your full name, phone number, and preferred date?"
+        },
+        {
+          "role": "assistant",
+          "content": "Perfect! I'll book your appointment with Prashanth Nagaraj. Could you please provide your full name, phone number, and preferred date?"
+        },
+        {
+          "role": "user",
+          "content": "Perfect! I'll book your appointment with Prashanth Nagaraj. Could you please provide your full name, phone number, and preferred date?"
+        },
+        {
+          "role": "assistant",
+          "content": "Perfect! I'll book your appointment with Prashanth Nagaraj. Could you please provide your full name, phone number, and preferred date?"
+        },
+        {
+          "role": "user",
+          "content": "Sure, my full name is Priya Sharma, my phone number is 9876543210, and my preferred date is this Tuesday."
+        },
+        {
+          "role": "assistant",
+          "content": "Based on your symptoms, I'd recommend Dr. Harish Puranik who specializes in Orthopedic Surgery. They have 17 years of experience. Would you like to check their availability?"
+        },
+        {
+          "role": "user",
+          "content": "Based on your symptoms, I'd recommend Dr. Harish Puranik who specializes in Orthopedic Surgery. They have 17 years of experience. Would you like to check their availability?"
+        },
+        {
+          "role": "assistant",
+          "content": "Harish Puranik has the following available slots: 9:00 AM, 9:30 AM, 10:00 AM, 10:30 AM, 11:00 AM and 9 more. Would you like to book one of these times?"
+        },
+        {
+          "role": "user",
+          "content": "Harish Puranik has the following available slots: 9:00 AM, 9:30 AM, 10:00 AM, 10:30 AM, 11:00 AM and 9 more. Would you like to book one of these times?"
+        },
+        {
+          "role": "assistant",
+          "content": "Harish Puranik has the following available slots: 9:00 AM, 9:30 AM, 10:00 AM, 10:30 AM, 11:00 AM and 9 more. Would you like to book one of these times?"
+        },
+        {
+          "role": "user",
+          "content": "Harish Puranik has the following available slots: 9:00 AM, 9:30 AM, 10:00 AM, 10:30 AM, 11:00 AM and 9 more. Would you like to book one of these times?"
+        },
+        {
+          "role": "assistant",
+          "content": "Harish Puranik has the following available slots: 9:00 AM, 9:30 AM, 10:00 AM, 10:30 AM, 11:00 AM and 9 more. Would you like to book one of these times?"
+        }
+      ],
+      "turnCount": 15,
+      "appointmentBooked": false,
+      "evaluation": {
+        "passed": true,
+        "score": 85,
+        "details": {
+          "symptomsGathered": 20,
+          "appropriateRecommendation": 30,
+          "conversationFlow": 20,
+          "efficiency": 10,
+          "completion": 5
+        },
+        "feedback": [
+          "⚠️  Conversation was longer than expected",
+          "⚠️  Appointment was not booked"
+        ]
+      }
+    },
+    {
+      "scenarioId": "CONV002",
+      "scenarioName": "Vague Symptoms - Requires Clarification",
+      "conversationHistory": [
+        {
+          "role": "assistant",
+          "content": "Hello! I'm the virtual assistant for Even Hospital. I'm here to help you book an appointment with one of our specialist doctors. Could you please tell me what health concern or symptoms you're experiencing today?"
+        },
+        {
+          "role": "user",
+          "content": "Er...I'm not feeling too well. Been like this for a few days now. Feeling kinda tired and I have this persistent cough...dry mostly."
+        },
+        {
+          "role": "assistant",
+          "content": "Based on your symptoms, I recommend seeing one of our specialists:\n\n1. Dr. Dr. Ankit P Bhojani - Internal Medicine\n   10 years experience, Fee: ₹850-₹900\n   Specializes in: Internal medicine, Diabetes care, Critical care\n\n2. Dr. Dr. Sriharee Kulkarni - Internal Medicine\n   17 years experience, Fee: ₹850-₹900\n   Specializes in: Internal medicine, Chronic disease, Health screening\n\n3. Dr. Dr. Binita Priyambada - Internal Medicine\n   22 years experience, Fee: ₹850-₹900\n   Specializes in: Internal medicine, Clinical management, Medical emergencies\n\nWould you like to book an appointment with any of these doctors?"
+        },
+        {
+          "role": "user",
+          "content": "Oh...alright. Um...this Dr. Sriharee Kulkarni sounds good. But I'm not sure...um...does she have experience treating people like me? With, um...you know...lots of ongoing conditions? And...um...when can I see her?"
+        },
+        {
+          "role": "assistant",
+          "content": "Sriharee Kulkarni has the following available slots: 9:00 AM, 9:30 AM, 10:00 AM, 10:30 AM, 11:00 AM and 9 more. Would you like to book one of these times?"
+        },
+        {
+          "role": "user",
+          "content": "Yes, Dr. Sriharee Kulkarni has 17 years of experience and specializes in internal medicine and chronic disease, making her well-qualified to treat patients with multiple ongoing conditions. \n\nAs for her availability, she has slots open this week on Tuesday and Thursday afternoons and Wednesday morning. Which time works best for you?"
+        },
+        {
+          "role": "assistant",
+          "content": "Sriharee Kulkarni has the following available slots: 9:00 AM, 9:30 AM, 10:00 AM, 10:30 AM, 11:00 AM and 9 more. Would you like to book one of these times?"
+        },
+        {
+          "role": "user",
+          "content": "Um...let's see. Can I get the 10:30 AM slot on Wednesday? That sounds good. Is that alright?"
+        },
+        {
+          "role": "assistant",
+          "content": "Sriharee Kulkarni has the following available slots: 9:00 AM, 9:30 AM, 10:00 AM, 10:30 AM, 11:00 AM and 9 more. Would you like to book one of these times?"
+        },
+        {
+          "role": "user",
+          "content": "Alright, I've booked you for the 10:30 AM slot on Wednesday with Dr. Sriharee Kulkarni. Can you provide me with your contact information so we can send you a confirmation and reminder?"
+        },
+        {
+          "role": "assistant",
+          "content": "Sriharee Kulkarni has the following available slots: 9:00 AM, 9:30 AM, 10:00 AM, 10:30 AM, 11:00 AM and 9 more. Would you like to book one of these times?"
+        },
+        {
+          "role": "user",
+          "content": "Sure, um...my phone number is 9812345678 and my email is rajesh.kumar@email.com. Just send the confirmation there, okay?"
+        },
+        {
+          "role": "assistant",
+          "content": "Based on your symptoms, I'd recommend Dr. Ankit P Bhojani who specializes in Internal Medicine. They have 10 years of experience. Would you like to check their availability?"
+        },
+        {
+          "role": "user",
+          "content": "Sure, um...my phone number is 9812345678 and my email is rajesh.kumar@email.com. Just send the confirmation there, okay?"
+        },
+        {
+          "role": "assistant",
+          "content": "Based on your symptoms, I'd recommend Dr. Ankit P Bhojani who specializes in Internal Medicine. They have 10 years of experience. Would you like to check their availability?"
+        },
+        {
+          "role": "user",
+          "content": "Okay, great! I have booked your appointment for Wednesday at 10:30 AM with Dr. Sriharee Kulkarni. You will receive a confirmation email and SMS shortly. Please arrive 15 minutes before your appointment time. Do you need help with anything else?"
+        },
+        {
+          "role": "assistant",
+          "content": "Sriharee Kulkarni has the following available slots: 9:00 AM, 9:30 AM, 10:00 AM, 10:30 AM, 11:00 AM and 9 more. Would you like to book one of these times?"
+        },
+        {
+          "role": "user",
+          "content": "Okay, great! I have booked your appointment for Wednesday at 10:30 AM with Dr. Sriharee Kulkarni. You will receive a confirmation email and SMS shortly. Please arrive 15 minutes before your appointment time. Do you need help with anything else?"
+        },
+        {
+          "role": "assistant",
+          "content": "Sriharee Kulkarni has the following available slots: 9:00 AM, 9:30 AM, 10:00 AM, 10:30 AM, 11:00 AM and 9 more. Would you like to book one of these times?"
+        },
+        {
+          "role": "user",
+          "content": "No, that's all for now. I'll be there on Wednesday. Thank you for your help."
+        }
+      ],
+      "turnCount": 10,
+      "appointmentBooked": false,
+      "evaluation": {
+        "passed": true,
+        "score": 85,
+        "details": {
+          "symptomsGathered": 20,
+          "appropriateRecommendation": 30,
+          "conversationFlow": 20,
+          "efficiency": 10,
+          "completion": 5
+        },
+        "feedback": [
+          "⚠️  Conversation was longer than expected",
+          "⚠️  Appointment was not booked"
+        ]
+      }
+    },
+    {
+      "scenarioId": "CONV003",
+      "scenarioName": "Pregnant Patient - Prenatal Care",
+      "conversationHistory": [
+        {
+          "role": "assistant",
+          "content": "Hello! I'm the virtual assistant for Even Hospital. I'm here to help you book an appointment with one of our specialist doctors. Could you please tell me what health concern or symptoms you're experiencing today?"
+        },
+        {
+          "role": "user",
+          "content": "Hi, I'm Anjali Reddy. I'm pregnant, in my second trimester, and I'm looking to book a prenatal checkup. It's my first pregnancy and I need to ensure everything is going okay."
+        },
+        {
+          "role": "assistant",
+          "content": "Based on your symptoms, I recommend seeing one of our specialists:\n\n1. Dr. Dr. Rashmi Nagaraja Naik - Gynecology & Obstetrics\n   22 years experience, Fee: ₹850-₹900\n   Specializes in: Prenatal care, High-risk pregnancy, Delivery management\n\n2. Dr. Dr. Nivedita Jha - Gynecology & Obstetrics\n   14 years experience, Fee: ₹850-₹900\n   Specializes in: Prenatal care, Delivery, Gynecological procedures\n\n3. Dr. Dr. Yashika S - Gynecology & Obstetrics\n   6 years experience, Fee: ₹850-₹900\n   Specializes in: Obstetrics, Gynecological care, Women's health\n\nWould you like to book an appointment with any of these doctors?"
+        },
+        {
+          "role": "user",
+          "content": "I'm leaning towards Dr. Rashmi Nagaraja Naik because of her experience. But can you tell me when she's available? I prefer morning appointments if that's possible."
+        },
+        {
+          "role": "assistant",
+          "content": "Rashmi Nagaraja Naik has the following available slots: 9:00 AM, 9:30 AM, 10:00 AM, 10:30 AM, 11:00 AM and 9 more. Would you like to book one of these times?"
+        },
+        {
+          "role": "user",
+          "content": "Yes, I'd like to book the 10:00 AM slot. Can you tell me the date for this appointment?"
+        },
+        {
+          "role": "assistant",
+          "content": "Yashika S has the following available slots: 9:00 AM, 9:30 AM, 10:00 AM, 10:30 AM, 11:00 AM and 9 more. Would you like to book one of these times?"
+        },
+        {
+          "role": "user",
+          "content": "You can book the 10:00 AM slot with Dr. Rashmi Nagaraja Naik on Tuesday, April 6th. Shall I go ahead and book this for you?"
+        },
+        {
+          "role": "assistant",
+          "content": "Rashmi Nagaraja Naik has the following available slots: 9:00 AM, 9:30 AM, 10:00 AM, 10:30 AM, 11:00 AM and 9 more. Would you like to book one of these times?"
+        },
+        {
+          "role": "user",
+          "content": "Yes please, book the appointment for me on April 6th at 10:00 AM with Dr. Rashmi Nagaraja Naik. Thank you."
+        }
+      ],
+      "turnCount": 5,
+      "appointmentBooked": false,
+      "evaluation": {
+        "passed": true,
+        "score": 95,
+        "details": {
+          "symptomsGathered": 20,
+          "appropriateRecommendation": 30,
+          "conversationFlow": 20,
+          "efficiency": 20,
+          "completion": 5
+        },
+        "feedback": [
+          "⚠️  Appointment was not booked"
+        ]
+      }
+    },
+    {
+      "scenarioId": "CONV004",
+      "scenarioName": "Elderly Patient - Multiple Issues",
+      "conversationHistory": [
+        {
+          "role": "assistant",
+          "content": "Hello! I'm the virtual assistant for Even Hospital. I'm here to help you book an appointment with one of our specialist doctors. Could you please tell me what health concern or symptoms you're experiencing today?"
+        },
+        {
+          "role": "user",
+          "content": "Hello there, dear. I am Lakshmi Devi. Having some joint pain, I am. Also, my blood sugar, it's been acting up. Arthritis and diabetes, the doctor told me once. Need to see a specialist, I think."
+        },
+        {
+          "role": "assistant",
+          "content": "Based on your symptoms, I recommend seeing one of our specialists:\n\n1. Dr. Dr. Harish Puranik - Orthopedic Surgery\n   17 years experience, Fee: ₹850-₹900\n   Specializes in: Joint replacement, Arthroscopy, Sports medicine\n\n2. Dr. Dr. Mithun N Oswal - Orthopedic Surgery\n   13 years experience, Fee: ₹850-₹900\n   Specializes in: Joint replacements, Arthroscopy, Sports injury\n\n3. Dr. Dr. Prashanth Nagaraj - Orthopedic Surgery\n   20 years experience, Fee: ₹850-₹900\n   Specializes in: Lower limb reconstruction, Sports injuries, Cartilage repair\n\nWould you like to book an appointment with any of these doctors?"
+        },
+        {
+          "role": "user",
+          "content": "Oh, they all sound very good. But, tell me dear, who among them is available earliest? I'm in quite a bit of discomfort."
+        },
+        {
+          "role": "assistant",
+          "content": "Dr. Harish Puranik has the following available slots: 9:30 AM, 10:00 AM, 10:30 AM, 11:00 AM, 11:30 AM and 8 more. Would you like to book one of these times?"
+        },
+        {
+          "role": "user",
+          "content": "Hmm...let me think...Yes, let's go for the 11 o'clock slot. With Dr. Harish Puranik, right? He's the one with the joint replacement experience? I also need to see someone for my blood sugar, dear."
+        },
+        {
+          "role": "assistant",
+          "content": "Harish Puranik has the following available slots: 9:00 AM, 9:30 AM, 10:00 AM, 10:30 AM, 11:00 AM and 9 more. Would you like to book one of these times?"
+        },
+        {
+          "role": "user",
+          "content": "Yes, dear. Dr. Harish Puranik is experienced in joint replacements. He is booked for you at 11AM then. As for your blood sugar, you need to see an Endocrinologist. I can help you book that appointment as well. Would you like me to proceed?"
+        },
+        {
+          "role": "assistant",
+          "content": "Perfect! I'll book your appointment with Harish Puranik. Could you please provide your full name, phone number, and preferred date?"
+        },
+        {
+          "role": "user",
+          "content": "I am Lakshmi Devi, dear. My phone number is 9876543210. And, let's go for the day after tomorrow, if that's alright. Now what about the blood sugar specialist, dear?"
+        },
+        {
+          "role": "assistant",
+          "content": "Based on your symptoms, I'd recommend Dr. Harish Puranik who specializes in Orthopedic Surgery. They have 17 years of experience. Would you like to check their availability?"
+        },
+        {
+          "role": "user",
+          "content": "I'm sorry for any confusion. Let me find a suitable Endocrinologist for your blood sugar concern.\n\n1. Dr. Anantharaman Ramakrishnan - Endocrinology\n   18 years experience, Fee: ₹950-₹1000\n   Specializes in: Diabetes management, Thyroid disorders\n\n2. Dr. Nikhil Tandon - Endocrinology\n   20 years experience, Fee: ₹950-₹1000\n   Specializes in: Diabetes management, Osteoporosis\n\n3. Dr. S V Madhu - Endocrinology\n   22 years experience, Fee: ₹950-₹1000\n   Specializes in: Diabetes management, Thyroid disorders\n\nWhich"
+        },
+        {
+          "role": "assistant",
+          "content": "Based on your symptoms, I'd recommend Dr. Harish Puranik who specializes in Orthopedic Surgery. They have 17 years of experience. Would you like to check their availability?"
+        },
+        {
+          "role": "user",
+          "content": "Based on your symptoms, I'd recommend Dr. Harish Puranik who specializes in Orthopedic Surgery. They have 17 years of experience. Would you like to check their availability?"
+        },
+        {
+          "role": "assistant",
+          "content": "Harish Puranik has the following available slots: 9:00 AM, 9:30 AM, 10:00 AM, 10:30 AM, 11:00 AM and 9 more. Would you like to book one of these times?"
+        },
+        {
+          "role": "user",
+          "content": "I see, dear. Who among these doctors can see me soonest? I hope they are gentle with elderly patients like me. My diabetes has been quite troubling too."
+        },
+        {
+          "role": "assistant",
+          "content": "Based on your symptoms, I'd recommend Dr. Harish Puranik who specializes in Orthopedic Surgery. They have 17 years of experience. Would you like to check their availability?"
+        },
+        {
+          "role": "user",
+          "content": "Yes, dear. Dr. Anantharaman Ramakrishnan is available tomorrow at 10:30 AM or the day after at 9:00 AM. Which do you prefer?"
+        },
+        {
+          "role": "assistant",
+          "content": "Harish Puranik has the following available slots: 9:00 AM, 9:30 AM, 10:00 AM, 10:30 AM, 11:00 AM and 9 more. Would you like to book one of these times?"
+        },
+        {
+          "role": "user",
+          "content": "Dr. Anantharaman Ramakrishnan has the earliest availability. He has an opening tomorrow at 10:30 AM and the day after at 9:00 AM. He's quite experienced with diabetes management. Which slot would you prefer?"
+        },
+        {
+          "role": "assistant",
+          "content": "Harish Puranik has the following available slots: 9:00 AM, 9:30 AM, 10:00 AM, 10:30 AM, 11:00 AM and 9 more. Would you like to book one of these times?"
+        },
+        {
+          "role": "user",
+          "content": "The day after at 9:00 AM, that will be fine. So, we have Dr. Harish Puranik for my joints and Dr. Anantharaman Ramakrishnan for my sugars. Is that correct, dear?"
+        },
+        {
+          "role": "assistant",
+          "content": "Based on your symptoms, I'd recommend Dr. Harish Puranik who specializes in Orthopedic Surgery. They have 17 years of experience. Would you like to check their availability?"
+        },
+        {
+          "role": "user",
+          "content": "Yes, Mrs. Devi. You are booked with Dr. Harish Puranik for your joint pain at 11:00 AM day after tomorrow and with Dr. Anantharaman Ramakrishnan for your diabetes at 9:00 AM on the same day. Do you have any other questions or is there anything else you need assistance with?"
+        },
+        {
+          "role": "assistant",
+          "content": "Based on your symptoms, I'd recommend Dr. Harish Puranik who specializes in Orthopedic Surgery. They have 17 years of experience. Would you like to check their availability?"
+        },
+        {
+          "role": "user",
+          "content": "Yes, Mrs. Devi. You have an appointment with Dr. Harish Puranik for your joint pain at 11:00 AM and with Dr. Anantharaman Ramakrishnan for your diabetes at 9:00 AM, day after tomorrow. Are there any other services you need help with?"
+        },
+        {
+          "role": "assistant",
+          "content": "Perfect! I'll book your appointment with Harish Puranik. Could you please provide your full name, phone number, and preferred date?"
+        },
+        {
+          "role": "user",
+          "content": "No, dear. I think that's all I need. God bless you for helping me. Keep doing good work. Bye now."
+        }
+      ],
+      "turnCount": 14,
+      "appointmentBooked": false,
+      "evaluation": {
+        "passed": true,
+        "score": 85,
+        "details": {
+          "symptomsGathered": 20,
+          "appropriateRecommendation": 30,
+          "conversationFlow": 20,
+          "efficiency": 10,
+          "completion": 5
+        },
+        "feedback": [
+          "⚠️  Conversation was longer than expected",
+          "⚠️  Appointment was not booked"
+        ]
+      }
+    },
+    {
+      "scenarioId": "CONV005",
+      "scenarioName": "Emergency Situation",
+      "conversationHistory": [
+        {
+          "role": "assistant",
+          "content": "Hello! I'm the virtual assistant for Even Hospital. I'm here to help you book an appointment with one of our specialist doctors. Could you please tell me what health concern or symptoms you're experiencing today?"
+        },
+        {
+          "role": "user",
+          "content": "Hello... I'm Vikram Singh, and... I've got severe chest pain and... shortness of breath. I'm... I'm quite worried."
+        },
+        {
+          "role": "assistant",
+          "content": "Based on your symptoms, I recommend seeing one of our specialists:\n\n1. Dr. Dr. Basavaraj Utagi - Cardiology (Non-Interventional)\n   17 years experience, Fee: ₹850-₹900\n   Specializes in: Cardiac care, Heart disease, Structural heart\n\n2. Dr. Dr. Gautham Shankar Saseendran - Emergency Medicine\n   11 years experience, Fee: ₹850-₹900\n   Specializes in: Emergency medicine, Acute emergencies, Trauma care\n\nWould you like to book an appointment with any of these doctors?"
+        },
+        {
+          "role": "user",
+          "content": "I... I think seeing a cardiologist would be better for... for my symptoms. How soon can I see Dr. Basavaraj Utagi? Is he... is he available today?"
+        },
+        {
+          "role": "assistant",
+          "content": "Basavaraj Utagi has the following available slots: 9:00 AM, 9:30 AM, 10:00 AM, 10:30 AM, 11:00 AM and 9 more. Would you like to book one of these times?"
+        },
+        {
+          "role": "user",
+          "content": "I... I think the earliest one would be best. Can... can you book me for the 9:00 AM slot? I... I can't take this pain anymore."
+        },
+        {
+          "role": "assistant",
+          "content": "Basavaraj Utagi has the following available slots: 9:00 AM, 9:30 AM, 10:00 AM, 10:30 AM, 11:00 AM and 9 more. Would you like to book one of these times?"
+        },
+        {
+          "role": "user",
+          "content": "Sure, I have booked an appointment with Dr. Basavaraj Utagi at 9:00 AM for you. You should also please consider going to an emergency room if your pain is severe or continues to worsen."
+        },
+        {
+          "role": "assistant",
+          "content": "Perfect! I'll book your appointment with Basavaraj Utagi. Could you please provide your full name, phone number, and preferred date?"
+        },
+        {
+          "role": "user",
+          "content": "Yes, yes, Vikram Singh is my full name. My phone number, it's 9812345678. And... and for the date, I... I need the appointment today, as early as possible. I... I need help."
+        },
+        {
+          "role": "assistant",
+          "content": "Perfect! I've booked your appointment with Basavaraj Utagi. Your appointment reference number is APT3936. You'll receive a confirmation SMS shortly. Is there anything else I can help you with?"
+        },
+        {
+          "role": "user",
+          "content": "I... I think that's all for now. Thank you... thank you so much for your help. I... I'll head to the hospital now."
+        }
+      ],
+      "turnCount": 6,
+      "appointmentBooked": true,
+      "evaluation": {
+        "passed": true,
+        "score": 90,
+        "details": {
+          "symptomsGathered": 20,
+          "appropriateRecommendation": 30,
+          "conversationFlow": 20,
+          "efficiency": 10,
+          "completion": 10
+        },
+        "feedback": [
+          "⚠️  Conversation was longer than expected"
+        ]
+      }
+    },
+    {
+      "scenarioId": "CONV006",
+      "scenarioName": "Child Patient - Parent Calling",
+      "conversationHistory": [
+        {
+          "role": "assistant",
+          "content": "Hello! I'm the virtual assistant for Even Hospital. I'm here to help you book an appointment with one of our specialist doctors. Could you please tell me what health concern or symptoms you're experiencing today?"
+        },
+        {
+          "role": "user",
+          "content": "Hello. My son, who's just five years old, has had a high fever since yesterday. I'm quite worried about him."
+        },
+        {
+          "role": "assistant",
+          "content": "Based on your symptoms, I recommend seeing one of our specialists:\n\n1. Dr. Dr. Sharil Hegde P - Pediatrics\n   24 years experience, Fee: ₹850-₹900\n   Specializes in: General pediatrics, Neonatology, Pediatric emergency\n\n2. Dr. Dr. Nishita Das - Pediatrics\n   10 years experience, Fee: ₹850-₹900\n   Specializes in: Pediatrics, Neonatology, Newborn care\n\nWould you like to book an appointment with any of these doctors?"
+        },
+        {
+          "role": "user",
+          "content": "I'm inclined towards Dr. Sharil Hegde P, mostly because of his extensive experience. But before I decide, I'd like to know more about his availability. When can we see him?"
+        },
+        {
+          "role": "assistant",
+          "content": "Sharil Hegde P has the following available slots: 9:00 AM, 9:30 AM, 10:00 AM, 10:30 AM, 11:00 AM and 9 more. Would you like to book one of these times?"
+        },
+        {
+          "role": "user",
+          "content": "Yes, could we book the 10:30 AM slot, please? Also, just to confirm, will this be a face-to-face consultation? My son is quite uncomfortable and I want to make sure he's examined properly."
+        },
+        {
+          "role": "assistant",
+          "content": "Sharil Hegde P has the following available slots: 9:00 AM, 9:30 AM, 10:00 AM, 10:30 AM, 11:00 AM and 9 more. Would you like to book one of these times?"
+        },
+        {
+          "role": "user",
+          "content": "Yes, could we book the 10:30 AM slot, please? Also, just to confirm, will this be a face-to-face consultation? My son is quite uncomfortable and I want to make sure he's examined properly."
+        },
+        {
+          "role": "assistant",
+          "content": "Sharil Hegde P has the following available slots: 9:00 AM, 9:30 AM, 10:00 AM, 10:30 AM, 11:00 AM and 9 more. Would you like to book one of these times?"
+        },
+        {
+          "role": "user",
+          "content": "Yes, could we book the 10:30 AM slot, please? Also, just to confirm, will this be a face-to-face consultation? My son is quite uncomfortable and I want to make sure he's examined properly."
+        },
+        {
+          "role": "assistant",
+          "content": "Sharil Hegde P has the following available slots: 9:00 AM, 9:30 AM, 10:00 AM, 10:30 AM, 11:00 AM and 9 more. Would you like to book one of these times?"
+        },
+        {
+          "role": "user",
+          "content": "Yes, could we book the 10:30 AM slot, please? Also, just to confirm, will this be a face-to-face consultation? My son is quite uncomfortable and I want to make sure he's examined properly."
+        },
+        {
+          "role": "assistant",
+          "content": "Sharil Hegde P has the following available slots: 9:00 AM, 9:30 AM, 10:00 AM, 10:30 AM, 11:00 AM and 9 more. Would you like to book one of these times?"
+        },
+        {
+          "role": "user",
+          "content": "Yes, could we book the 10:30 AM slot, please? Also, just to confirm, will this be a face-to-face consultation? My son is quite uncomfortable and I want to make sure he's examined properly."
+        },
+        {
+          "role": "assistant",
+          "content": "Sharil Hegde P has the following available slots: 9:00 AM, 9:30 AM, 10:00 AM, 10:30 AM, 11:00 AM and 9 more. Would you like to book one of these times?"
+        },
+        {
+          "role": "user",
+          "content": "Yes, could we book the 10:30 AM slot, please? Also, just to confirm, will this be a face-to-face consultation? My son is quite uncomfortable and I want to make sure he's examined properly."
+        },
+        {
+          "role": "assistant",
+          "content": "Sharil Hegde P has the following available slots: 9:00 AM, 9:30 AM, 10:00 AM, 10:30 AM, 11:00 AM and 9 more. Would you like to book one of these times?"
+        },
+        {
+          "role": "user",
+          "content": "Yes, the 10:30 AM slot with Dr. Sharil Hegde P is available for a face-to-face consultation tomorrow. May I have your son's full name and your contact details to confirm the booking?"
+        },
+        {
+          "role": "assistant",
+          "content": "Sharil Hegde P has the following available slots: 9:00 AM, 9:30 AM, 10:00 AM, 10:30 AM, 11:00 AM and 9 more. Would you like to book one of these times?"
+        },
+        {
+          "role": "user",
+          "content": "Yes, the 10:30 AM slot with Dr. Sharil Hegde P is available for a face-to-face consultation tomorrow. May I have your son's full name and your contact details to confirm the booking?"
+        },
+        {
+          "role": "assistant",
+          "content": "Sharil Hegde P has the following available slots: 9:00 AM, 9:30 AM, 10:00 AM, 10:30 AM, 11:00 AM and 9 more. Would you like to book one of these times?"
+        },
+        {
+          "role": "user",
+          "content": "Yes, could we book the 10:30 AM slot, please? Also, just to confirm, will this be a face-to-face consultation? My son is quite uncomfortable and I want to make sure he's examined properly."
+        },
+        {
+          "role": "assistant",
+          "content": "Sharil Hegde P has the following available slots: 9:00 AM, 9:30 AM, 10:00 AM, 10:30 AM, 11:00 AM and 9 more. Would you like to book one of these times?"
+        },
+        {
+          "role": "user",
+          "content": "Yes, could we book the 10:30 AM slot, please? Also, just to confirm, will this be a face-to-face consultation? My son is quite uncomfortable and I want to make sure he's examined properly."
+        },
+        {
+          "role": "assistant",
+          "content": "Sharil Hegde P has the following available slots: 9:00 AM, 9:30 AM, 10:00 AM, 10:30 AM, 11:00 AM and 9 more. Would you like to book one of these times?"
+        },
+        {
+          "role": "user",
+          "content": "Yes, could we book the 10:30 AM slot, please? Also, just to confirm, will this be a face-to-face consultation? My son is quite uncomfortable and I want to make sure he's examined properly."
+        },
+        {
+          "role": "assistant",
+          "content": "Sharil Hegde P has the following available slots: 9:00 AM, 9:30 AM, 10:00 AM, 10:30 AM, 11:00 AM and 9 more. Would you like to book one of these times?"
+        },
+        {
+          "role": "user",
+          "content": "Sure, I've booked the 10:30 AM slot for your son with Dr. Sharil Hegde P. And yes, it's a face-to-face consultation. Could you please confirm your son's full name and your contact number for the appointment records?"
+        },
+        {
+          "role": "assistant",
+          "content": "Sharil Hegde P has the following available slots: 9:00 AM, 9:30 AM, 10:00 AM, 10:30 AM, 11:00 AM and 9 more. Would you like to book one of these times?"
+        },
+        {
+          "role": "user",
+          "content": "Sure, I've booked the 10:30 AM slot for your son with Dr. Sharil Hegde P. And yes, it's a face-to-face consultation. Could you please confirm your son's full name and your contact number for the appointment records?"
+        },
+        {
+          "role": "assistant",
+          "content": "Sharil Hegde P has the following available slots: 9:00 AM, 9:30 AM, 10:00 AM, 10:30 AM, 11:00 AM and 9 more. Would you like to book one of these times?"
+        }
+      ],
+      "turnCount": 15,
+      "appointmentBooked": false,
+      "evaluation": {
+        "passed": true,
+        "score": 85,
+        "details": {
+          "symptomsGathered": 20,
+          "appropriateRecommendation": 30,
+          "conversationFlow": 20,
+          "efficiency": 10,
+          "completion": 5
+        },
+        "feedback": [
+          "⚠️  Conversation was longer than expected",
+          "⚠️  Appointment was not booked"
+        ]
+      }
+    },
+    {
+      "scenarioId": "CONV007",
+      "scenarioName": "Change of Mind - Doctor Preference",
+      "conversationHistory": [
+        {
+          "role": "assistant",
+          "content": "Hello! I'm the virtual assistant for Even Hospital. I'm here to help you book an appointment with one of our specialist doctors. Could you please tell me what health concern or symptoms you're experiencing today?"
+        },
+        {
+          "role": "user",
+          "content": "Hi there, I've been having lower back pain for about 2 weeks now. It's been really uncomfortable lately. I think it's time to see a doctor about it."
+        },
+        {
+          "role": "assistant",
+          "content": "Based on your symptoms, I recommend seeing one of our specialists:\n\n1. Dr. Dr. Vikas Chavan - Orthopedic Surgery\n   8 years experience, Fee: ₹850-₹900\n   Specializes in: Spine surgery, Minimally invasive spine surgery, Spinal disorders\n\n2. Dr. Dr. Prashanth Nagaraj - Orthopedic Surgery\n   20 years experience, Fee: ₹850-₹900\n   Specializes in: Lower limb reconstruction, Sports injuries, Cartilage repair\n\n3. Dr. Dr. K N Srikanth - General Surgery\n   33 years experience, Fee: ₹850-₹900\n   Specializes in: Laparoscopic surgery, GI surgery, Bariatric surgery\n\nWould you like to book an appointment with any of these doctors?"
+        },
+        {
+          "role": "user",
+          "content": "Hmm, the first two options seem more suitable, but I'm unsure who to pick. Could you tell me more about Dr. Chavan and Dr. Nagaraj, like their availability next week and success rates with lower back pain patients?"
+        },
+        {
+          "role": "assistant",
+          "content": "Vikas Chavan has the following available slots: 9:00 AM, 9:30 AM, 10:00 AM, 10:30 AM, 11:00 AM and 9 more. Would you like to book one of these times?"
+        },
+        {
+          "role": "user",
+          "content": "Oh, morning times seem good. But could you first tell me about Dr. Chavan's success rate with lower back pain patients? And let's also check Dr. Nagaraj's availability."
+        },
+        {
+          "role": "assistant",
+          "content": "Vikas Chavan has the following available slots: 9:00 AM, 9:30 AM, 10:00 AM, 10:30 AM, 11:00 AM and 9 more. Would you like to book one of these times?"
+        },
+        {
+          "role": "user",
+          "content": "Dr. Chavan has a success rate of about 90% with lower back pain patients. As for Dr. Nagaraj, he is available between 2:00 PM to 5:00 PM next week from Monday to Friday."
+        },
+        {
+          "role": "assistant",
+          "content": "Vikas Chavan has the following available slots: 9:00 AM, 9:30 AM, 10:00 AM, 10:30 AM, 11:00 AM and 9 more. Would you like to book one of these times?"
+        },
+        {
+          "role": "user",
+          "content": "90% sounds impressive, but before I make up my mind, could you also share Dr. Nagaraj's success rate in dealing with similar cases?"
+        },
+        {
+          "role": "assistant",
+          "content": "Based on your symptoms, I'd recommend Dr. Vikas Chavan who specializes in Orthopedic Surgery. They have 8 years of experience. Would you like to check their availability?"
+        },
+        {
+          "role": "user",
+          "content": "Dr. Nagaraj has a success rate of approximately 85% in treating patients with lower back pain. Would you like to book an appointment with either of these doctors?"
+        },
+        {
+          "role": "assistant",
+          "content": "Perfect! I'll book your appointment with Prashanth Nagaraj. Could you please provide your full name, phone number, and preferred date?"
+        },
+        {
+          "role": "user",
+          "content": "Hmm, that's a tough choice. Dr. Chavan sounds wonderful with his impressive success rate. But I also like the sound of Dr. Nagaraj's afternoon timings. You know what, let's go with Dr. Nagaraj. His success rate is also quite good. Can I have an appointment with him on next Wednesday at 3:00 PM?"
+        },
+        {
+          "role": "assistant",
+          "content": "Vikas Chavan has the following available slots: 9:00 AM, 9:30 AM, 10:00 AM, 10:30 AM, 11:00 AM and 9 more. Would you like to book one of these times?"
+        },
+        {
+          "role": "user",
+          "content": "Sure, I can do that for you. Could you please provide your full name and contact number for the confirmation?"
+        },
+        {
+          "role": "assistant",
+          "content": "Based on your symptoms, I'd recommend Dr. Vikas Chavan who specializes in Orthopedic Surgery. They have 8 years of experience. Would you like to check their availability?"
+        },
+        {
+          "role": "user",
+          "content": "Sure, I have booked your appointment with Dr. Prashanth Nagaraj on Wednesday at 3:00 PM. Can you please provide your full name and phone number for the records?"
+        },
+        {
+          "role": "assistant",
+          "content": "Perfect! I'll book your appointment with Vikas Chavan. Could you please provide your full name, phone number, and preferred date?"
+        },
+        {
+          "role": "user",
+          "content": "Sure, my full name is Arjun Nair and my contact number is 9876543210. Please book the appointment and send me a confirmation message on the same number. Thank you!"
+        }
+      ],
+      "turnCount": 10,
+      "appointmentBooked": false,
+      "evaluation": {
+        "passed": true,
+        "score": 85,
+        "details": {
+          "symptomsGathered": 20,
+          "appropriateRecommendation": 30,
+          "conversationFlow": 20,
+          "efficiency": 10,
+          "completion": 5
+        },
+        "feedback": [
+          "⚠️  Conversation was longer than expected",
+          "⚠️  Appointment was not booked"
+        ]
+      }
+    },
+    {
+      "scenarioId": "CONV008",
+      "scenarioName": "Unavailable Service - Dental",
+      "conversationHistory": [
+        {
+          "role": "assistant",
+          "content": "Hello! I'm the virtual assistant for Even Hospital. I'm here to help you book an appointment with one of our specialist doctors. Could you please tell me what health concern or symptoms you're experiencing today?"
+        },
+        {
+          "role": "user",
+          "content": "Hello, I've been having some tooth pain. I'd like to book an appointment with a dentist."
+        },
+        {
+          "role": "assistant",
+          "content": "I apologize, but we currently don't have Dental/Dentistry specialists at Even Hospital. However, I can help you find doctors for other medical concerns. What symptoms or health issues are you experiencing?"
+        },
+        {
+          "role": "user",
+          "content": "Sure, I understand. But I really need a dentist for this issue. Can you recommend any good dental clinics nearby?"
+        },
+        {
+          "role": "assistant",
+          "content": "I apologize, but we currently don't have Dental/Dentistry specialists at Even Hospital. However, I can help you find doctors for other medical concerns. What symptoms or health issues are you experiencing?"
+        },
+        {
+          "role": "user",
+          "content": "I see. In that case, could you suggest some best practices for managing tooth pain while I find a dentist?"
+        },
+        {
+          "role": "assistant",
+          "content": "I apologize, but we currently don't have Dental/Dentistry specialists at Even Hospital. However, I can help you find doctors for other medical concerns. What symptoms or health issues are you experiencing?"
+        },
+        {
+          "role": "user",
+          "content": "I'm sorry, but I can't assist with that."
+        },
+        {
+          "role": "assistant",
+          "content": "Could you tell me more about your symptoms so I can recommend the right specialist?"
+        },
+        {
+          "role": "user",
+          "content": "I understand your concern, but as I mentioned before, my main concern is my tooth pain. Could you recommend a general physician who could perhaps prescribe some temporary pain relief until I find a dentist?"
+        },
+        {
+          "role": "assistant",
+          "content": "I apologize, but we currently don't have Dental/Dentistry specialists at Even Hospital. However, I can help you find doctors for other medical concerns. What symptoms or health issues are you experiencing?"
+        },
+        {
+          "role": "user",
+          "content": "Yes, sure. I can help you book an appointment with a general physician. Dr. Smith and Dr. Johnson are available. Which one would you prefer?"
+        },
+        {
+          "role": "assistant",
+          "content": "Could you tell me more about your symptoms so I can recommend the right specialist?"
+        },
+        {
+          "role": "user",
+          "content": "I'd like to know more about their experience and availability please."
+        },
+        {
+          "role": "assistant",
+          "content": "Could you tell me more about your symptoms so I can recommend the right specialist?"
+        },
+        {
+          "role": "user",
+          "content": "Dr. Smith is a general practitioner with over 15 years of experience. She's available Tuesday and Thursday afternoon. Dr. Johnson has 10 years of experience and is available on Monday and Wednesday mornings. Who would you prefer?"
+        },
+        {
+          "role": "assistant",
+          "content": "Could you tell me more about your symptoms so I can recommend the right specialist?"
+        },
+        {
+          "role": "user",
+          "content": "Dr. Smith's experience seems more appealing. Let's go with her. What's the earliest appointment available on a Tuesday?"
+        },
+        {
+          "role": "assistant",
+          "content": "Could you tell me more about your symptoms so I can recommend the right specialist?"
+        },
+        {
+          "role": "user",
+          "content": "Great choice. The earliest available appointment with Dr. Smith on Tuesday is at 10:30 AM. Shall I book that for you?"
+        },
+        {
+          "role": "assistant",
+          "content": "Could you tell me more about your symptoms so I can recommend the right specialist?"
+        },
+        {
+          "role": "user",
+          "content": "Yes, please. Book the appointment for me."
+        },
+        {
+          "role": "assistant",
+          "content": "Could you tell me more about your symptoms so I can recommend the right specialist?"
+        },
+        {
+          "role": "user",
+          "content": "I have booked your appointment with Dr. Smith at 10:30 AM on Tuesday. Would you like me to send you a reminder?"
+        },
+        {
+          "role": "assistant",
+          "content": "Could you tell me more about your symptoms so I can recommend the right specialist?"
+        },
+        {
+          "role": "user",
+          "content": "Yes, please do send me a reminder. Can I receive it via email?"
+        },
+        {
+          "role": "assistant",
+          "content": "Could you tell me more about your symptoms so I can recommend the right specialist?"
+        },
+        {
+          "role": "user",
+          "content": "Sure, I can send you an email reminder. Could you please provide me with your email address?"
+        },
+        {
+          "role": "assistant",
+          "content": "Could you tell me more about your symptoms so I can recommend the right specialist?"
+        },
+        {
+          "role": "user",
+          "content": "Yes, my email address is sanjaygupta@email.com."
+        },
+        {
+          "role": "assistant",
+          "content": "Could you tell me more about your symptoms so I can recommend the right specialist?"
+        }
+      ],
+      "turnCount": 15,
+      "appointmentBooked": false,
+      "evaluation": {
+        "passed": true,
+        "score": 85,
+        "details": {
+          "symptomsGathered": 20,
+          "appropriateRecommendation": 30,
+          "conversationFlow": 20,
+          "efficiency": 10,
+          "completion": 5
+        },
+        "feedback": [
+          "⚠️  Conversation was longer than expected",
+          "⚠️  Appointment was not booked"
+        ]
+      }
+    },
+    {
+      "scenarioId": "CONV009",
+      "scenarioName": "Follow-up Appointment",
+      "conversationHistory": [
+        {
+          "role": "assistant",
+          "content": "Hello! I'm the virtual assistant for Even Hospital. I'm here to help you book an appointment with one of our specialist doctors. Could you please tell me what health concern or symptoms you're experiencing today?"
+        },
+        {
+          "role": "user",
+          "content": "Hello, I am Kavita Joshi. I had surgery with Dr. Puranik some time back and now I need a follow-up appointment with him. Could you help me with that?"
+        },
+        {
+          "role": "assistant",
+          "content": "Could you tell me more about your symptoms so I can recommend the right specialist?"
+        },
+        {
+          "role": "user",
+          "content": "Actually, I am not experiencing any new symptoms. I just need a routine follow-up with Dr. Puranik post surgery. Can you check his availability for me?"
+        },
+        {
+          "role": "assistant",
+          "content": "Could you tell me more about your symptoms so I can recommend the right specialist?"
+        },
+        {
+          "role": "user",
+          "content": "Actually, I am not experiencing any new symptoms. I just need a routine follow-up with Dr. Puranik post surgery. Can you check his availability for me?"
+        },
+        {
+          "role": "assistant",
+          "content": "Could you tell me more about your symptoms so I can recommend the right specialist?"
+        },
+        {
+          "role": "user",
+          "content": "I'm sorry but I think there's a misunderstanding. I am not experiencing any new symptoms. I just need to have a follow-up visit with Dr. Puranik who did my surgery. Can you check his schedule?"
+        },
+        {
+          "role": "assistant",
+          "content": "Could you tell me more about your symptoms so I can recommend the right specialist?"
+        },
+        {
+          "role": "user",
+          "content": "I'm sorry but I think there's a misunderstanding. I am not experiencing any new symptoms. I just need to have a follow-up visit with Dr. Puranik who did my surgery. Can you check his schedule?"
+        },
+        {
+          "role": "assistant",
+          "content": "Could you tell me more about your symptoms so I can recommend the right specialist?"
+        },
+        {
+          "role": "user",
+          "content": "I'm sorry but I think there's a misunderstanding. I am not experiencing any new symptoms. I just need to have a follow-up visit with Dr. Puranik who did my surgery. Can you check his schedule?"
+        },
+        {
+          "role": "assistant",
+          "content": "Could you tell me more about your symptoms so I can recommend the right specialist?"
+        },
+        {
+          "role": "user",
+          "content": "I'm sorry but I think there's a misunderstanding. I am not experiencing any new symptoms. I just need to have a follow-up visit with Dr. Puranik who did my surgery. Can you check his schedule?"
+        },
+        {
+          "role": "assistant",
+          "content": "Could you tell me more about your symptoms so I can recommend the right specialist?"
+        },
+        {
+          "role": "user",
+          "content": "I'm sorry but I think there's a misunderstanding. I am not experiencing any new symptoms. I just need to have a follow-up visit with Dr. Puranik who did my surgery. Can you check his schedule?"
+        },
+        {
+          "role": "assistant",
+          "content": "Could you tell me more about your symptoms so I can recommend the right specialist?"
+        },
+        {
+          "role": "user",
+          "content": "I'm sorry but I think there's a misunderstanding. I am not experiencing any new symptoms. I just need to have a follow-up visit with Dr. Puranik who did my surgery. Can you check his schedule?"
+        },
+        {
+          "role": "assistant",
+          "content": "Could you tell me more about your symptoms so I can recommend the right specialist?"
+        },
+        {
+          "role": "user",
+          "content": "I'm sorry but I think there's a misunderstanding. I am not experiencing any new symptoms. I just need to have a follow-up visit with Dr. Puranik who did my surgery. Can you check his schedule?"
+        },
+        {
+          "role": "assistant",
+          "content": "Could you tell me more about your symptoms so I can recommend the right specialist?"
+        },
+        {
+          "role": "user",
+          "content": "I'm sorry but I think there's a misunderstanding. I am not experiencing any new symptoms. I just need to have a follow-up visit with Dr. Puranik who did my surgery. Can you check his schedule?"
+        },
+        {
+          "role": "assistant",
+          "content": "Could you tell me more about your symptoms so I can recommend the right specialist?"
+        },
+        {
+          "role": "user",
+          "content": "I'm sorry but I think there's a misunderstanding. I am not experiencing any new symptoms. I just need to have a follow-up visit with Dr. Puranik who did my surgery. Can you check his schedule?"
+        },
+        {
+          "role": "assistant",
+          "content": "Could you tell me more about your symptoms so I can recommend the right specialist?"
+        },
+        {
+          "role": "user",
+          "content": "I'm sorry, I misunderstood your initial request. I'll check Dr. Puranik's availability for you. Hold on for a moment, please."
+        },
+        {
+          "role": "assistant",
+          "content": "Could you tell me more about your symptoms so I can recommend the right specialist?"
+        },
+        {
+          "role": "user",
+          "content": "I'm sorry, I misunderstood your initial request. I'll check Dr. Puranik's availability for you. Hold on for a moment, please."
+        },
+        {
+          "role": "assistant",
+          "content": "Could you tell me more about your symptoms so I can recommend the right specialist?"
+        },
+        {
+          "role": "user",
+          "content": "I'm sorry, I misunderstood your initial request. I'll check Dr. Puranik's availability for you. Hold on for a moment, please."
+        },
+        {
+          "role": "assistant",
+          "content": "Could you tell me more about your symptoms so I can recommend the right specialist?"
+        }
+      ],
+      "turnCount": 15,
+      "appointmentBooked": false,
+      "evaluation": {
+        "passed": true,
+        "score": 85,
+        "details": {
+          "symptomsGathered": 20,
+          "appropriateRecommendation": 30,
+          "conversationFlow": 20,
+          "efficiency": 10,
+          "completion": 5
+        },
+        "feedback": [
+          "⚠️  Conversation was longer than expected",
+          "⚠️  Appointment was not booked"
+        ]
+      }
+    },
+    {
+      "scenarioId": "CONV010",
+      "scenarioName": "Multilingual - Hindi Speaker",
+      "conversationHistory": [
+        {
+          "role": "assistant",
+          "content": "Hello! I'm the virtual assistant for Even Hospital. I'm here to help you book an appointment with one of our specialist doctors. Could you please tell me what health concern or symptoms you're experiencing today?"
+        },
+        {
+          "role": "user",
+          "content": "Namaste! Mera naam Ram Prasad hai. Mera ghutna me bahut dard hai. Mujhe doctor ki jarurat hai."
+        },
+        {
+          "role": "assistant",
+          "content": "Could you tell me more about your symptoms so I can recommend the right specialist?"
+        },
+        {
+          "role": "user",
+          "content": "Mera ghutna pichle ek hafte se dard kar raha hai. Jyada chalne pe aur sote waqt dard badh jata hai. Koi acche doctor se milna chahta hoon."
+        },
+        {
+          "role": "assistant",
+          "content": "Could you tell me more about your symptoms so I can recommend the right specialist?"
+        },
+        {
+          "role": "user",
+          "content": "I'm sorry to hear that you're in pain. I recommend that you see an orthopedic specialist for your knee pain. Would you like me to schedule an appointment for you?"
+        },
+        {
+          "role": "assistant",
+          "content": "Based on your symptoms, I recommend seeing one of our specialists:\n\n1. Dr. Dr. Harish Puranik - Orthopedic Surgery\n   17 years experience, Fee: ₹850-₹900\n   Specializes in: Joint replacement, Arthroscopy, Sports medicine\n\n2. Dr. Dr. Prashanth Nagaraj - Orthopedic Surgery\n   20 years experience, Fee: ₹850-₹900\n   Specializes in: Lower limb reconstruction, Sports injuries, Cartilage repair\n\n3. Dr. Dr. Mithun N Oswal - Orthopedic Surgery\n   13 years experience, Fee: ₹850-₹900\n   Specializes in: Joint replacements, Arthroscopy, Sports injury\n\nWould you like to book an appointment with any of these doctors?"
+        },
+        {
+          "role": "user",
+          "content": "Dr. Prashanth Nagaraj se milna pasand karunga. Kya unka kal samay hai? Aur unke pas kitna experience hai ghutne ke dard me ilaj ke liye?"
+        },
+        {
+          "role": "assistant",
+          "content": "Based on your symptoms, I'd recommend Dr. Harish Puranik who specializes in Orthopedic Surgery. They have 17 years of experience. Would you like to check their availability?"
+        },
+        {
+          "role": "user",
+          "content": "Dr. Prashanth Nagaraj has over 20 years of experience, including in treating knee pain. I'm currently checking their availability for tomorrow. Please hold on."
+        },
+        {
+          "role": "assistant",
+          "content": "Prashanth Nagaraj has the following available slots: 9:00 AM, 9:30 AM, 10:00 AM, 10:30 AM, 11:00 AM and 9 more. Would you like to book one of these times?"
+        },
+        {
+          "role": "user",
+          "content": "Dr. Prashanth Nagaraj has more than 20 years of experience in Orthopedic Surgery. He specializes in lower limb reconstruction, sports injuries, and cartilage repair. He should be a good fit for your knee pain. And his earliest availability for tomorrow is 10 AM. Shall I book that for you?"
+        },
+        {
+          "role": "assistant",
+          "content": "Prashanth Nagaraj has the following available slots: 9:00 AM, 9:30 AM, 10:00 AM, 10:30 AM, 11:00 AM and 9 more. Would you like to book one of these times?"
+        },
+        {
+          "role": "user",
+          "content": "Dr. Prashanth Nagaraj has more than 20 years of experience in Orthopedic Surgery. He specializes in lower limb reconstruction, sports injuries, and cartilage repair. He should be a good fit for your knee pain. And his earliest availability for tomorrow is 10 AM. Shall I book that for you?"
+        },
+        {
+          "role": "assistant",
+          "content": "Prashanth Nagaraj has the following available slots: 9:00 AM, 9:30 AM, 10:00 AM, 10:30 AM, 11:00 AM and 9 more. Would you like to book one of these times?"
+        },
+        {
+          "role": "user",
+          "content": "10 baje ka appointment theek rahega."
+        },
+        {
+          "role": "assistant",
+          "content": "Perfect! I'll book your appointment with Prashanth Nagaraj. Could you please provide your full name, phone number, and preferred date?"
+        },
+        {
+          "role": "user",
+          "content": "Great! I have scheduled your appointment with Dr. Prashanth Nagaraj for 10 AM tomorrow. Please arrive a few minutes early to complete any necessary paperwork. Do you have any other questions or concerns?"
+        },
+        {
+          "role": "assistant",
+          "content": "Perfect! I've booked your appointment with Prashanth Nagaraj. Your appointment reference number is APT6288. You'll receive a confirmation SMS shortly. Is there anything else I can help you with?"
+        },
+        {
+          "role": "user",
+          "content": "Great! I have scheduled your appointment with Dr. Prashanth Nagaraj for 10 AM tomorrow. Please arrive a few minutes early to complete any necessary paperwork. Do you have any other questions or concerns?"
+        },
+        {
+          "role": "assistant",
+          "content": "Perfect! I'll book your appointment with Prashanth Nagaraj. Could you please provide your full name, phone number, and preferred date?"
+        },
+        {
+          "role": "user",
+          "content": "Perfect! I've booked your appointment with Prashanth Nagaraj. Your appointment reference number is APT6288. You'll receive a confirmation SMS shortly. Is there anything else I can help you with?"
+        },
+        {
+          "role": "assistant",
+          "content": "Perfect! I'll book your appointment with Prashanth Nagaraj. Could you please provide your full name, phone number, and preferred date?"
+        },
+        {
+          "role": "user",
+          "content": "Great! I have scheduled your appointment with Dr. Prashanth Nagaraj for 10 AM tomorrow. Please arrive a few minutes early to complete any necessary paperwork. Do you have any other questions or concerns?"
+        },
+        {
+          "role": "assistant",
+          "content": "Perfect! I've booked your appointment with Prashanth Nagaraj. Your appointment reference number is APT4348. You'll receive a confirmation SMS shortly. Is there anything else I can help you with?"
+        },
+        {
+          "role": "user",
+          "content": "Nahi, bas itna hi. Dhanyavad!"
+        },
+        {
+          "role": "assistant",
+          "content": "Based on your symptoms, I'd recommend Dr. Harish Puranik who specializes in Orthopedic Surgery. They have 17 years of experience. Would you like to check their availability?"
+        },
+        {
+          "role": "user",
+          "content": "Nahi, bas itna hi. Dhanyavad!"
+        },
+        {
+          "role": "assistant",
+          "content": "Based on your symptoms, I'd recommend Dr. Harish Puranik who specializes in Orthopedic Surgery. They have 17 years of experience. Would you like to check their availability?"
+        },
+        {
+          "role": "user",
+          "content": "Nahi, bas itna hi. Dhanyavad!"
+        },
+        {
+          "role": "assistant",
+          "content": "Based on your symptoms, I'd recommend Dr. Harish Puranik who specializes in Orthopedic Surgery. They have 17 years of experience. Would you like to check their availability?"
+        }
+      ],
+      "turnCount": 15,
+      "appointmentBooked": true,
+      "evaluation": {
+        "passed": true,
+        "score": 90,
+        "details": {
+          "symptomsGathered": 20,
+          "appropriateRecommendation": 30,
+          "conversationFlow": 20,
+          "efficiency": 10,
+          "completion": 10
+        },
+        "feedback": [
+          "⚠️  Conversation was longer than expected"
+        ]
+      }
+    }
+  ]
+}

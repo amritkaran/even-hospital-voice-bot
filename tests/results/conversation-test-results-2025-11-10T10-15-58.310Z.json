@@ -1,0 +1,390 @@
+{
+  "totalScenarios": 3,
+  "passed": 3,
+  "failed": 0,
+  "scenarios": [
+    {
+      "scenarioId": "CONV001",
+      "scenarioName": "Clear Symptoms - Happy Path",
+      "conversationHistory": [
+        {
+          "role": "assistant",
+          "content": "Hello! I'm the virtual assistant for Even Hospital. I'm here to help you book an appointment with one of our specialist doctors. Could you please tell me what health concern or symptoms you're experiencing today?"
+        },
+        {
+          "role": "user",
+          "content": "Hi, I've been having some knee pain recently. I think I need to see a specialist for it."
+        },
+        {
+          "role": "assistant",
+          "content": "Based on your symptoms, I recommend seeing one of our specialists:\n\n1. Dr. Dr. Harish Puranik - Orthopedic Surgery\n   17 years experience, Fee: ₹850-₹900\n   Specializes in: Joint replacement, Arthroscopy, Sports medicine\n\n2. Dr. Dr. Prashanth Nagaraj - Orthopedic Surgery\n   20 years experience, Fee: ₹850-₹900\n   Specializes in: Lower limb reconstruction, Sports injuries, Cartilage repair\n\n3. Dr. Dr. Mithun N Oswal - Orthopedic Surgery\n   13 years experience, Fee: ₹850-₹900\n   Specializes in: Joint replacements, Arthroscopy, Sports injury\n\nWould you like to book an appointment with any of these doctors?"
+        },
+        {
+          "role": "user",
+          "content": "Those are good options. I am leaning towards Dr. Prashanth Nagaraj, considering his experience. Does he have any availability next week?"
+        },
+        {
+          "role": "assistant",
+          "content": "Prashanth Nagaraj has the following available slots: 9:00 AM, 9:30 AM, 10:00 AM, 10:30 AM, 11:00 AM and 9 more. Would you like to book one of these times?"
+        },
+        {
+          "role": "user",
+          "content": "Yes, I'd like to book the 10:00 AM slot. Can you please confirm if this is for Monday next week?"
+        },
+        {
+          "role": "assistant",
+          "content": "Prashanth Nagaraj has the following available slots: 9:00 AM, 9:30 AM, 10:00 AM, 10:30 AM, 11:00 AM and 9 more. Would you like to book one of these times?"
+        },
+        {
+          "role": "user",
+          "content": "Yes, the 10:00 AM slot is available for Monday next week. Shall I proceed with booking this appointment for you?"
+        },
+        {
+          "role": "assistant",
+          "content": "Prashanth Nagaraj has the following available slots: 9:00 AM, 9:30 AM, 10:00 AM, 10:30 AM, 11:00 AM and 9 more. Would you like to book one of these times?"
+        },
+        {
+          "role": "user",
+          "content": "Yes, please proceed with the booking for Monday next week at 10:00 AM."
+        },
+        {
+          "role": "assistant",
+          "content": "Perfect! I'll book your appointment with Prashanth Nagaraj. What date works best for you? And may I have your full name and phone number?"
+        },
+        {
+          "role": "user",
+          "content": "I have confirmed your appointment with Dr. Prashanth Nagaraj for Monday next week at 10:00 AM. You will also receive a confirmation message on your registered number. Anything else you would like to know?"
+        },
+        {
+          "role": "assistant",
+          "content": "Perfect! I'll book your appointment with Prashanth Nagaraj. What date works best for you? And may I have your full name and phone number?"
+        },
+        {
+          "role": "user",
+          "content": "My full name is Priya Sharma and my phone number is 9876543210. Please book the appointment for next Monday."
+        },
+        {
+          "role": "assistant",
+          "content": "Perfect! I'll book your appointment with Prashanth Nagaraj. What date works best for you? And may I have your full name and phone number?"
+        },
+        {
+          "role": "user",
+          "content": "I have confirmed your appointment with Dr. Prashanth Nagaraj for Monday next week at 10:00 AM. You will also receive a confirmation message on your registered number. Anything else you would like to know?"
+        },
+        {
+          "role": "assistant",
+          "content": "Perfect! I'll book your appointment with Prashanth Nagaraj. What date works best for you? And may I have your full name and phone number?"
+        },
+        {
+          "role": "user",
+          "content": "I have confirmed your appointment with Dr. Prashanth Nagaraj for Monday next week at 10:00 AM. You will also receive a confirmation message on your registered number. Anything else you would like to know?"
+        },
+        {
+          "role": "assistant",
+          "content": "Perfect! I'll book your appointment with Prashanth Nagaraj. What date works best for you? And may I have your full name and phone number?"
+        },
+        {
+          "role": "user",
+          "content": "No, thank you. I appreciate your help."
+        }
+      ],
+      "turnCount": 10,
+      "appointmentBooked": true,
+      "evaluation": {
+        "passed": true,
+        "score": 90,
+        "details": {
+          "symptomsGathered": 20,
+          "appropriateRecommendation": 30,
+          "conversationFlow": 20,
+          "efficiency": 10,
+          "completion": 10
+        },
+        "feedback": [
+          "⚠️  Conversation was longer than expected"
+        ]
+      }
+    },
+    {
+      "scenarioId": "CONV002",
+      "scenarioName": "Vague Symptoms - Requires Clarification",
+      "conversationHistory": [
+        {
+          "role": "assistant",
+          "content": "Hello! I'm the virtual assistant for Even Hospital. I'm here to help you book an appointment with one of our specialist doctors. Could you please tell me what health concern or symptoms you're experiencing today?"
+        },
+        {
+          "role": "user",
+          "content": "Well, I've not been feeling myself lately. Just not feeling good, you see. I've got aches and pains here and there. Tired all the time too."
+        },
+        {
+          "role": "assistant",
+          "content": "Which doctor would you like to check availability for?"
+        },
+        {
+          "role": "user",
+          "content": "Uh, I'm not sure. You see I got multiple things going on with me. Don't know who'd be best for this. Maybe someone who knows about these chronic conditions, I guess?"
+        },
+        {
+          "role": "assistant",
+          "content": "Based on your symptoms, I recommend seeing one of our specialists:\n\n1. Dr. Dr. Binita Priyambada - Internal Medicine\n   22 years experience, Fee: ₹850-₹900\n   Specializes in: Internal medicine, Clinical management, Medical emergencies\n\n2. Dr. Dr. Sriharee Kulkarni - Internal Medicine\n   17 years experience, Fee: ₹850-₹900\n   Specializes in: Internal medicine, Chronic disease, Health screening\n\n3. Dr. Dr. Ankit P Bhojani - Internal Medicine\n   10 years experience, Fee: ₹850-₹900\n   Specializes in: Internal medicine, Diabetes care, Critical care\n\nWould you like to book an appointment with any of these doctors?"
+        },
+        {
+          "role": "user",
+          "content": "Oh, this is a bit confusing. Uh, who among them has the most experience dealing with, you know, multiple conditions at the same time? And also, when can they see me? I'd prefer soon if possible."
+        },
+        {
+          "role": "assistant",
+          "content": "Dr. Binita Priyambada has the following available slots: 9:00 AM, 9:30 AM, 10:00 AM, 10:30 AM, 11:00 AM and 9 more. Would you like to book one of these times?"
+        },
+        {
+          "role": "user",
+          "content": "Uh, I think I'd prefer a bit later in the day. Do you have anything after, say, 2 PM? And also, will this doctor be able to handle all my conditions? I've got diabetes, hypertension, and arthritis."
+        },
+        {
+          "role": "assistant",
+          "content": "Based on your symptoms, I'd recommend Dr. Binita Priyambada who specializes in Internal Medicine. They have 22 years of experience. Would you like to check their availability?"
+        },
+        {
+          "role": "user",
+          "content": "Uh, okay then. Does she have any availability after 2 PM? I think I can manage that time."
+        },
+        {
+          "role": "assistant",
+          "content": "Dr. Binita Priyambada has the following available slots: 9:00 AM, 9:30 AM, 10:00 AM, 10:30 AM, 11:00 AM and 9 more. Would you like to book one of these times?"
+        },
+        {
+          "role": "user",
+          "content": "Yes, she has an available slot at 2:30 PM and 3:00 PM. Which one would you like to book?"
+        },
+        {
+          "role": "assistant",
+          "content": "Dr. Binita Priyambada has the following available slots: 9:00 AM, 9:30 AM, 10:00 AM, 10:30 AM, 11:00 AM and 9 more. Would you like to book one of these times?"
+        },
+        {
+          "role": "user",
+          "content": "Uh, yes. Let's do the 3:00 PM slot please. That should work for me."
+        },
+        {
+          "role": "assistant",
+          "content": "Dr. Binita Priyambada has the following available slots: 9:00 AM, 9:30 AM, 10:00 AM, 10:30 AM, 11:00 AM and 9 more. Would you like to book one of these times?"
+        },
+        {
+          "role": "user",
+          "content": "Great! I've booked your appointment for 3:00 PM. Is there anything else you need help with?"
+        },
+        {
+          "role": "assistant",
+          "content": "Perfect! I'll book your appointment with Dr. Binita Priyambada. What date works best for you? And may I have your full name and phone number?"
+        },
+        {
+          "role": "user",
+          "content": "Oh, I see. The 3:00 PM slot it is then. I've scheduled your appointment with Dr. Binita Priyambada for that time. Is there anything else I can help you with?"
+        },
+        {
+          "role": "assistant",
+          "content": "Binita Priyambada has the following available slots: 9:00 AM, 9:30 AM, 10:00 AM, 10:30 AM, 11:00 AM and 9 more. Would you like to book one of these times?"
+        },
+        {
+          "role": "user",
+          "content": "Oh, alright. My name is Rajesh Kumar. And the date, uh... how about two days from now? Is that fine? And my phone number is 9876543210."
+        },
+        {
+          "role": "assistant",
+          "content": "Based on your symptoms, I'd recommend Dr. Binita Priyambada who specializes in Internal Medicine. They have 22 years of experience. Would you like to check their availability?"
+        },
+        {
+          "role": "user",
+          "content": "Yes, I'd like to confirm my appointment for the 3:00 PM slot with Dr. Binita Priyambada. My name is Rajesh Kumar and my phone number is 9876543210. Could you please send me a reminder the day before? I can be a bit forgetful sometimes."
+        },
+        {
+          "role": "assistant",
+          "content": "Binita Priyambada has the following available slots: 9:00 AM, 9:30 AM, 10:00 AM, 10:30 AM, 11:00 AM and 9 more. Would you like to book one of these times?"
+        },
+        {
+          "role": "user",
+          "content": "Alright, I've booked your appointment with Dr. Binita Priyambada for 3:00 PM, two days from now. We will send a reminder to your phone number, 9876543210, the day before your appointment. Anything else I can assist you with?"
+        },
+        {
+          "role": "assistant",
+          "content": "Perfect! I'll book your appointment with Binita Priyambada. What date works best for you? And may I have your full name and phone number?"
+        },
+        {
+          "role": "user",
+          "content": "Great, Rajesh. Your appointment with Dr. Binita Priyambada is confirmed for two days from now at 3:00 pm. We'll send you a reminder the day before. Is there anything else you need help with?"
+        },
+        {
+          "role": "assistant",
+          "content": "Perfect! I'll book your appointment with Binita Priyambada. What date works best for you? And may I have your full name and phone number?"
+        },
+        {
+          "role": "user",
+          "content": "No, I think that should be all. Thank you for helping me out with this. I'm not very used to all this technology stuff. But you made it easy for me. Thank you."
+        }
+      ],
+      "turnCount": 14,
+      "appointmentBooked": true,
+      "evaluation": {
+        "passed": true,
+        "score": 90,
+        "details": {
+          "symptomsGathered": 20,
+          "appropriateRecommendation": 30,
+          "conversationFlow": 20,
+          "efficiency": 10,
+          "completion": 10
+        },
+        "feedback": [
+          "⚠️  Conversation was longer than expected"
+        ]
+      }
+    },
+    {
+      "scenarioId": "CONV003",
+      "scenarioName": "Pregnant Patient - Prenatal Care",
+      "conversationHistory": [
+        {
+          "role": "assistant",
+          "content": "Hello! I'm the virtual assistant for Even Hospital. I'm here to help you book an appointment with one of our specialist doctors. Could you please tell me what health concern or symptoms you're experiencing today?"
+        },
+        {
+          "role": "user",
+          "content": "Hello, I'm Anjali and I'm pregnant. It's my first time and I'm in my second trimester. I'm looking for a prenatal checkup."
+        },
+        {
+          "role": "assistant",
+          "content": "Which doctor would you like to check availability for?"
+        },
+        {
+          "role": "user",
+          "content": "I'm not really sure who the best doctor for me would be. Could you suggest someone who specializes in prenatal care and has a lot of experience with first time moms like me?"
+        },
+        {
+          "role": "assistant",
+          "content": "Which doctor would you like to check availability for?"
+        },
+        {
+          "role": "user",
+          "content": "I'm not really sure who the best doctor for me would be. Could you suggest someone who specializes in prenatal care and has a lot of experience with first time moms like me?"
+        },
+        {
+          "role": "assistant",
+          "content": "Which doctor would you like to check availability for?"
+        },
+        {
+          "role": "user",
+          "content": "I'm not really sure who the best doctor for me would be. Could you suggest someone who specializes in prenatal care and has a lot of experience with first time moms like me?"
+        },
+        {
+          "role": "assistant",
+          "content": "Which doctor would you like to check availability for?"
+        },
+        {
+          "role": "user",
+          "content": "I'm not really sure who the best doctor for me would be. Could you suggest someone who specializes in prenatal care and has a lot of experience with first time moms like me?"
+        },
+        {
+          "role": "assistant",
+          "content": "Which doctor would you like to check availability for?"
+        },
+        {
+          "role": "user",
+          "content": "I'm not really sure who the best doctor for me would be. Could you suggest someone who specializes in prenatal care and has a lot of experience with first time moms like me?"
+        },
+        {
+          "role": "assistant",
+          "content": "Which doctor would you like to check availability for?"
+        },
+        {
+          "role": "user",
+          "content": "I'm not sure, as I mentioned earlier. Could you recommend any obstetricians who are good with first-time mothers?"
+        },
+        {
+          "role": "assistant",
+          "content": "Which doctor would you like to check availability for?"
+        },
+        {
+          "role": "user",
+          "content": "I'm not sure, as I mentioned earlier. Could you recommend any obstetricians who are good with first-time mothers?"
+        },
+        {
+          "role": "assistant",
+          "content": "Which doctor would you like to check availability for?"
+        },
+        {
+          "role": "user",
+          "content": "I'm not sure, as I mentioned earlier. Could you recommend any obstetricians who are good with first-time mothers?"
+        },
+        {
+          "role": "assistant",
+          "content": "Which doctor would you like to check availability for?"
+        },
+        {
+          "role": "user",
+          "content": "I'm not sure, as I mentioned earlier. Could you recommend any obstetricians who are good with first-time mothers?"
+        },
+        {
+          "role": "assistant",
+          "content": "Which doctor would you like to check availability for?"
+        },
+        {
+          "role": "user",
+          "content": "I'm not sure, as I mentioned earlier. Could you recommend any obstetricians who are good with first-time mothers?"
+        },
+        {
+          "role": "assistant",
+          "content": "Which doctor would you like to check availability for?"
+        },
+        {
+          "role": "user",
+          "content": "I'm not sure, as I mentioned earlier. Could you recommend any obstetricians who are good with first-time mothers?"
+        },
+        {
+          "role": "assistant",
+          "content": "Which doctor would you like to check availability for?"
+        },
+        {
+          "role": "user",
+          "content": "I'm not sure, as I mentioned earlier. Could you recommend any obstetricians who are good with first-time mothers?"
+        },
+        {
+          "role": "assistant",
+          "content": "Which doctor would you like to check availability for?"
+        },
+        {
+          "role": "user",
+          "content": "I'm not sure, as I mentioned earlier. Could you recommend any obstetricians who are good with first-time mothers?"
+        },
+        {
+          "role": "assistant",
+          "content": "Which doctor would you like to check availability for?"
+        },
+        {
+          "role": "user",
+          "content": "I'm not sure, that's why I was hoping you could recommend someone. I just want to ensure I'm in good hands during my pregnancy."
+        },
+        {
+          "role": "assistant",
+          "content": "Based on your symptoms, I recommend seeing one of our specialists:\n\n1. Dr. Dr. Rashmi Nagaraja Naik - Gynecology & Obstetrics\n   22 years experience, Fee: ₹850-₹900\n   Specializes in: Prenatal care, High-risk pregnancy, Delivery management\n\n2. Dr. Dr. Nivedita Jha - Gynecology & Obstetrics\n   14 years experience, Fee: ₹850-₹900\n   Specializes in: Prenatal care, Delivery, Gynecological procedures\n\n3. Dr. Dr. Yashika S - Gynecology & Obstetrics\n   6 years experience, Fee: ₹850-₹900\n   Specializes in: Obstetrics, Gynecological care, Women's health\n\nWould you like to book an appointment with any of these doctors?"
+        }
+      ],
+      "turnCount": 15,
+      "appointmentBooked": false,
+      "evaluation": {
+        "passed": true,
+        "score": 85,
+        "details": {
+          "symptomsGathered": 20,
+          "appropriateRecommendation": 30,
+          "conversationFlow": 20,
+          "efficiency": 10,
+          "completion": 5
+        },
+        "feedback": [
+          "⚠️  Conversation was longer than expected",
+          "⚠️  Appointment was not booked"
+        ]
+      }
+    }
+  ]
+}

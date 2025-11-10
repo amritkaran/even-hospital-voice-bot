@@ -1,0 +1,290 @@
+{
+  "totalScenarios": 3,
+  "passed": 3,
+  "failed": 0,
+  "scenarios": [
+    {
+      "scenarioId": "CONV001",
+      "scenarioName": "Clear Symptoms - Happy Path",
+      "conversationHistory": [
+        {
+          "role": "assistant",
+          "content": "Hello! I'm the virtual assistant for Even Hospital. I'm here to help you book an appointment with one of our specialist doctors. Could you please tell me what health concern or symptoms you're experiencing today?"
+        },
+        {
+          "role": "user",
+          "content": "Hi there. I've been experiencing quite a bit of knee pain recently. I think I need to see a specialist about it."
+        },
+        {
+          "role": "assistant",
+          "content": "Based on your symptoms, I recommend seeing one of our specialists:\n\n1. Dr. Dr. Harish Puranik - Orthopedic Surgery\n   17 years experience, Fee: ₹850-₹900\n   Specializes in: Joint replacement, Arthroscopy, Sports medicine\n\n2. Dr. Dr. Prashanth Nagaraj - Orthopedic Surgery\n   20 years experience, Fee: ₹850-₹900\n   Specializes in: Lower limb reconstruction, Sports injuries, Cartilage repair\n\n3. Dr. Dr. Mithun N Oswal - Orthopedic Surgery\n   13 years experience, Fee: ₹850-₹900\n   Specializes in: Joint replacements, Arthroscopy, Sports injury\n\nWould you like to book an appointment with any of these doctors?"
+        },
+        {
+          "role": "user",
+          "content": "I'm considering Dr. Prashanth Nagaraj since he has experience in sports injuries. Can you tell me about his availability over the coming week?"
+        },
+        {
+          "role": "assistant",
+          "content": "I apologize, but we currently don't have Dermatology specialists at Even Hospital. However, I can help you find doctors for other medical concerns. What symptoms or health issues are you experiencing?"
+        },
+        {
+          "role": "user",
+          "content": "Dr. Prashanth Nagaraj is available from Monday to Friday. His morning timings are from 10:00 AM to 1:00 PM and evening timings are from 4:00 PM to 7:00 PM. Which time slot would you prefer?"
+        },
+        {
+          "role": "assistant",
+          "content": "I apologize, but we currently don't have Dermatology specialists at Even Hospital. However, I can help you find doctors for other medical concerns. What symptoms or health issues are you experiencing?"
+        },
+        {
+          "role": "user",
+          "content": "Let's go for a morning slot. How about Wednesday at 11:00 AM?"
+        },
+        {
+          "role": "assistant",
+          "content": "I'm having trouble understanding your health concern. Could you describe your symptoms more clearly? For example: \"I have knee pain\", \"I need pregnancy care\", or \"My child has a fever\"."
+        },
+        {
+          "role": "user",
+          "content": "Alright, I've scheduled your appointment with Dr. Prashanth Nagaraj for Wednesday at 11:00 AM. Is there anything else you would like to know or discuss?"
+        },
+        {
+          "role": "assistant",
+          "content": "I apologize, but we currently don't have Dermatology specialists at Even Hospital. However, I can help you find doctors for other medical concerns. What symptoms or health issues are you experiencing?"
+        },
+        {
+          "role": "user",
+          "content": "No, that's all I needed. Thank you for your help."
+        }
+      ],
+      "turnCount": 6,
+      "appointmentBooked": false,
+      "evaluation": {
+        "passed": true,
+        "score": 85,
+        "details": {
+          "symptomsGathered": 20,
+          "appropriateRecommendation": 30,
+          "conversationFlow": 20,
+          "efficiency": 10,
+          "completion": 5
+        },
+        "feedback": [
+          "⚠️  Conversation was longer than expected",
+          "⚠️  Appointment was not booked"
+        ]
+      }
+    },
+    {
+      "scenarioId": "CONV002",
+      "scenarioName": "Vague Symptoms - Requires Clarification",
+      "conversationHistory": [
+        {
+          "role": "assistant",
+          "content": "Hello! I'm the virtual assistant for Even Hospital. I'm here to help you book an appointment with one of our specialist doctors. Could you please tell me what health concern or symptoms you're experiencing today?"
+        },
+        {
+          "role": "user",
+          "content": "Oh, hello... I'm not sure, you know, I'm not feeling well. Dunno with what exactly... just bad, like really bad."
+        },
+        {
+          "role": "assistant",
+          "content": "Based on your symptoms, I recommend seeing one of our specialists:\n\n1. Dr. Dr. Ankit P Bhojani - Internal Medicine\n   10 years experience, Fee: ₹850-₹900\n   Specializes in: Internal medicine, Diabetes care, Critical care\n\n2. Dr. Dr. Sriharee Kulkarni - Internal Medicine\n   17 years experience, Fee: ₹850-₹900\n   Specializes in: Internal medicine, Chronic disease, Health screening\n\n3. Dr. Dr. Binita Priyambada - Internal Medicine\n   22 years experience, Fee: ₹850-₹900\n   Specializes in: Internal medicine, Clinical management, Medical emergencies\n\nWould you like to book an appointment with any of these doctors?"
+        },
+        {
+          "role": "user",
+          "content": "Hmm, they all sound like good doctors but, ah, you know, I need to know more. Who is this Dr. Binita Priyambada? How long has she been doing this? Does she handle cases like mine often?"
+        },
+        {
+          "role": "assistant",
+          "content": "Based on your symptoms, I recommend seeing one of our specialists:\n\n1. Dr. Dr. Binita Priyambada - Internal Medicine\n   22 years experience, Fee: ₹850-₹900\n   Specializes in: Internal medicine, Clinical management, Medical emergencies\n\n2. Dr. Dr. Sriharee Kulkarni - Internal Medicine\n   17 years experience, Fee: ₹850-₹900\n   Specializes in: Internal medicine, Chronic disease, Health screening\n\n3. Dr. Dr. Ankit P Bhojani - Internal Medicine\n   10 years experience, Fee: ₹850-₹900\n   Specializes in: Internal medicine, Diabetes care, Critical care\n\nWould you like to book an appointment with any of these doctors?"
+        },
+        {
+          "role": "user",
+          "content": "Dr. Binita Priyambada, oh, she has 22 years of experience, right? That's a lot I guess. Does she deal with patients who have, you know, many chronic conditions like me? What's her availability?"
+        },
+        {
+          "role": "assistant",
+          "content": "Based on your symptoms, I recommend seeing one of our specialists:\n\n1. Dr. Dr. Binita Priyambada - Internal Medicine\n   22 years experience, Fee: ₹850-₹900\n   Specializes in: Internal medicine, Clinical management, Medical emergencies\n\n2. Dr. Dr. Sriharee Kulkarni - Internal Medicine\n   17 years experience, Fee: ₹850-₹900\n   Specializes in: Internal medicine, Chronic disease, Health screening\n\n3. Dr. Dr. Ankit P Bhojani - Internal Medicine\n   10 years experience, Fee: ₹850-₹900\n   Specializes in: Internal medicine, Diabetes care, Critical care\n\nWould you like to book an appointment with any of these doctors?"
+        },
+        {
+          "role": "user",
+          "content": "Yes, Dr. Binita Priyambada has 22 years of experience and she specializes in dealing with patients having multiple chronic conditions. Can I help you book an appointment with her?"
+        },
+        {
+          "role": "assistant",
+          "content": "Based on your symptoms, I recommend seeing one of our specialists:\n\n1. Dr. Dr. Binita Priyambada - Internal Medicine\n   22 years experience, Fee: ₹850-₹900\n   Specializes in: Internal medicine, Clinical management, Medical emergencies\n\n2. Dr. Dr. Sriharee Kulkarni - Internal Medicine\n   17 years experience, Fee: ₹850-₹900\n   Specializes in: Internal medicine, Chronic disease, Health screening\n\n3. Dr. Dr. Ankit P Bhojani - Internal Medicine\n   10 years experience, Fee: ₹850-₹900\n   Specializes in: Internal medicine, Diabetes care, Critical care\n\nWould you like to book an appointment with any of these doctors?"
+        },
+        {
+          "role": "user",
+          "content": "Oh, yes yes. That sounds good. I'd like to see Dr. Binita Priyambada. Can you tell me when she's available?"
+        },
+        {
+          "role": "assistant",
+          "content": "Based on your symptoms, I recommend seeing one of our specialists:\n\n1. Dr. Dr. Binita Priyambada - Internal Medicine\n   22 years experience, Fee: ₹850-₹900\n   Specializes in: Internal medicine, Clinical management, Medical emergencies\n\n2. Dr. Dr. Sriharee Kulkarni - Internal Medicine\n   17 years experience, Fee: ₹850-₹900\n   Specializes in: Internal medicine, Chronic disease, Health screening\n\n3. Dr. Dr. Ankit P Bhojani - Internal Medicine\n   10 years experience, Fee: ₹850-₹900\n   Specializes in: Internal medicine, Diabetes care, Critical care\n\nWould you like to book an appointment with any of these doctors?"
+        },
+        {
+          "role": "user",
+          "content": "Dr. Binita Priyambada is available on weekdays from 10 AM to 4 PM. She also has slots open on Saturday from 10 AM to 1 PM. When would you like to schedule your appointment?"
+        },
+        {
+          "role": "assistant",
+          "content": "Based on your symptoms, I recommend seeing one of our specialists:\n\n1. Dr. Dr. Binita Priyambada - Internal Medicine\n   22 years experience, Fee: ₹850-₹900\n   Specializes in: Internal medicine, Clinical management, Medical emergencies\n\n2. Dr. Dr. Sriharee Kulkarni - Internal Medicine\n   17 years experience, Fee: ₹850-₹900\n   Specializes in: Internal medicine, Chronic disease, Health screening\n\n3. Dr. Dr. Ankit P Bhojani - Internal Medicine\n   10 years experience, Fee: ₹850-₹900\n   Specializes in: Internal medicine, Diabetes care, Critical care\n\nWould you like to book an appointment with any of these doctors?"
+        },
+        {
+          "role": "user",
+          "content": "Ah, weekdays... how about this Friday around, I dunno, 11 AM? Will that work? Is that a good time for her?"
+        },
+        {
+          "role": "assistant",
+          "content": "I'm having trouble understanding your health concern. Could you describe your symptoms more clearly? For example: \"I have knee pain\", \"I need pregnancy care\", or \"My child has a fever\"."
+        },
+        {
+          "role": "user",
+          "content": "I'm sorry, I can't assist with that."
+        },
+        {
+          "role": "assistant",
+          "content": "I'm having trouble understanding your health concern. Could you describe your symptoms more clearly? For example: \"I have knee pain\", \"I need pregnancy care\", or \"My child has a fever\"."
+        },
+        {
+          "role": "user",
+          "content": "Yes, Dr. Binita Priyambada is available this Friday at 11 AM. Shall I go ahead and book this slot for you?"
+        },
+        {
+          "role": "assistant",
+          "content": "Based on your symptoms, I recommend seeing one of our specialists:\n\n1. Dr. Dr. Ankit P Bhojani - Internal Medicine\n   10 years experience, Fee: ₹850-₹900\n   Specializes in: Internal medicine, Diabetes care, Critical care\n\n2. Dr. Dr. Sriharee Kulkarni - Internal Medicine\n   17 years experience, Fee: ₹850-₹900\n   Specializes in: Internal medicine, Chronic disease, Health screening\n\n3. Dr. Dr. Binita Priyambada - Internal Medicine\n   22 years experience, Fee: ₹850-₹900\n   Specializes in: Internal medicine, Clinical management, Medical emergencies\n\nWould you like to book an appointment with any of these doctors?"
+        },
+        {
+          "role": "user",
+          "content": "Ah, yeah, go ahead... book it. That should be okay."
+        },
+        {
+          "role": "assistant",
+          "content": "I'm having trouble understanding your health concern. Could you describe your symptoms more clearly? For example: \"I have knee pain\", \"I need pregnancy care\", or \"My child has a fever\"."
+        },
+        {
+          "role": "user",
+          "content": "I'm sorry, I can't assist with that."
+        },
+        {
+          "role": "assistant",
+          "content": "I'm having trouble understanding your health concern. Could you describe your symptoms more clearly? For example: \"I have knee pain\", \"I need pregnancy care\", or \"My child has a fever\"."
+        },
+        {
+          "role": "user",
+          "content": "Great, I have scheduled your appointment with Dr. Binita Priyambada for this Friday at 11 AM. Is there anything else you need assistance with?"
+        },
+        {
+          "role": "assistant",
+          "content": "Based on your symptoms, I recommend seeing one of our specialists:\n\n1. Dr. Dr. Ankit P Bhojani - Internal Medicine\n   10 years experience, Fee: ₹850-₹900\n   Specializes in: Internal medicine, Diabetes care, Critical care\n\n2. Dr. Dr. Sriharee Kulkarni - Internal Medicine\n   17 years experience, Fee: ₹850-₹900\n   Specializes in: Internal medicine, Chronic disease, Health screening\n\n3. Dr. Dr. Binita Priyambada - Internal Medicine\n   22 years experience, Fee: ₹850-₹900\n   Specializes in: Internal medicine, Clinical management, Medical emergencies\n\nWould you like to book an appointment with any of these doctors?"
+        },
+        {
+          "role": "user",
+          "content": "No, no, that's all. Thank you for your help. I hope I feel better soon."
+        }
+      ],
+      "turnCount": 13,
+      "appointmentBooked": true,
+      "evaluation": {
+        "passed": true,
+        "score": 90,
+        "details": {
+          "symptomsGathered": 20,
+          "appropriateRecommendation": 30,
+          "conversationFlow": 20,
+          "efficiency": 10,
+          "completion": 10
+        },
+        "feedback": [
+          "⚠️  Conversation was longer than expected"
+        ]
+      }
+    },
+    {
+      "scenarioId": "CONV003",
+      "scenarioName": "Pregnant Patient - Prenatal Care",
+      "conversationHistory": [
+        {
+          "role": "assistant",
+          "content": "Hello! I'm the virtual assistant for Even Hospital. I'm here to help you book an appointment with one of our specialist doctors. Could you please tell me what health concern or symptoms you're experiencing today?"
+        },
+        {
+          "role": "user",
+          "content": "Hi, I'm Anjali. I'm pregnant and I'm in my second trimester. This is my first baby, and I'm a bit anxious. I need to schedule a prenatal checkup."
+        },
+        {
+          "role": "assistant",
+          "content": "Based on your symptoms, I recommend seeing one of our specialists:\n\n1. Dr. Dr. Rashmi Nagaraja Naik - Gynecology & Obstetrics\n   22 years experience, Fee: ₹850-₹900\n   Specializes in: Prenatal care, High-risk pregnancy, Delivery management\n\n2. Dr. Dr. Nivedita Jha - Gynecology & Obstetrics\n   14 years experience, Fee: ₹850-₹900\n   Specializes in: Prenatal care, Delivery, Gynecological procedures\n\n3. Dr. Dr. Yashika S - Gynecology & Obstetrics\n   6 years experience, Fee: ₹850-₹900\n   Specializes in: Obstetrics, Gynecological care, Women's health\n\nWould you like to book an appointment with any of these doctors?"
+        },
+        {
+          "role": "user",
+          "content": "Oh, could you tell me a bit more about Dr. Rashmi? Does she have experience with first-time mothers like me? Also, when is her next available appointment?"
+        },
+        {
+          "role": "assistant",
+          "content": "I apologize, but we currently don't have Dermatology specialists at Even Hospital. However, I can help you find doctors for other medical concerns. What symptoms or health issues are you experiencing?"
+        },
+        {
+          "role": "user",
+          "content": "Yes, Dr. Rashmi has extensive experience with first-time mothers and she specializes in prenatal care and high-risk pregnancies. Her next available appointment is on Tuesday, 23rd February at 10:30 AM. Would you like to book this appointment?"
+        },
+        {
+          "role": "assistant",
+          "content": "I apologize, but we currently don't have Dermatology specialists at Even Hospital. However, I can help you find doctors for other medical concerns. What symptoms or health issues are you experiencing?"
+        },
+        {
+          "role": "user",
+          "content": "Yes, Dr. Rashmi is highly experienced with first-time mothers. She has helped many women navigate their pregnancy journey. As for availability, she has an open slot on 23rd February at 10:30 AM. Would you like me to book that for you?"
+        },
+        {
+          "role": "assistant",
+          "content": "I apologize, but we currently don't have Dermatology specialists at Even Hospital. However, I can help you find doctors for other medical concerns. What symptoms or health issues are you experiencing?"
+        },
+        {
+          "role": "user",
+          "content": "Yes, please. I'd like to book that appointment. And, um, do I need to bring anything specific or prepare in any way for this checkup? I'm not really sure what to expect."
+        },
+        {
+          "role": "assistant",
+          "content": "Based on your symptoms, I recommend seeing one of our specialists:\n\n1. Dr. Dr. Ankit P Bhojani - Internal Medicine\n   10 years experience, Fee: ₹850-₹900\n   Specializes in: Internal medicine, Diabetes care, Critical care\n\n2. Dr. Dr. Sriharee Kulkarni - Internal Medicine\n   17 years experience, Fee: ₹850-₹900\n   Specializes in: Internal medicine, Chronic disease, Health screening\n\n3. Dr. Dr. Binita Priyambada - Internal Medicine\n   22 years experience, Fee: ₹850-₹900\n   Specializes in: Internal medicine, Clinical management, Medical emergencies\n\nWould you like to book an appointment with any of these doctors?"
+        },
+        {
+          "role": "user",
+          "content": "Great, I have booked your appointment with Dr. Rashmi for Tuesday, 23rd February at 10:30 AM. It's always good to bring your medical records, any medicines you're currently taking, and a list of questions you may have for the doctor. If there are any other specific instructions, the doctor's office will let you know in advance. Is there anything else you need assistance with?"
+        },
+        {
+          "role": "assistant",
+          "content": "I apologize, but we currently don't have Dermatology specialists at Even Hospital. However, I can help you find doctors for other medical concerns. What symptoms or health issues are you experiencing?"
+        },
+        {
+          "role": "user",
+          "content": "Great, your appointment with Dr. Rashmi is booked for Tuesday, 23rd February at 10:30 AM. It's advisable to bring any previous medical records related to your pregnancy, and note down any questions or concerns you might have to discuss during the appointment. The doctor or her team will guide you further if any specific preparation is needed. Is there anything else you need help with?"
+        },
+        {
+          "role": "assistant",
+          "content": "I apologize, but we currently don't have Dermatology specialists at Even Hospital. However, I can help you find doctors for other medical concerns. What symptoms or health issues are you experiencing?"
+        },
+        {
+          "role": "user",
+          "content": "No, thank you. I think that's all for now. I appreciate your help. I'm feeling a little less nervous now."
+        }
+      ],
+      "turnCount": 8,
+      "appointmentBooked": true,
+      "evaluation": {
+        "passed": true,
+        "score": 90,
+        "details": {
+          "symptomsGathered": 20,
+          "appropriateRecommendation": 30,
+          "conversationFlow": 20,
+          "efficiency": 10,
+          "completion": 10
+        },
+        "feedback": [
+          "⚠️  Conversation was longer than expected"
+        ]
+      }
+    }
+  ]
+}

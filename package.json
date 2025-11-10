@@ -8,7 +8,12 @@
     "start": "node src/index.js",
     "generate-embeddings": "node src/utils/generateEmbeddings.js",
     "test-rag": "node src/services/ragService.js",
-    "dev": "node --watch src/index.js"
+    "dev": "node --watch src/index.js",
+    "test:api": "node tests/api-tests.js",
+    "test:evaluate": "node tests/evaluate.js",
+    "test:appointments": "node tests/appointment-tests.js",
+    "test:conversations": "node tests/conversation-simulator.js",
+    "test:all": "npm run test:api && npm run test:evaluate"
   },
   "keywords": [
     "voice-bot",

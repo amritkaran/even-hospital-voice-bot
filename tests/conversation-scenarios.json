@@ -1,0 +1,332 @@
+{
+  "conversationScenarios": [
+    {
+      "scenarioId": "CONV001",
+      "name": "Clear Symptoms - Happy Path",
+      "patientPersona": {
+        "name": "Priya Sharma",
+        "age": 35,
+        "personality": "Direct and clear communicator",
+        "medicalHistory": "Generally healthy",
+        "techSavvy": true
+      },
+      "initialComplaint": "knee pain",
+      "expectedFlow": [
+        "greet",
+        "describe_symptoms",
+        "get_recommendations",
+        "select_doctor",
+        "book_appointment",
+        "confirm_and_end"
+      ],
+      "expectedOutcome": {
+        "specialty": "Orthopedic Surgery",
+        "doctorBooked": true,
+        "conversationLength": "3-5 turns"
+      },
+      "successCriteria": {
+        "symptomsGathered": true,
+        "doctorRecommended": true,
+        "appointmentBooked": true,
+        "patientSatisfied": true
+      }
+    },
+    {
+      "scenarioId": "CONV002",
+      "name": "Vague Symptoms - Requires Clarification",
+      "patientPersona": {
+        "name": "Rajesh Kumar",
+        "age": 55,
+        "personality": "Vague, needs prompting",
+        "medicalHistory": "Multiple chronic conditions",
+        "techSavvy": false
+      },
+      "initialComplaint": "I'm not feeling well",
+      "expectedFlow": [
+        "greet",
+        "describe_vague_symptoms",
+        "bot_asks_clarification",
+        "provide_specific_symptoms",
+        "get_recommendations",
+        "book_appointment"
+      ],
+      "expectedOutcome": {
+        "specialty": "Internal Medicine",
+        "doctorBooked": true,
+        "conversationLength": "5-8 turns"
+      },
+      "successCriteria": {
+        "botAskedClarifyingQuestions": true,
+        "symptomsGathered": true,
+        "doctorRecommended": true,
+        "appointmentBooked": true
+      }
+    },
+    {
+      "scenarioId": "CONV003",
+      "name": "Pregnant Patient - Prenatal Care",
+      "patientPersona": {
+        "name": "Anjali Reddy",
+        "age": 28,
+        "personality": "Anxious first-time mother",
+        "medicalHistory": "First pregnancy, 2nd trimester",
+        "techSavvy": true
+      },
+      "initialComplaint": "I'm pregnant and need prenatal checkup",
+      "expectedFlow": [
+        "greet",
+        "describe_pregnancy",
+        "get_gynecologist_recommendations",
+        "ask_about_trimester",
+        "select_doctor",
+        "book_appointment"
+      ],
+      "expectedOutcome": {
+        "specialty": "Gynecology & Obstetrics",
+        "doctorBooked": true,
+        "conversationLength": "4-6 turns"
+      },
+      "successCriteria": {
+        "symptomsGathered": true,
+        "appropriateSpecialty": true,
+        "doctorRecommended": true,
+        "appointmentBooked": true
+      }
+    },
+    {
+      "scenarioId": "CONV004",
+      "name": "Elderly Patient - Multiple Issues",
+      "patientPersona": {
+        "name": "Lakshmi Devi",
+        "age": 72,
+        "personality": "Elderly, slow speaker, hearing difficulty",
+        "medicalHistory": "Diabetes, hypertension, arthritis",
+        "techSavvy": false
+      },
+      "initialComplaint": "joint pain and blood sugar issues",
+      "expectedFlow": [
+        "greet",
+        "describe_multiple_symptoms",
+        "bot_prioritizes_symptoms",
+        "recommend_primary_specialty",
+        "suggest_followup_with_other_specialists",
+        "book_appointment"
+      ],
+      "expectedOutcome": {
+        "specialty": "Internal Medicine or Orthopedic Surgery",
+        "doctorBooked": true,
+        "conversationLength": "6-10 turns"
+      },
+      "successCriteria": {
+        "patientFeltHeard": true,
+        "multipleConcernsAcknowledged": true,
+        "appropriatePrioritization": true,
+        "appointmentBooked": true
+      }
+    },
+    {
+      "scenarioId": "CONV005",
+      "name": "Emergency Situation",
+      "patientPersona": {
+        "name": "Vikram Singh",
+        "age": 45,
+        "personality": "Anxious, in pain",
+        "medicalHistory": "No significant history",
+        "techSavvy": true
+      },
+      "initialComplaint": "severe chest pain and shortness of breath",
+      "expectedFlow": [
+        "greet",
+        "describe_emergency_symptoms",
+        "bot_recognizes_emergency",
+        "immediate_recommendation",
+        "urgent_appointment_or_emergency_guidance"
+      ],
+      "expectedOutcome": {
+        "specialty": "Cardiology or Emergency Medicine",
+        "urgency": "high",
+        "conversationLength": "2-4 turns"
+      },
+      "successCriteria": {
+        "emergencyRecognized": true,
+        "urgentActionRecommended": true,
+        "appropriateSpecialty": true,
+        "fastResponse": true
+      }
+    },
+    {
+      "scenarioId": "CONV006",
+      "name": "Child Patient - Parent Calling",
+      "patientPersona": {
+        "name": "Meera Patel (mother)",
+        "age": 32,
+        "personality": "Concerned parent",
+        "medicalHistory": "Healthy 5-year-old son with fever",
+        "techSavvy": true
+      },
+      "initialComplaint": "my child has high fever since yesterday",
+      "expectedFlow": [
+        "greet",
+        "describe_child_symptoms",
+        "bot_asks_child_age",
+        "recommend_pediatrician",
+        "book_appointment"
+      ],
+      "expectedOutcome": {
+        "specialty": "Pediatrics",
+        "doctorBooked": true,
+        "conversationLength": "4-6 turns"
+      },
+      "successCriteria": {
+        "childAgeGathered": true,
+        "appropriateSpecialty": true,
+        "parentReassured": true,
+        "appointmentBooked": true
+      }
+    },
+    {
+      "scenarioId": "CONV007",
+      "name": "Change of Mind - Doctor Preference",
+      "patientPersona": {
+        "name": "Arjun Nair",
+        "age": 40,
+        "personality": "Indecisive, wants options",
+        "medicalHistory": "Lower back pain",
+        "techSavvy": true
+      },
+      "initialComplaint": "back pain for 2 weeks",
+      "expectedFlow": [
+        "greet",
+        "describe_symptoms",
+        "get_recommendations",
+        "ask_about_other_doctors",
+        "compare_doctors",
+        "select_final_doctor",
+        "book_appointment"
+      ],
+      "expectedOutcome": {
+        "specialty": "Orthopedic Surgery",
+        "doctorBooked": true,
+        "conversationLength": "6-9 turns"
+      },
+      "successCriteria": {
+        "multipleOptionsProvided": true,
+        "patientComparedDoctors": true,
+        "finalDecisionMade": true,
+        "appointmentBooked": true
+      }
+    },
+    {
+      "scenarioId": "CONV008",
+      "name": "Unavailable Service - Dental",
+      "patientPersona": {
+        "name": "Sanjay Gupta",
+        "age": 38,
+        "personality": "Direct communicator",
+        "medicalHistory": "Tooth pain",
+        "techSavvy": true
+      },
+      "initialComplaint": "tooth pain and need dentist",
+      "expectedFlow": [
+        "greet",
+        "describe_dental_issue",
+        "bot_explains_service_unavailable",
+        "bot_offers_alternatives",
+        "patient_understands"
+      ],
+      "expectedOutcome": {
+        "serviceAvailable": false,
+        "alternativeOffered": true,
+        "conversationLength": "2-4 turns"
+      },
+      "successCriteria": {
+        "politelyDeclined": true,
+        "explanationProvided": true,
+        "alternativeSuggested": true,
+        "patientUnderstands": true
+      }
+    },
+    {
+      "scenarioId": "CONV009",
+      "name": "Follow-up Appointment",
+      "patientPersona": {
+        "name": "Kavita Joshi",
+        "age": 50,
+        "personality": "Organized, has history with hospital",
+        "medicalHistory": "Previous surgery with Dr. Puranik",
+        "techSavvy": true
+      },
+      "initialComplaint": "I need follow-up with Dr. Puranik",
+      "expectedFlow": [
+        "greet",
+        "request_specific_doctor",
+        "bot_finds_doctor",
+        "check_availability",
+        "book_appointment"
+      ],
+      "expectedOutcome": {
+        "specialty": "Orthopedic Surgery",
+        "specificDoctor": "Dr. Harish Puranik",
+        "doctorBooked": true,
+        "conversationLength": "3-5 turns"
+      },
+      "successCriteria": {
+        "specificDoctorFound": true,
+        "availabilityChecked": true,
+        "appointmentBooked": true,
+        "efficientConversation": true
+      }
+    },
+    {
+      "scenarioId": "CONV010",
+      "name": "Multilingual - Hindi Speaker",
+      "patientPersona": {
+        "name": "Ram Prasad",
+        "age": 60,
+        "personality": "Prefers Hindi, limited English",
+        "medicalHistory": "Knee pain",
+        "techSavvy": false
+      },
+      "initialComplaint": "mera ghutna me bahut dard hai",
+      "expectedFlow": [
+        "greet",
+        "describe_symptoms_hindi",
+        "bot_understands_hindi",
+        "recommend_doctors",
+        "book_appointment"
+      ],
+      "expectedOutcome": {
+        "specialty": "Orthopedic Surgery",
+        "languageHandled": "Hindi",
+        "doctorBooked": true,
+        "conversationLength": "4-6 turns"
+      },
+      "successCriteria": {
+        "hindiUnderstood": true,
+        "appropriateResponse": true,
+        "doctorRecommended": true,
+        "appointmentBooked": true
+      }
+    }
+  ],
+  "evaluationCriteria": {
+    "conversationQuality": {
+      "naturalness": "Is the conversation flow natural and human-like?",
+      "empathy": "Does the bot show appropriate empathy?",
+      "efficiency": "Is the conversation efficient (not too long)?",
+      "clarity": "Are responses clear and easy to understand?"
+    },
+    "functionalCorrectness": {
+      "symptomGathering": "Did bot gather necessary symptom information?",
+      "doctorRecommendation": "Were appropriate doctors recommended?",
+      "appointmentBooking": "Was appointment successfully booked?",
+      "errorHandling": "Were errors handled gracefully?"
+    },
+    "patientExperience": {
+      "satisfaction": "Was patient satisfied with the interaction?",
+      "trust": "Did patient feel confident in recommendations?",
+      "comfort": "Was patient comfortable throughout conversation?",
+      "resolution": "Was patient's issue resolved?"
+    }
+  }
+}

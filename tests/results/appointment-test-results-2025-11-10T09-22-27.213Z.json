@@ -1,0 +1,138 @@
+{
+  "totalTests": 10,
+  "passed": 6,
+  "failed": 1,
+  "testDetails": [
+    {
+      "test": "Check Doctor Availability",
+      "status": "PASSED",
+      "details": "Found 13 slots",
+      "data": {
+        "success": true,
+        "doctor": "Dr. Harish Puranik",
+        "date": "2025-11-11",
+        "availableSlots": [
+          "9:30 AM",
+          "10:00 AM",
+          "10:30 AM",
+          "11:00 AM",
+          "11:30 AM",
+          "2:00 PM",
+          "2:30 PM",
+          "3:00 PM",
+          "3:30 PM",
+          "4:00 PM",
+          "4:30 PM",
+          "5:00 PM",
+          "5:30 PM"
+        ]
+      }
+    },
+    {
+      "test": "Create Appointment with Specific Time",
+      "status": "PASSED",
+      "data": {
+        "success": true,
+        "appointmentId": "APT66547180V6CL",
+        "appointment": {
+          "appointmentId": "APT66547180V6CL",
+          "doctorName": "Dr. Harish Puranik",
+          "patientName": "John Doe",
+          "patientPhone": "+91-9876543210",
+          "appointmentDate": "2025-11-11",
+          "appointmentTime": "9:30 AM",
+          "status": "confirmed",
+          "createdAt": "2025-11-10T09:22:27.180Z",
+          "notes": ""
+        },
+        "message": "Appointment confirmed with Dr. Harish Puranik on 2025-11-11 at 9:30 AM"
+      }
+    },
+    {
+      "test": "Create Appointment Auto-assign Time",
+      "status": "PASSED",
+      "appointmentId": "APT66547183JZRS",
+      "assignedTime": "10:00 AM",
+      "data": {
+        "success": true,
+        "appointmentId": "APT66547183JZRS",
+        "appointment": {
+          "appointmentId": "APT66547183JZRS",
+          "doctorName": "Dr. Harish Puranik",
+          "patientName": "Jane Smith",
+          "patientPhone": "+91-9876543211",
+          "appointmentDate": "2025-11-12",
+          "appointmentTime": "10:00 AM",
+          "status": "confirmed",
+          "createdAt": "2025-11-10T09:22:27.183Z",
+          "notes": ""
+        },
+        "message": "Appointment confirmed with Dr. Harish Puranik on 2025-11-12 at 10:00 AM"
+      }
+    },
+    {
+      "test": "Retrieve Appointment",
+      "status": "PASSED",
+      "data": {
+        "success": true,
+        "appointment": {
+          "appointmentId": "APT66547180V6CL",
+          "doctorName": "Dr. Harish Puranik",
+          "patientName": "John Doe",
+          "patientPhone": "+91-9876543210",
+          "appointmentDate": "2025-11-11",
+          "appointmentTime": "9:30 AM",
+          "status": "confirmed",
+          "createdAt": "2025-11-10T09:22:27.180Z",
+          "notes": ""
+        }
+      }
+    },
+    {
+      "test": "Get Upcoming Appointments",
+      "status": "FAILED",
+      "error": "Request failed with status code 404"
+    },
+    {
+      "test": "Cancel Appointment",
+      "status": "PASSED",
+      "data": {
+        "success": true,
+        "message": "Appointment cancelled successfully",
+        "appointment": {
+          "appointmentId": "APT66547180V6CL",
+          "doctorName": "Dr. Harish Puranik",
+          "patientName": "John Doe",
+          "patientPhone": "+91-9876543210",
+          "appointmentDate": "2025-11-11",
+          "appointmentTime": "9:30 AM",
+          "status": "cancelled",
+          "createdAt": "2025-11-10T09:22:27.180Z",
+          "notes": "",
+          "cancellationReason": "",
+          "cancelledAt": "2025-11-10T09:22:27.201Z"
+        }
+      }
+    },
+    {
+      "test": "Retrieve Cancelled Appointment",
+      "status": "PASSED",
+      "data": {
+        "success": true,
+        "appointment": {
+          "appointmentId": "APT66547180V6CL",
+          "doctorName": "Dr. Harish Puranik",
+          "patientName": "John Doe",
+          "patientPhone": "+91-9876543210",
+          "appointmentDate": "2025-11-11",
+          "appointmentTime": "9:30 AM",
+          "status": "cancelled",
+          "createdAt": "2025-11-10T09:22:27.180Z",
+          "notes": "",
+          "cancellationReason": "",
+          "cancelledAt": "2025-11-10T09:22:27.201Z"
+        }
+      }
+    }
+  ]
+}

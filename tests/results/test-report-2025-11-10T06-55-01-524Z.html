@@ -1,0 +1,1321 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Even Hospital Bot Test Results - 2025-11-10T06-55-01-524Z</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 20px;
+      background: #f5f5f5;
+    }
+    .header {
+      background: #2196F3;
+      color: white;
+      padding: 20px;
+      border-radius: 8px;
+      margin-bottom: 20px;
+    }
+    .metrics {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 15px;
+      margin-bottom: 20px;
+    }
+    .metric-card {
+      background: white;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+    .metric-value {
+      font-size: 32px;
+      font-weight: bold;
+      color: #2196F3;
+    }
+    .metric-label {
+      color: #666;
+      margin-top: 5px;
+    }
+    .test-list {
+      background: white;
+      border-radius: 8px;
+      padding: 20px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+    .test-item {
+      border-left: 4px solid #ddd;
+      padding: 15px;
+      margin-bottom: 10px;
+      background: #f9f9f9;
+    }
+    .test-item.passed {
+      border-left-color: #4CAF50;
+    }
+    .test-item.failed {
+      border-left-color: #f44336;
+    }
+    .test-header {
+      font-weight: bold;
+      margin-bottom: 8px;
+    }
+    .test-details {
+      font-size: 14px;
+      color: #666;
+    }
+    .badge {
+      display: inline-block;
+      padding: 4px 8px;
+      border-radius: 4px;
+      font-size: 12px;
+      font-weight: bold;
+      margin-right: 8px;
+    }
+    .badge.passed {
+      background: #4CAF50;
+      color: white;
+    }
+    .badge.failed {
+      background: #f44336;
+      color: white;
+    }
+    .category {
+      background: #2196F3;
+      color: white;
+    }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <h1>🏥 Even Hospital Voice Bot - Test Results</h1>
+    <p>Test Run: 10/11/2025, 12:24:54 pm</p>
+  </div>
+
+  <div class="metrics">
+    <div class="metric-card">
+      <div class="metric-value">54/60</div>
+      <div class="metric-label">Tests Passed</div>
+    </div>
+    <div class="metric-card">
+      <div class="metric-value">88.33%</div>
+      <div class="metric-label">Doctor Match Accuracy</div>
+    </div>
+    <div class="metric-card">
+      <div class="metric-value">83.33%</div>
+      <div class="metric-label">Specialty Accuracy</div>
+    </div>
+    <div class="metric-card">
+      <div class="metric-value">5ms</div>
+      <div class="metric-label">Avg Response Time</div>
+    </div>
+  </div>
+
+  <div class="test-list">
+    <h2>Test Details</h2>
+    
+      <div class="test-item passed">
+        <div class="test-header">
+          <span class="badge passed">PASSED</span>
+          <span class="badge category">happy_path</span>
+          TC001 - Orthopedic Surgery
+        </div>
+        <div class="test-details">
+          <strong>Symptoms:</strong> "knee pain and difficulty walking"<br>
+          
+            <strong>Doctor Match:</strong> 100%<br>
+            <strong>Specialty Match:</strong> ✓<br>
+            <strong>Response Time:</strong> 4ms<br>
+            
+              <strong>Returned Doctors:</strong> Dr. Harish Puranik, Dr. Prashanth Nagaraj, Dr. Mithun N Oswal
+            
+          
+          
+        </div>
+      </div>
+    
+      <div class="test-item passed">
+        <div class="test-header">
+          <span class="badge passed">PASSED</span>
+          <span class="badge category">happy_path</span>
+          TC002 - General Surgery
+        </div>
+        <div class="test-details">
+          <strong>Symptoms:</strong> "severe stomach pain"<br>
+          
+            <strong>Doctor Match:</strong> 100%<br>
+            <strong>Specialty Match:</strong> ✓<br>
+            <strong>Response Time:</strong> 5ms<br>
+            
+              <strong>Returned Doctors:</strong> Dr. K N Srikanth, Dr. Sunil Kumar V, Dr. Venkateshu Devendran
+            
+          
+          
+        </div>
+      </div>
+    
+      <div class="test-item passed">
+        <div class="test-header">
+          <span class="badge passed">PASSED</span>
+          <span class="badge category">happy_path</span>
+          TC003 - Cardiology
+        </div>
+        <div class="test-details">
+          <strong>Symptoms:</strong> "chest pain and shortness of breath"<br>
+          
+            <strong>Doctor Match:</strong> 100%<br>
+            <strong>Specialty Match:</strong> ✓<br>
+            <strong>Response Time:</strong> 7ms<br>
+            
+              <strong>Returned Doctors:</strong> Dr. Basavaraj Utagi, Dr. Poornima Parasuraman, Dr. K N Srikanth
+            
+          
+          
+        </div>
+      </div>
+    
+      <div class="test-item passed">
+        <div class="test-header">
+          <span class="badge passed">PASSED</span>
+          <span class="badge category">happy_path</span>
+          TC004 - Pediatrics
+        </div>
+        <div class="test-details">
+          <strong>Symptoms:</strong> "my child has high fever"<br>
+          
+            <strong>Doctor Match:</strong> 100%<br>
+            <strong>Specialty Match:</strong> ✓<br>
+            <strong>Response Time:</strong> 12ms<br>
+            
+              <strong>Returned Doctors:</strong> Dr. Sharil Hegde P, Dr. Nishita Das
+            
+          
+          
+        </div>
+      </div>
+    
+      <div class="test-item passed">
+        <div class="test-header">
+          <span class="badge passed">PASSED</span>
+          <span class="badge category">happy_path</span>
+          TC005 - Gynecology & Obstetrics
+        </div>
+        <div class="test-details">
+          <strong>Symptoms:</strong> "I'm pregnant and need prenatal care"<br>
+          
+            <strong>Doctor Match:</strong> 100%<br>
+            <strong>Specialty Match:</strong> ✓<br>
+            <strong>Response Time:</strong> 11ms<br>
+            
+              <strong>Returned Doctors:</strong> Dr. Rashmi Nagaraja Naik, Dr. Nivedita Jha, Dr. Yashika S
+            
+          
+          
+        </div>
+      </div>
+    
+      <div class="test-item passed">
+        <div class="test-header">
+          <span class="badge passed">PASSED</span>
+          <span class="badge category">happy_path</span>
+          TC006 - General Surgery
+        </div>
+        <div class="test-details">
+          <strong>Symptoms:</strong> "I have pain under my right rib cage after eating"<br>
+          
+            <strong>Doctor Match:</strong> 100%<br>
+            <strong>Specialty Match:</strong> ✓<br>
+            <strong>Response Time:</strong> 5ms<br>
+            
+              <strong>Returned Doctors:</strong> Dr. Poornima Parasuraman, Dr. K N Srikanth, Dr. Sunil Kumar V
+            
+          
+          
+        </div>
+      </div>
+    
+      <div class="test-item passed">
+        <div class="test-header">
+          <span class="badge passed">PASSED</span>
+          <span class="badge category">happy_path</span>
+          TC007 - Orthopedic Surgery
+        </div>
+        <div class="test-details">
+          <strong>Symptoms:</strong> "I injured my ACL playing football"<br>
+          
+            <strong>Doctor Match:</strong> 100%<br>
+            <strong>Specialty Match:</strong> ✓<br>
+            <strong>Response Time:</strong> 8ms<br>
+            
+              <strong>Returned Doctors:</strong> Dr. Harish Puranik, Dr. Vikas Chavan, Dr. Prashanth Nagaraj
+            
+          
+          
+        </div>
+      </div>
+    
+      <div class="test-item passed">
+        <div class="test-header">
+          <span class="badge passed">PASSED</span>
+          <span class="badge category">happy_path</span>
+          TC008 - ENT
+        </div>
+        <div class="test-details">
+          <strong>Symptoms:</strong> "I have throat pain and hearing problems"<br>
+          
+            <strong>Doctor Match:</strong> 100%<br>
+            <strong>Specialty Match:</strong> ✗<br>
+            <strong>Response Time:</strong> 2ms<br>
+            
+              <strong>Returned Doctors:</strong> Dr. Animesh Banerjee, Dr. Vikas Chavan, Dr. Prashanth Nagaraj
+            
+          
+          
+        </div>
+      </div>
+    
+      <div class="test-item passed">
+        <div class="test-header">
+          <span class="badge passed">PASSED</span>
+          <span class="badge category">happy_path</span>
+          TC009 - Internal Medicine
+        </div>
+        <div class="test-details">
+          <strong>Symptoms:</strong> "I have diabetes and hypertension that needs management"<br>
+          
+            <strong>Doctor Match:</strong> 100%<br>
+            <strong>Specialty Match:</strong> ✓<br>
+            <strong>Response Time:</strong> 5ms<br>
+            
+              <strong>Returned Doctors:</strong> Dr. Binita Priyambada, Dr. Sriharee Kulkarni, Dr. Ankit P Bhojani
+            
+          
+          
+        </div>
+      </div>
+    
+      <div class="test-item passed">
+        <div class="test-header">
+          <span class="badge passed">PASSED</span>
+          <span class="badge category">happy_path</span>
+          TC010 - Urology
+        </div>
+        <div class="test-details">
+          <strong>Symptoms:</strong> "I have urinary problems and prostate issues"<br>
+          
+            <strong>Doctor Match:</strong> 100%<br>
+            <strong>Specialty Match:</strong> ✓<br>
+            <strong>Response Time:</strong> 4ms<br>
+            
+              <strong>Returned Doctors:</strong> Dr. Vishal Naik
+            
+          
+          
+        </div>
+      </div>
+    
+      <div class="test-item passed">
+        <div class="test-header">
+          <span class="badge passed">PASSED</span>
+          <span class="badge category">complex_medical</span>
+          TC011 - General Surgery
+        </div>
+        <div class="test-details">
+          <strong>Symptoms:</strong> "I have bleeding during bowel movements and severe pain"<br>
+          
+            <strong>Doctor Match:</strong> 100%<br>
+            <strong>Specialty Match:</strong> ✓<br>
+            <strong>Response Time:</strong> 5ms<br>
+            
+              <strong>Returned Doctors:</strong> Dr. Prateek Patil, Dr. Poornima Parasuraman, Dr. K N Srikanth
+            
+          
+          
+        </div>
+      </div>
+    
+      <div class="test-item passed">
+        <div class="test-header">
+          <span class="badge passed">PASSED</span>
+          <span class="badge category">complex_medical</span>
+          TC012 - Orthopedic Surgery
+        </div>
+        <div class="test-details">
+          <strong>Symptoms:</strong> "My joints are degenerating and I have chronic osteoarthritis pain"<br>
+          
+            <strong>Doctor Match:</strong> 100%<br>
+            <strong>Specialty Match:</strong> ✓<br>
+            <strong>Response Time:</strong> 5ms<br>
+            
+              <strong>Returned Doctors:</strong> Dr. Harish Puranik, Dr. Mithun N Oswal, Dr. Prashanth Nagaraj
+            
+          
+          
+        </div>
+      </div>
+    
+      <div class="test-item passed">
+        <div class="test-header">
+          <span class="badge passed">PASSED</span>
+          <span class="badge category">complex_medical</span>
+          TC013 - Gynecology & Obstetrics
+        </div>
+        <div class="test-details">
+          <strong>Symptoms:</strong> "I've been unable to conceive for 2 years"<br>
+          
+            <strong>Doctor Match:</strong> 100%<br>
+            <strong>Specialty Match:</strong> ✓<br>
+            <strong>Response Time:</strong> 7ms<br>
+            
+              <strong>Returned Doctors:</strong> Dr. Rashmi Nagaraja Naik
+            
+          
+          
+        </div>
+      </div>
+    
+      <div class="test-item passed">
+        <div class="test-header">
+          <span class="badge passed">PASSED</span>
+          <span class="badge category">complex_medical</span>
+          TC014 - Orthopedic Surgery
+        </div>
+        <div class="test-details">
+          <strong>Symptoms:</strong> "I have chronic back pain and neck stiffness with numbness"<br>
+          
+            <strong>Doctor Match:</strong> 100%<br>
+            <strong>Specialty Match:</strong> ✓<br>
+            <strong>Response Time:</strong> 4ms<br>
+            
+              <strong>Returned Doctors:</strong> Dr. Vikas Chavan, Dr. Prashanth Nagaraj, Dr. Harish Puranik
+            
+          
+          
+        </div>
+      </div>
+    
+      <div class="test-item passed">
+        <div class="test-header">
+          <span class="badge passed">PASSED</span>
+          <span class="badge category">complex_medical</span>
+          TC015 - General Surgery
+        </div>
+        <div class="test-details">
+          <strong>Symptoms:</strong> "I have a breast lump that needs evaluation"<br>
+          
+            <strong>Doctor Match:</strong> 100%<br>
+            <strong>Specialty Match:</strong> ✓<br>
+            <strong>Response Time:</strong> 6ms<br>
+            
+              <strong>Returned Doctors:</strong> Dr. Poornima Parasuraman, Dr. Prateek Patil, Dr. Venkateshu Devendran
+            
+          
+          
+        </div>
+      </div>
+    
+      <div class="test-item passed">
+        <div class="test-header">
+          <span class="badge passed">PASSED</span>
+          <span class="badge category">edge_cases</span>
+          TC016 - Multiple
+        </div>
+        <div class="test-details">
+          <strong>Symptoms:</strong> "I'm not feeling well but I'm not sure what's wrong"<br>
+          
+            <strong>Doctor Match:</strong> 100%<br>
+            <strong>Specialty Match:</strong> ✓<br>
+            <strong>Response Time:</strong> 4ms<br>
+            
+              <strong>Returned Doctors:</strong> Dr. Ankit P Bhojani, Dr. Sriharee Kulkarni, Dr. Binita Priyambada
+            
+          
+          
+        </div>
+      </div>
+    
+      <div class="test-item passed">
+        <div class="test-header">
+          <span class="badge passed">PASSED</span>
+          <span class="badge category">edge_cases</span>
+          TC017 - Orthopedic Surgery
+        </div>
+        <div class="test-details">
+          <strong>Symptoms:</strong> "I fell and I think I broke my arm"<br>
+          
+            <strong>Doctor Match:</strong> 100%<br>
+            <strong>Specialty Match:</strong> ✓<br>
+            <strong>Response Time:</strong> 5ms<br>
+            
+              <strong>Returned Doctors:</strong> Dr. Prashanth Nagaraj, Dr. Harish Puranik, Dr. Mithun N Oswal
+            
+          
+          
+        </div>
+      </div>
+    
+      <div class="test-item passed">
+        <div class="test-header">
+          <span class="badge passed">PASSED</span>
+          <span class="badge category">edge_cases</span>
+          TC018 - General Surgery
+        </div>
+        <div class="test-details">
+          <strong>Symptoms:</strong> "I have severe pain in my lower right abdomen"<br>
+          
+            <strong>Doctor Match:</strong> 100%<br>
+            <strong>Specialty Match:</strong> ✓<br>
+            <strong>Response Time:</strong> 6ms<br>
+            
+              <strong>Returned Doctors:</strong> Dr. K N Srikanth, Dr. Venkateshu Devendran, Dr. Sunil Kumar V
+            
+          
+          
+        </div>
+      </div>
+    
+      <div class="test-item passed">
+        <div class="test-header">
+          <span class="badge passed">PASSED</span>
+          <span class="badge category">specialty_specific</span>
+          TC019 - Psychiatry
+        </div>
+        <div class="test-details">
+          <strong>Symptoms:</strong> "I have anxiety and depression"<br>
+          
+            <strong>Doctor Match:</strong> 100%<br>
+            <strong>Specialty Match:</strong> ✓<br>
+            <strong>Response Time:</strong> 4ms<br>
+            
+              <strong>Returned Doctors:</strong> Dr. Harshitha V Handral
+            
+          
+          
+        </div>
+      </div>
+    
+      <div class="test-item passed">
+        <div class="test-header">
+          <span class="badge passed">PASSED</span>
+          <span class="badge category">specialty_specific</span>
+          TC020 - Nephrology
+        </div>
+        <div class="test-details">
+          <strong>Symptoms:</strong> "I have kidney problems and need dialysis management"<br>
+          
+            <strong>Doctor Match:</strong> 100%<br>
+            <strong>Specialty Match:</strong> ✓<br>
+            <strong>Response Time:</strong> 4ms<br>
+            
+              <strong>Returned Doctors:</strong> Dr. Naveen Kumar K L, Dr. Girish Namagondlu Seetharamaiah
+            
+          
+          
+        </div>
+      </div>
+    
+      <div class="test-item passed">
+        <div class="test-header">
+          <span class="badge passed">PASSED</span>
+          <span class="badge category">specialty_specific</span>
+          TC021 - Gastroenterology
+        </div>
+        <div class="test-details">
+          <strong>Symptoms:</strong> "I have digestive problems and stomach issues"<br>
+          
+            <strong>Doctor Match:</strong> 100%<br>
+            <strong>Specialty Match:</strong> ✓<br>
+            <strong>Response Time:</strong> 5ms<br>
+            
+              <strong>Returned Doctors:</strong> Dr. Puneeth B S
+            
+          
+          
+        </div>
+      </div>
+    
+      <div class="test-item passed">
+        <div class="test-header">
+          <span class="badge passed">PASSED</span>
+          <span class="badge category">specialty_specific</span>
+          TC022 - Dietetics & Nutrition
+        </div>
+        <div class="test-details">
+          <strong>Symptoms:</strong> "I need diet plan for weight management"<br>
+          
+            <strong>Doctor Match:</strong> 100%<br>
+            <strong>Specialty Match:</strong> ✗<br>
+            <strong>Response Time:</strong> 4ms<br>
+            
+              <strong>Returned Doctors:</strong> Ms. Kamar Afshan M, Dr. Sonali Kulkarni
+            
+          
+          
+        </div>
+      </div>
+    
+      <div class="test-item passed">
+        <div class="test-header">
+          <span class="badge passed">PASSED</span>
+          <span class="badge category">specialty_specific</span>
+          TC023 - Emergency Medicine
+        </div>
+        <div class="test-details">
+          <strong>Symptoms:</strong> "I have a medical emergency with acute symptoms"<br>
+          
+            <strong>Doctor Match:</strong> 100%<br>
+            <strong>Specialty Match:</strong> ✓<br>
+            <strong>Response Time:</strong> 5ms<br>
+            
+              <strong>Returned Doctors:</strong> Dr. Gautham Shankar Saseendran, Dr. Sharil Hegde P, Dr. Nishita Das
+            
+          
+          
+        </div>
+      </div>
+    
+      <div class="test-item passed">
+        <div class="test-header">
+          <span class="badge passed">PASSED</span>
+          <span class="badge category">happy_path</span>
+          TC024 - General Surgery
+        </div>
+        <div class="test-details">
+          <strong>Symptoms:</strong> "I have a bulge in my groin area"<br>
+          
+            <strong>Doctor Match:</strong> 100%<br>
+            <strong>Specialty Match:</strong> ✓<br>
+            <strong>Response Time:</strong> 5ms<br>
+            
+              <strong>Returned Doctors:</strong> Dr. Prateek Patil, Dr. Venkateshu Devendran, Dr. Sunil Kumar V
+            
+          
+          
+        </div>
+      </div>
+    
+      <div class="test-item passed">
+        <div class="test-header">
+          <span class="badge passed">PASSED</span>
+          <span class="badge category">happy_path</span>
+          TC025 - General Surgery
+        </div>
+        <div class="test-details">
+          <strong>Symptoms:</strong> "I have a thyroid nodule that needs surgery"<br>
+          
+            <strong>Doctor Match:</strong> 100%<br>
+            <strong>Specialty Match:</strong> ✓<br>
+            <strong>Response Time:</strong> 4ms<br>
+            
+              <strong>Returned Doctors:</strong> Dr. Poornima Parasuraman
+            
+          
+          
+        </div>
+      </div>
+    
+      <div class="test-item passed">
+        <div class="test-header">
+          <span class="badge passed">PASSED</span>
+          <span class="badge category">happy_path</span>
+          TC026 - Pediatrics
+        </div>
+        <div class="test-details">
+          <strong>Symptoms:</strong> "my newborn needs screening tests and follow-up"<br>
+          
+            <strong>Doctor Match:</strong> 100%<br>
+            <strong>Specialty Match:</strong> ✓<br>
+            <strong>Response Time:</strong> 3ms<br>
+            
+              <strong>Returned Doctors:</strong> Dr. Sharil Hegde P, Dr. Nishita Das
+            
+          
+          
+        </div>
+      </div>
+    
+      <div class="test-item passed">
+        <div class="test-header">
+          <span class="badge passed">PASSED</span>
+          <span class="badge category">happy_path</span>
+          TC027 - Gynecology & Obstetrics
+        </div>
+        <div class="test-details">
+          <strong>Symptoms:</strong> "I have irregular periods and heavy menstrual bleeding"<br>
+          
+            <strong>Doctor Match:</strong> 100%<br>
+            <strong>Specialty Match:</strong> ✓<br>
+            <strong>Response Time:</strong> 3ms<br>
+            
+              <strong>Returned Doctors:</strong> Dr. Rashmi Nagaraja Naik, Dr. Nivedita Jha, Dr. Yashika S
+            
+          
+          
+        </div>
+      </div>
+    
+      <div class="test-item passed">
+        <div class="test-header">
+          <span class="badge passed">PASSED</span>
+          <span class="badge category">complex_medical</span>
+          TC028 - General Surgery
+        </div>
+        <div class="test-details">
+          <strong>Symptoms:</strong> "I have blood in my stool and suspect colorectal issues"<br>
+          
+            <strong>Doctor Match:</strong> 100%<br>
+            <strong>Specialty Match:</strong> ✓<br>
+            <strong>Response Time:</strong> 5ms<br>
+            
+              <strong>Returned Doctors:</strong> Dr. Poornima Parasuraman, Dr. K N Srikanth, Dr. Prateek Patil
+            
+          
+          
+        </div>
+      </div>
+    
+      <div class="test-item passed">
+        <div class="test-header">
+          <span class="badge passed">PASSED</span>
+          <span class="badge category">multi_turn</span>
+          TC029 - Orthopedic Surgery
+        </div>
+        <div class="test-details">
+          <strong>Symptoms:</strong> "My shoulder hurts"<br>
+          
+            <strong>Doctor Match:</strong> 100%<br>
+            <strong>Specialty Match:</strong> ✓<br>
+            <strong>Response Time:</strong> 3ms<br>
+            
+              <strong>Returned Doctors:</strong> Dr. Harish Puranik, Dr. Prashanth Nagaraj, Dr. Mithun N Oswal
+            
+          
+          
+        </div>
+      </div>
+    
+      <div class="test-item passed">
+        <div class="test-header">
+          <span class="badge passed">PASSED</span>
+          <span class="badge category">multi_turn</span>
+          TC030 - Internal Medicine
+        </div>
+        <div class="test-details">
+          <strong>Symptoms:</strong> "I need a general health checkup"<br>
+          
+            <strong>Doctor Match:</strong> 100%<br>
+            <strong>Specialty Match:</strong> ✓<br>
+            <strong>Response Time:</strong> 6ms<br>
+            
+              <strong>Returned Doctors:</strong> Dr. Ankit P Bhojani, Dr. Sriharee Kulkarni, Dr. Binita Priyambada
+            
+          
+          
+        </div>
+      </div>
+    
+      <div class="test-item failed">
+        <div class="test-header">
+          <span class="badge failed">FAILED</span>
+          <span class="badge category">error_handling</span>
+          TC031 - Unknown
+        </div>
+        <div class="test-details">
+          <strong>Symptoms:</strong> "I need a dental checkup"<br>
+          
+            <strong>Doctor Match:</strong> 0%<br>
+            <strong>Specialty Match:</strong> ✗<br>
+            <strong>Response Time:</strong> 5ms<br>
+            
+              <strong>Returned Doctors:</strong> Dr. Ankit P Bhojani, Dr. Sriharee Kulkarni, Dr. Binita Priyambada
+            
+          
+          
+        </div>
+      </div>
+    
+      <div class="test-item failed">
+        <div class="test-header">
+          <span class="badge failed">FAILED</span>
+          <span class="badge category">error_handling</span>
+          TC032 - Multiple
+        </div>
+        <div class="test-details">
+          <strong>Symptoms:</strong> "xyz abc random words"<br>
+          
+            <strong>Doctor Match:</strong> 0%<br>
+            <strong>Specialty Match:</strong> ✗<br>
+            <strong>Response Time:</strong> 5ms<br>
+            
+              <strong>Returned Doctors:</strong> Dr. K N Srikanth, Dr. Sunil Kumar V, Dr. Venkateshu Devendran
+            
+          
+          
+        </div>
+      </div>
+    
+      <div class="test-item passed">
+        <div class="test-header">
+          <span class="badge passed">PASSED</span>
+          <span class="badge category">happy_path</span>
+          TC033 - General Surgery
+        </div>
+        <div class="test-details">
+          <strong>Symptoms:</strong> "I have severe pain during bowel movements and anal fissure"<br>
+          
+            <strong>Doctor Match:</strong> 100%<br>
+            <strong>Specialty Match:</strong> ✓<br>
+            <strong>Response Time:</strong> 5ms<br>
+            
+              <strong>Returned Doctors:</strong> Dr. Prateek Patil, Dr. Poornima Parasuraman
+            
+          
+          
+        </div>
+      </div>
+    
+      <div class="test-item passed">
+        <div class="test-header">
+          <span class="badge passed">PASSED</span>
+          <span class="badge category">happy_path</span>
+          TC034 - Orthopedic Surgery
+        </div>
+        <div class="test-details">
+          <strong>Symptoms:</strong> "My hip hurts when I walk"<br>
+          
+            <strong>Doctor Match:</strong> 100%<br>
+            <strong>Specialty Match:</strong> ✓<br>
+            <strong>Response Time:</strong> 5ms<br>
+            
+              <strong>Returned Doctors:</strong> Dr. Harish Puranik, Dr. Prashanth Nagaraj, Dr. Mithun N Oswal
+            
+          
+          
+        </div>
+      </div>
+    
+      <div class="test-item passed">
+        <div class="test-header">
+          <span class="badge passed">PASSED</span>
+          <span class="badge category">happy_path</span>
+          TC035 - Pediatrics
+        </div>
+        <div class="test-details">
+          <strong>Symptoms:</strong> "my child needs immunization and regular checkup"<br>
+          
+            <strong>Doctor Match:</strong> 100%<br>
+            <strong>Specialty Match:</strong> ✓<br>
+            <strong>Response Time:</strong> 4ms<br>
+            
+              <strong>Returned Doctors:</strong> Dr. Sharil Hegde P, Dr. Nishita Das
+            
+          
+          
+        </div>
+      </div>
+    
+      <div class="test-item passed">
+        <div class="test-header">
+          <span class="badge passed">PASSED</span>
+          <span class="badge category">complex_medical</span>
+          TC036 - Gynecology & Obstetrics
+        </div>
+        <div class="test-details">
+          <strong>Symptoms:</strong> "I'm in my third trimester and need delivery arrangements"<br>
+          
+            <strong>Doctor Match:</strong> 100%<br>
+            <strong>Specialty Match:</strong> ✓<br>
+            <strong>Response Time:</strong> 5ms<br>
+            
+              <strong>Returned Doctors:</strong> Dr. Rashmi Nagaraja Naik, Dr. Nivedita Jha, Dr. Yashika S
+            
+          
+          
+        </div>
+      </div>
+    
+      <div class="test-item passed">
+        <div class="test-header">
+          <span class="badge passed">PASSED</span>
+          <span class="badge category">happy_path</span>
+          TC037 - General Surgery
+        </div>
+        <div class="test-details">
+          <strong>Symptoms:</strong> "I have lower abdomen pain and fever"<br>
+          
+            <strong>Doctor Match:</strong> 100%<br>
+            <strong>Specialty Match:</strong> ✓<br>
+            <strong>Response Time:</strong> 5ms<br>
+            
+              <strong>Returned Doctors:</strong> Dr. Sunil Kumar V, Dr. Venkateshu Devendran, Dr. K N Srikanth
+            
+          
+          
+        </div>
+      </div>
+    
+      <div class="test-item passed">
+        <div class="test-header">
+          <span class="badge passed">PASSED</span>
+          <span class="badge category">happy_path</span>
+          TC038 - ENT
+        </div>
+        <div class="test-details">
+          <strong>Symptoms:</strong> "I have nasal issues and ear infection"<br>
+          
+            <strong>Doctor Match:</strong> 100%<br>
+            <strong>Specialty Match:</strong> ✗<br>
+            <strong>Response Time:</strong> 4ms<br>
+            
+              <strong>Returned Doctors:</strong> Dr. Animesh Banerjee
+            
+          
+          
+        </div>
+      </div>
+    
+      <div class="test-item passed">
+        <div class="test-header">
+          <span class="badge passed">PASSED</span>
+          <span class="badge category">multi_turn</span>
+          TC039 - Cardiology
+        </div>
+        <div class="test-details">
+          <strong>Symptoms:</strong> "I feel chest discomfort sometimes"<br>
+          
+            <strong>Doctor Match:</strong> 100%<br>
+            <strong>Specialty Match:</strong> ✓<br>
+            <strong>Response Time:</strong> 4ms<br>
+            
+              <strong>Returned Doctors:</strong> Dr. Basavaraj Utagi, Dr. Poornima Parasuraman, Dr. K N Srikanth
+            
+          
+          
+        </div>
+      </div>
+    
+      <div class="test-item passed">
+        <div class="test-header">
+          <span class="badge passed">PASSED</span>
+          <span class="badge category">multi_turn</span>
+          TC040 - General Surgery
+        </div>
+        <div class="test-details">
+          <strong>Symptoms:</strong> "I have piles"<br>
+          
+            <strong>Doctor Match:</strong> 100%<br>
+            <strong>Specialty Match:</strong> ✓<br>
+            <strong>Response Time:</strong> 8ms<br>
+            
+              <strong>Returned Doctors:</strong> Dr. Prateek Patil, Dr. Poornima Parasuraman
+            
+          
+          
+        </div>
+      </div>
+    
+      <div class="test-item failed">
+        <div class="test-header">
+          <span class="badge failed">FAILED</span>
+          <span class="badge category">specialty_specific</span>
+          TC041 - Orthopedic Surgery
+        </div>
+        <div class="test-details">
+          <strong>Symptoms:</strong> "mera ghutna me bahut dard hai"<br>
+          
+            <strong>Doctor Match:</strong> 0%<br>
+            <strong>Specialty Match:</strong> ✗<br>
+            <strong>Response Time:</strong> 5ms<br>
+            
+              <strong>Returned Doctors:</strong> Dr. Rashmi Nagaraja Naik, Dr. Nivedita Jha, Dr. Yashika S
+            
+          
+          
+        </div>
+      </div>
+    
+      <div class="test-item passed">
+        <div class="test-header">
+          <span class="badge passed">PASSED</span>
+          <span class="badge category">happy_path</span>
+          TC042 - Internal Medicine
+        </div>
+        <div class="test-details">
+          <strong>Symptoms:</strong> "I want preventive health screening"<br>
+          
+            <strong>Doctor Match:</strong> 100%<br>
+            <strong>Specialty Match:</strong> ✓<br>
+            <strong>Response Time:</strong> 6ms<br>
+            
+              <strong>Returned Doctors:</strong> Dr. Ankit P Bhojani, Dr. Sriharee Kulkarni, Dr. Binita Priyambada
+            
+          
+          
+        </div>
+      </div>
+    
+      <div class="test-item passed">
+        <div class="test-header">
+          <span class="badge passed">PASSED</span>
+          <span class="badge category">edge_cases</span>
+          TC043 - Multiple
+        </div>
+        <div class="test-details">
+          <strong>Symptoms:</strong> "I have multiple health issues - diabetes, kidney problems, and heart concerns"<br>
+          
+            <strong>Doctor Match:</strong> 100%<br>
+            <strong>Specialty Match:</strong> ✓<br>
+            <strong>Response Time:</strong> 2ms<br>
+            
+              <strong>Returned Doctors:</strong> Dr. Binita Priyambada, Dr. Sriharee Kulkarni, Dr. Ankit P Bhojani
+            
+          
+          
+        </div>
+      </div>
+    
+      <div class="test-item passed">
+        <div class="test-header">
+          <span class="badge passed">PASSED</span>
+          <span class="badge category">complex_medical</span>
+          TC044 - Orthopedic Surgery
+        </div>
+        <div class="test-details">
+          <strong>Symptoms:</strong> "I injured my ligament while playing cricket"<br>
+          
+            <strong>Doctor Match:</strong> 100%<br>
+            <strong>Specialty Match:</strong> ✓<br>
+            <strong>Response Time:</strong> 3ms<br>
+            
+              <strong>Returned Doctors:</strong> Dr. Harish Puranik, Dr. Vikas Chavan, Dr. Prashanth Nagaraj
+            
+          
+          
+        </div>
+      </div>
+    
+      <div class="test-item passed">
+        <div class="test-header">
+          <span class="badge passed">PASSED</span>
+          <span class="badge category">happy_path</span>
+          TC045 - Urology
+        </div>
+        <div class="test-details">
+          <strong>Symptoms:</strong> "I have kidney issues and urinary tract problems"<br>
+          
+            <strong>Doctor Match:</strong> 100%<br>
+            <strong>Specialty Match:</strong> ✓<br>
+            <strong>Response Time:</strong> 3ms<br>
+            
+              <strong>Returned Doctors:</strong> Dr. Vishal Naik, Dr. Naveen Kumar K L, Dr. Girish Namagondlu Seetharamaiah
+            
+          
+          
+        </div>
+      </div>
+    
+      <div class="test-item failed">
+        <div class="test-header">
+          <span class="badge failed">FAILED</span>
+          <span class="badge category">error_handling</span>
+          TC046 - Unknown
+        </div>
+        <div class="test-details">
+          <strong>Symptoms:</strong> "I want to book an appointment but don't remember doctor's name"<br>
+          
+            <strong>Doctor Match:</strong> 0%<br>
+            <strong>Specialty Match:</strong> ✗<br>
+            <strong>Response Time:</strong> 5ms<br>
+            
+              <strong>Returned Doctors:</strong> Dr. Ankit P Bhojani, Dr. Sriharee Kulkarni, Dr. Binita Priyambada
+            
+          
+          
+        </div>
+      </div>
+    
+      <div class="test-item passed">
+        <div class="test-header">
+          <span class="badge passed">PASSED</span>
+          <span class="badge category">happy_path</span>
+          TC047 - Gynecology & Obstetrics
+        </div>
+        <div class="test-details">
+          <strong>Symptoms:</strong> "I'm in my second trimester and need pregnancy monitoring"<br>
+          
+            <strong>Doctor Match:</strong> 100%<br>
+            <strong>Specialty Match:</strong> ✓<br>
+            <strong>Response Time:</strong> 6ms<br>
+            
+              <strong>Returned Doctors:</strong> Dr. Rashmi Nagaraja Naik, Dr. Nivedita Jha, Dr. Yashika S
+            
+          
+          
+        </div>
+      </div>
+    
+      <div class="test-item passed">
+        <div class="test-header">
+          <span class="badge passed">PASSED</span>
+          <span class="badge category">specialty_specific</span>
+          TC048 - Dietetics & Nutrition
+        </div>
+        <div class="test-details">
+          <strong>Symptoms:</strong> "I need dietary guidance and personalized nutrition plan"<br>
+          
+            <strong>Doctor Match:</strong> 100%<br>
+            <strong>Specialty Match:</strong> ✗<br>
+            <strong>Response Time:</strong> 6ms<br>
+            
+              <strong>Returned Doctors:</strong> Ms. Kamar Afshan M, Dr. Sonali Kulkarni
+            
+          
+          
+        </div>
+      </div>
+    
+      <div class="test-item passed">
+        <div class="test-header">
+          <span class="badge passed">PASSED</span>
+          <span class="badge category">multi_turn</span>
+          TC049 - Pediatrics
+        </div>
+        <div class="test-details">
+          <strong>Symptoms:</strong> "my baby is not feeding well"<br>
+          
+            <strong>Doctor Match:</strong> 100%<br>
+            <strong>Specialty Match:</strong> ✓<br>
+            <strong>Response Time:</strong> 5ms<br>
+            
+              <strong>Returned Doctors:</strong> Dr. Sharil Hegde P, Dr. Nishita Das
+            
+          
+          
+        </div>
+      </div>
+    
+      <div class="test-item passed">
+        <div class="test-header">
+          <span class="badge passed">PASSED</span>
+          <span class="badge category">happy_path</span>
+          TC050 - Psychiatry
+        </div>
+        <div class="test-details">
+          <strong>Symptoms:</strong> "I need psychological support and mental health evaluation"<br>
+          
+            <strong>Doctor Match:</strong> 100%<br>
+            <strong>Specialty Match:</strong> ✓<br>
+            <strong>Response Time:</strong> 8ms<br>
+            
+              <strong>Returned Doctors:</strong> Dr. Harshitha V Handral
+            
+          
+          
+        </div>
+      </div>
+    
+      <div class="test-item passed">
+        <div class="test-header">
+          <span class="badge passed">PASSED</span>
+          <span class="badge category">complex_medical</span>
+          TC051 - Nephrology
+        </div>
+        <div class="test-details">
+          <strong>Symptoms:</strong> "I have chronic kidney disease and need renal evaluation"<br>
+          
+            <strong>Doctor Match:</strong> 100%<br>
+            <strong>Specialty Match:</strong> ✓<br>
+            <strong>Response Time:</strong> 5ms<br>
+            
+              <strong>Returned Doctors:</strong> Dr. Naveen Kumar K L, Dr. Girish Namagondlu Seetharamaiah
+            
+          
+          
+        </div>
+      </div>
+    
+      <div class="test-item passed">
+        <div class="test-header">
+          <span class="badge passed">PASSED</span>
+          <span class="badge category">happy_path</span>
+          TC052 - Gastroenterology
+        </div>
+        <div class="test-details">
+          <strong>Symptoms:</strong> "I have GI symptoms and intestinal issues"<br>
+          
+            <strong>Doctor Match:</strong> 100%<br>
+            <strong>Specialty Match:</strong> ✓<br>
+            <strong>Response Time:</strong> 3ms<br>
+            
+              <strong>Returned Doctors:</strong> Dr. Puneeth B S, Dr. Poornima Parasuraman, Dr. K N Srikanth
+            
+          
+          
+        </div>
+      </div>
+    
+      <div class="test-item failed">
+        <div class="test-header">
+          <span class="badge failed">FAILED</span>
+          <span class="badge category">edge_cases</span>
+          TC053 - Orthopedic Surgery
+        </div>
+        <div class="test-details">
+          <strong>Symptoms:</strong> "nanna kai melu aagide"<br>
+          
+            <strong>Doctor Match:</strong> 0%<br>
+            <strong>Specialty Match:</strong> ✗<br>
+            <strong>Response Time:</strong> 4ms<br>
+            
+              <strong>Returned Doctors:</strong> Dr. Naveen Kumar K L, Dr. Girish Namagondlu Seetharamaiah, Dr. K N Srikanth
+            
+          
+          
+        </div>
+      </div>
+    
+      <div class="test-item passed">
+        <div class="test-header">
+          <span class="badge passed">PASSED</span>
+          <span class="badge category">happy_path</span>
+          TC054 - Emergency Medicine
+        </div>
+        <div class="test-details">
+          <strong>Symptoms:</strong> "I need urgent medical care for acute symptoms"<br>
+          
+            <strong>Doctor Match:</strong> 100%<br>
+            <strong>Specialty Match:</strong> ✓<br>
+            <strong>Response Time:</strong> 5ms<br>
+            
+              <strong>Returned Doctors:</strong> Dr. Gautham Shankar Saseendran, Dr. Sharil Hegde P, Dr. Nishita Das
+            
+          
+          
+        </div>
+      </div>
+    
+      <div class="test-item passed">
+        <div class="test-header">
+          <span class="badge passed">PASSED</span>
+          <span class="badge category">multi_turn</span>
+          TC055 - Internal Medicine
+        </div>
+        <div class="test-details">
+          <strong>Symptoms:</strong> "I don't feel good"<br>
+          
+            <strong>Doctor Match:</strong> 100%<br>
+            <strong>Specialty Match:</strong> ✓<br>
+            <strong>Response Time:</strong> 6ms<br>
+            
+              <strong>Returned Doctors:</strong> Dr. Ankit P Bhojani, Dr. Sriharee Kulkarni, Dr. Binita Priyambada
+            
+          
+          
+        </div>
+      </div>
+    
+      <div class="test-item passed">
+        <div class="test-header">
+          <span class="badge passed">PASSED</span>
+          <span class="badge category">complex_medical</span>
+          TC056 - General Surgery
+        </div>
+        <div class="test-details">
+          <strong>Symptoms:</strong> "I need bariatric surgery for weight loss"<br>
+          
+            <strong>Doctor Match:</strong> 0%<br>
+            <strong>Specialty Match:</strong> ✓<br>
+            <strong>Response Time:</strong> 4ms<br>
+            
+              <strong>Returned Doctors:</strong> Dr. Poornima Parasuraman, Ms. Kamar Afshan M, Dr. Sonali Kulkarni
+            
+          
+          
+        </div>
+      </div>
+    
+      <div class="test-item passed">
+        <div class="test-header">
+          <span class="badge passed">PASSED</span>
+          <span class="badge category">edge_cases</span>
+          TC057 - Multiple
+        </div>
+        <div class="test-details">
+          <strong>Symptoms:</strong> "I'm a senior citizen and need comprehensive health evaluation"<br>
+          
+            <strong>Doctor Match:</strong> 100%<br>
+            <strong>Specialty Match:</strong> ✓<br>
+            <strong>Response Time:</strong> 6ms<br>
+            
+              <strong>Returned Doctors:</strong> Dr. Ankit P Bhojani, Dr. Sriharee Kulkarni, Dr. Binita Priyambada
+            
+          
+          
+        </div>
+      </div>
+    
+      <div class="test-item passed">
+        <div class="test-header">
+          <span class="badge passed">PASSED</span>
+          <span class="badge category">happy_path</span>
+          TC058 - Orthopedic Surgery
+        </div>
+        <div class="test-details">
+          <strong>Symptoms:</strong> "I have elbow pain and stiffness"<br>
+          
+            <strong>Doctor Match:</strong> 100%<br>
+            <strong>Specialty Match:</strong> ✓<br>
+            <strong>Response Time:</strong> 4ms<br>
+            
+              <strong>Returned Doctors:</strong> Dr. Harish Puranik, Dr. Prashanth Nagaraj, Dr. Mithun N Oswal
+            
+          
+          
+        </div>
+      </div>
+    
+      <div class="test-item failed">
+        <div class="test-header">
+          <span class="badge failed">FAILED</span>
+          <span class="badge category">error_handling</span>
+          TC059 - Unknown
+        </div>
+        <div class="test-details">
+          <strong>Symptoms:</strong> "Can I get a doctor's appointment for tomorrow at 9 AM?"<br>
+          
+            <strong>Doctor Match:</strong> 0%<br>
+            <strong>Specialty Match:</strong> ✗<br>
+            <strong>Response Time:</strong> 4ms<br>
+            
+              <strong>Returned Doctors:</strong> Dr. Gautham Shankar Saseendran, Dr. Ankit P Bhojani, Dr. Sriharee Kulkarni
+            
+          
+          
+        </div>
+      </div>
+    
+      <div class="test-item passed">
+        <div class="test-header">
+          <span class="badge passed">PASSED</span>
+          <span class="badge category">complex_medical</span>
+          TC060 - Cardiology
+        </div>
+        <div class="test-details">
+          <strong>Symptoms:</strong> "I'm concerned about my heart health and need cardiac evaluation with ECG"<br>
+          
+            <strong>Doctor Match:</strong> 100%<br>
+            <strong>Specialty Match:</strong> ✓<br>
+            <strong>Response Time:</strong> 5ms<br>
+            
+              <strong>Returned Doctors:</strong> Dr. Basavaraj Utagi
+            
+          
+          
+        </div>
+      </div>
+    
+  </div>
+</body>
+</html>
+  

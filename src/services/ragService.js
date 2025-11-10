@@ -184,6 +184,225 @@ class RAGService {
   }
 
   /**
+   * Translate common Hindi/Kannada medical phrases to English
+   */
+  translateQuery(query) {
+    const translations = {
+      // Hindi translations
+      'mera': 'my',
+      'mere': 'my',
+      'ghutna': 'knee',
+      'ghutne': 'knee',
+      'dard': 'pain',
+      'bahut': 'very',
+      'hai': 'is',
+      'me': 'in',
+      'pet': 'stomach',
+      'sar': 'head',
+      'peeth': 'back',
+      'kamar': 'back',
+      'pair': 'leg',
+      'hath': 'hand',
+      'kandha': 'shoulder',
+
+      // Kannada translations
+      'nanna': 'my',
+      'nanage': 'to me',
+      'kai': 'hand',
+      'kaal': 'leg',
+      'melu': 'swelling',
+      'aagide': 'is swollen',
+      'novu': 'pain',
+      'tale': 'head',
+      'hotte': 'stomach',
+      '等': 'etc'
+    };
+
+    let translatedQuery = query.toLowerCase();
+    let wasTranslated = false;
+
+    // Check if query contains non-ASCII characters (likely Hindi/Kannada)
+    const hasNonAscii = /[^\x00-\x7F]/.test(query);
+
+    if (hasNonAscii) {
+      // For queries with native scripts, provide common pattern matching
+      const patterns = [
+        { regex: /घुटन|ghutna|ghutne/gi, replacement: 'knee', desc: 'knee' },
+        { regex: /दर्द|dard|novu/gi, replacement: 'pain', desc: 'pain' },
+        { regex: /हाथ|हात|हत्थ|kai/gi, replacement: 'hand', desc: 'hand' },
+        { regex: /पैर|पाय|kaal/gi, replacement: 'leg', desc: 'leg' },
+        { regex: /सूजन|मेलु|melu|aagide/gi, replacement: 'swelling swollen', desc: 'swelling' },
+        { regex: /सिर|sir|tale/gi, replacement: 'head', desc: 'head' },
+        { regex: /पेट|hotte/gi, replacement: 'stomach', desc: 'stomach' }
+      ];
+
+      patterns.forEach(pattern => {
+        if (pattern.regex.test(query)) {
+          translatedQuery += ' ' + pattern.replacement;
+          wasTranslated = true;
+        }
+      });
+    }
+
+    // Word-by-word translation for romanized text
+    const words = query.toLowerCase().split(/\s+/);
+    const translatedWords = words.map(word => translations[word] || word);
+
+    if (translatedWords.some((w, i) => w !== words[i])) {
+      translatedQuery = translatedWords.join(' ');
+      wasTranslated = true;
+    }
+
+    return {
+      original: query,
+      translated: translatedQuery,
+      wasTranslated
+    };
+  }
+
+  /**
+   * Detect if query is for an unavailable service
+   */
+  detectUnavailableService(query) {
+    const unavailableServices = [
+      { keywords: ['dental', 'dentist', 'tooth', 'teeth', 'cavity', 'orthodont'], service: 'Dental/Dentistry' },
+      { keywords: ['eye', 'vision', 'opthalm', 'glasses', 'contact lens'], service: 'Ophthalmology' },
+      { keywords: ['dermatology', 'skin', 'acne', 'rash', 'dermatologist'], service: 'Dermatology' },
+      { keywords: ['physical therapy', 'physiotherapy', 'rehabilitation', 'physio'], service: 'Physiotherapy' },
+      { keywords: ['radiology', 'x-ray', 'ct scan', 'mri', 'ultrasound scan'], service: 'Radiology/Imaging' }
+    ];
+
+    const lowerQuery = query.toLowerCase();
+
+    for (const unavailable of unavailableServices) {
+      if (unavailable.keywords.some(keyword => lowerQuery.includes(keyword))) {
+        return {
+          isUnavailable: true,
+          service: unavailable.service,
+          message: `I apologize, but we currently don't have ${unavailable.service} specialists at Even Hospital. However, I can help you find doctors for other medical concerns. What symptoms or health issues are you experiencing?`
+        };
+      }
+    }
+
+    return { isUnavailable: false };
+  }
+
+  /**
+   * Detect if query is gibberish or contains only random words
+   */
+  detectGibberish(query) {
+    const lowerQuery = query.toLowerCase().trim();
+    const words = lowerQuery.split(/\s+/).filter(w => w.length > 0);
+
+    // List of common English words (medical and general)
+    const commonWords = new Set([
+      'pain', 'hurt', 'ache', 'swollen', 'fever', 'sick', 'illness', 'disease',
+      'problem', 'issue', 'concern', 'symptom', 'feel', 'feeling', 'doctor',
+      'appointment', 'checkup', 'health', 'medical', 'emergency', 'acute',
+      'chronic', 'severe', 'mild', 'bleeding', 'infection', 'injury',
+      'my', 'i', 'have', 'need', 'want', 'get', 'book', 'make', 'help', 'can',
+      'the', 'a', 'an', 'is', 'are', 'am', 'me', 'and', 'or', 'but', 'with',
+      'knee', 'leg', 'hand', 'arm', 'head', 'stomach', 'chest', 'back', 'neck',
+      'shoulder', 'foot', 'ankle', 'hip', 'joint', 'bone', 'muscle', 'skin',
+      'eye', 'ear', 'nose', 'throat', 'mouth', 'teeth', 'heart', 'lung',
+      'pregnancy', 'pregnant', 'child', 'baby', 'diabetes', 'blood', 'pressure',
+      'sugar', 'kidney', 'liver', 'urine', 'stool', 'vomit', 'nausea', 'dizzy'
+    ]);
+
+    // Check if most words are unrecognizable
+    const recognizedWords = words.filter(word => {
+      // Check if word is in common words
+      if (commonWords.has(word)) return true;
+      // Check if word is part of a common word (for variations like 'painful', 'swelling')
+      return Array.from(commonWords).some(common =>
+        word.includes(common) || common.includes(word)
+      );
+    });
+
+    const recognitionRate = words.length > 0 ? recognizedWords.length / words.length : 0;
+
+    // If less than 30% of words are recognized, likely gibberish
+    if (recognitionRate < 0.3 && words.length >= 3) {
+      return {
+        isGibberish: true,
+        message: 'I\'m having trouble understanding your request. Could you describe your symptoms or health concern more clearly? For example: "I have knee pain", "I need pregnancy care", or "My child has a fever".'
+      };
+    }
+
+    return { isGibberish: false };
+  }
+
+  /**
+   * Detect if query is too vague or unclear
+   */
+  detectVagueQuery(query, searchResults) {
+    const lowerQuery = query.toLowerCase().trim();
+
+    // First check for gibberish
+    const gibberishCheck = this.detectGibberish(query);
+    if (gibberishCheck.isGibberish) {
+      return {
+        isVague: true,
+        reason: 'gibberish',
+        message: gibberishCheck.message
+      };
+    }
+
+    // Check for very short queries (less than 10 characters)
+    if (lowerQuery.length < 10 && !searchResults.recommendations.length) {
+      return {
+        isVague: true,
+        reason: 'too_short',
+        message: 'Could you please describe your symptoms or health concern in more detail? For example, tell me where you feel pain or what specific issue you\'re experiencing.'
+      };
+    }
+
+    // Check for gibberish or random words with low relevance scores
+    const words = lowerQuery.split(/\s+/).filter(w => w.length > 2);
+    const commonMedicalWords = [
+      'pain', 'hurt', 'ache', 'swollen', 'fever', 'sick', 'illness', 'disease',
+      'problem', 'issue', 'concern', 'symptom', 'feel', 'feeling', 'doctor',
+      'appointment', 'checkup', 'health', 'medical', 'emergency', 'acute',
+      'chronic', 'severe', 'mild', 'bleeding', 'infection', 'injury'
+    ];
+
+    const hasRelevantWords = words.some(word =>
+      commonMedicalWords.some(medical => word.includes(medical))
+    );
+
+    // If no relevant medical words and very low relevance scores
+    if (!hasRelevantWords && searchResults.recommendations.length > 0) {
+      const avgScore = searchResults.recommendations.reduce((sum, rec) =>
+        sum + rec.relevanceScore, 0) / searchResults.recommendations.length;
+
+      if (avgScore < 0.3) {
+        return {
+          isVague: true,
+          reason: 'unclear_symptoms',
+          message: 'I\'m having trouble understanding your health concern. Could you describe your symptoms more clearly? For example: "I have knee pain", "I need pregnancy care", or "My child has a fever".'
+        };
+      }
+    }
+
+    // Check for appointment-only requests without symptoms
+    const appointmentOnlyPatterns = [
+      /^(can i|i want|i need|how to|when can).*(book|make|schedule|get).*(appointment|doctor)/i,
+      /^(appointment|doctor|booking).*tomorrow|today|next week/i,
+      /book.*appointment.*don'?t (know|remember)/i
+    ];
+
+    if (appointmentOnlyPatterns.some(pattern => pattern.test(query))) {
+      return {
+        isVague: true,
+        reason: 'no_symptoms',
+        message: 'I\'d be happy to help you book an appointment! First, could you tell me what health issue or symptoms you\'re experiencing? This will help me recommend the right specialist for you.'
+      };
+    }
+
+    return { isVague: false };
+  }
+
+  /**
    * Generate comprehensive response for voice bot
    */
   async generateVoiceBotResponse(patientQuery) {
@@ -191,8 +410,32 @@ class RAGService {
       await this.initialize();
     }
 
+    // Step 0: Translate query if needed (Hindi/Kannada support)
+    const translationResult = this.translateQuery(patientQuery);
+    const queryToSearch = translationResult.wasTranslated ? translationResult.translated : patientQuery;
+
+    if (translationResult.wasTranslated) {
+      console.log(`Translated query: "${patientQuery}" → "${queryToSearch}"`);
+    }
+
+    // Step 1: Check for unavailable services first
+    const unavailableCheck = this.detectUnavailableService(queryToSearch);
+    if (unavailableCheck.isUnavailable) {
+      return {
+        success: false,
+        error: 'unavailable_service',
+        service: unavailableCheck.service,
+        message: unavailableCheck.message,
+        query: patientQuery,
+        guidance: {
+          type: 'unavailable_service',
+          action: 'describe_symptoms'
+        }
+      };
+    }
+
     // Normalize query for caching (lowercase, trim)
-    const cacheKey = patientQuery.toLowerCase().trim();
+    const cacheKey = queryToSearch.toLowerCase().trim();
 
     // Check cache first
     const cached = this.responseCache.get(cacheKey);
@@ -208,14 +451,37 @@ class RAGService {
       this.responseCache.delete(firstKey);
     }
 
-    // Find relevant doctors
-    const searchResults = await this.findRelevantDoctors(patientQuery, 3);
+    // Find relevant doctors using translated query
+    const searchResults = await this.findRelevantDoctors(queryToSearch, 3);
 
-    // Get relevant Q&A
-    const qaResults = await this.getRelevantQA(patientQuery, 2);
+    // Step 2: Check if query is too vague
+    const vagueCheck = this.detectVagueQuery(queryToSearch, searchResults);
+    if (vagueCheck.isVague) {
+      return {
+        success: false,
+        error: 'vague_query',
+        reason: vagueCheck.reason,
+        message: vagueCheck.message,
+        query: patientQuery,
+        guidance: {
+          type: 'vague_query',
+          action: 'clarify_symptoms',
+          examples: [
+            'I have knee pain when walking',
+            'I\'m pregnant and need prenatal care',
+            'My child has high fever',
+            'I have chest pain and shortness of breath'
+          ]
+        }
+      };
+    }
+
+    // Get relevant Q&A using translated query
+    const qaResults = await this.getRelevantQA(queryToSearch, 2);
 
     // Format response
     const response = {
+      success: true,
       query: patientQuery,
       doctors: searchResults.recommendations.map(rec =>
         this.formatDoctorRecommendation(rec)

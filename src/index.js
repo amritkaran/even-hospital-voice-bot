@@ -100,6 +100,20 @@ app.post('/api/search-doctors', async (req, res) => {
 
     const results = await ragService.generateVoiceBotResponse(symptoms);
 
+    // Handle error responses (unavailable service, vague query)
+    if (results.success === false) {
+      return res.status(200).json({
+        success: false,
+        error: results.error,
+        message: results.message,
+        query: symptoms,
+        guidance: results.guidance,
+        service: results.service,
+        reason: results.reason
+      });
+    }
+
+    // Handle successful search
     res.json({
       success: true,
       query: symptoms,
@@ -164,20 +178,33 @@ app.post('/api/appointments/book', (req, res) => {
 });
 
 /**
- * Get appointment by ID
+ * Get upcoming appointments
+ * IMPORTANT: Must be BEFORE /:id route to avoid route conflict
  */
-app.get('/api/appointments/:id', (req, res) => {
+app.get('/api/appointments/upcoming', (req, res) => {
   try {
-    const { id } = req.params;
-    const appointment = appointmentService.getAppointment(id);
-
-    if (!appointment) {
-      return res.status(404).json({ error: 'Appointment not found' });
-    }
-
-    res.json({ success: true, appointment });
+    const appointments = appointmentService.getUpcomingAppointments();
+    res.json({
+      success: true,
+      count: appointments.length,
+      appointments
+    });
   } catch (error) {
-    console.error('Error fetching appointment:', error);
+    console.error('Error fetching appointments:', error);
+    res.status(500).json({ error: error.message });
+  }
+});
+
+/**
+ * Get appointment statistics
+ * IMPORTANT: Must be BEFORE /:id route to avoid route conflict
+ */
+app.get('/api/appointments/stats', (req, res) => {
+  try {
+    const stats = appointmentService.getStatistics();
+    res.json({ success: true, stats });
+  } catch (error) {
+    console.error('Error fetching stats:', error);
     res.status(500).json({ error: error.message });
   }
 });
@@ -205,47 +232,37 @@ app.get('/api/appointments/availability/:doctorName', (req, res) => {
 });
 
 /**
+ * Get appointment by ID
+ * IMPORTANT: This must be AFTER specific routes like /upcoming, /stats
+ */
+app.get('/api/appointments/:id', (req, res) => {
+  try {
+    const { id } = req.params;
+    const appointment = appointmentService.getAppointment(id);
+
+    if (!appointment) {
+      return res.status(404).json({ error: 'Appointment not found' });
+    }
+
+    res.json({ success: true, appointment });
+  } catch (error) {
+    console.error('Error fetching appointment:', error);
+    res.status(500).json({ error: error.message });
+  }
+});
+
+/**
  * Cancel appointment
  */
 app.post('/api/appointments/:id/cancel', (req, res) => {
   try {
     const { id } = req.params;
-    const { reason } = req.body;
+    const { reason} = req.body;
 
     const result = appointmentService.cancelAppointment(id, reason);
     res.json(result);
   } catch (error) {
     console.error('Error cancelling appointment:', error);
-    res.status(500).json({ error: error.message });
-  }
-});
-
-/**
- * Get upcoming appointments
- */
-app.get('/api/appointments/upcoming', (req, res) => {
-  try {
-    const appointments = appointmentService.getUpcomingAppointments();
-    res.json({
-      success: true,
-      count: appointments.length,
-      appointments
-    });
-  } catch (error) {
-    console.error('Error fetching appointments:', error);
-    res.status(500).json({ error: error.message });
-  }
-});
-
-/**
- * Get appointment statistics
- */
-app.get('/api/appointments/stats', (req, res) => {
-  try {
-    const stats = appointmentService.getStatistics();
-    res.json({ success: true, stats });
-  } catch (error) {
-    console.error('Error fetching stats:', error);
     res.status(500).json({ error: error.message });
   }
 });

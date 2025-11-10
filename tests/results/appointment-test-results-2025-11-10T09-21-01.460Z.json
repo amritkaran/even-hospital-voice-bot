@@ -1,0 +1,93 @@
+{
+  "totalTests": 10,
+  "passed": 3,
+  "failed": 4,
+  "testDetails": [
+    {
+      "test": "Check Doctor Availability",
+      "status": "PASSED",
+      "details": "Found 14 slots",
+      "data": {
+        "success": true,
+        "doctor": "Dr. Harish Puranik",
+        "date": "2025-11-11",
+        "availableSlots": [
+          "9:00 AM",
+          "9:30 AM",
+          "10:00 AM",
+          "10:30 AM",
+          "11:00 AM",
+          "11:30 AM",
+          "2:00 PM",
+          "2:30 PM",
+          "3:00 PM",
+          "3:30 PM",
+          "4:00 PM",
+          "4:30 PM",
+          "5:00 PM",
+          "5:30 PM"
+        ]
+      }
+    },
+    {
+      "test": "Create Appointment with Specific Time",
+      "status": "PASSED",
+      "data": {
+        "success": true,
+        "appointmentId": "APT664614218ZOQ",
+        "appointment": {
+          "appointmentId": "APT664614218ZOQ",
+          "doctorName": "Dr. Harish Puranik",
+          "patientName": "John Doe",
+          "patientPhone": "+91-9876543210",
+          "appointmentDate": "2025-11-11",
+          "appointmentTime": "9:00 AM",
+          "status": "confirmed",
+          "createdAt": "2025-11-10T09:21:01.421Z",
+          "notes": ""
+        },
+        "message": "Appointment confirmed with Dr. Harish Puranik on 2025-11-11 at 9:00 AM"
+      }
+    },
+    {
+      "test": "Create Appointment Auto-assign Time",
+      "status": "PASSED",
+      "data": {
+        "success": true,
+        "appointmentId": "APT6646142640BB",
+        "appointment": {
+          "appointmentId": "APT6646142640BB",
+          "doctorName": "Dr. Harish Puranik",
+          "patientName": "Jane Smith",
+          "patientPhone": "+91-9876543211",
+          "appointmentDate": "2025-11-12",
+          "appointmentTime": "9:00 AM",
+          "status": "confirmed",
+          "createdAt": "2025-11-10T09:21:01.426Z",
+          "notes": ""
+        },
+        "message": "Appointment confirmed with Dr. Harish Puranik on 2025-11-12 at 9:00 AM"
+      }
+    },
+    {
+      "test": "Retrieve Appointment",
+      "status": "FAILED",
+      "error": "Request failed with status code 404"
+    },
+    {
+      "test": "Get Upcoming Appointments",
+      "status": "FAILED",
+      "error": "Request failed with status code 404"
+    },
+    {
+      "test": "Cancel Appointment",
+      "status": "FAILED",
+      "error": "Cancellation failed"
+    },
+    {
+      "test": "Retrieve Cancelled Appointment",
+      "status": "FAILED",
+      "error": "Request failed with status code 404"
+    }
+  ]
+}
