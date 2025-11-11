@@ -814,21 +814,23 @@ When planning your next AI project, use these questions:
 
 **Testing Framework**:
 - **Language**: Node.js / JavaScript
-- **LLM Provider**: OpenAI GPT-4 (for both simulation & evaluation)
+- **LLM Provider**: OpenAI GPT-3.5-turbo (for patient simulation), Rule-based (for evaluation)
 - **Testing Library**: Custom built on top of OpenAI API
 - **Results Storage**: JSON files with timestamped results
 
 **Cost Analysis**:
-- 10 scenarios with GPT-4: ~$0.50-$1.00 per full test run
-- Can run 100+ tests per month for <$100
+- 10 scenarios with GPT-3.5-turbo: ~$0.05-$0.20 per full test run
+- Can run 500+ tests per month for <$100
 - Compare to: Manual testing (5-10 hours × $50/hr = $250-500)
+- 10x cheaper than GPT-4 with minimal quality trade-off
 
 ### Recommended Tools
 
 **For Conversation Simulation**:
-- OpenAI GPT-4 API (best quality)
+- OpenAI GPT-3.5-turbo API (best cost/quality balance - recommended)
+- OpenAI GPT-4 API (highest quality but 10x more expensive)
 - Anthropic Claude (good alternative)
-- Local LLMs (cost-effective but lower quality)
+- Local LLMs (free but lower quality)
 
 **For Evaluation**:
 - GPT-4 (most reliable for scoring)

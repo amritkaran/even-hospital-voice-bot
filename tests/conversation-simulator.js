@@ -168,7 +168,7 @@ Your first message will be when the bot greets you. Respond naturally.`;
 
     try {
       const response = await openai.chat.completions.create({
-        model: 'gpt-4',
+        model: 'gpt-3.5-turbo',  // Using GPT-3.5 for cost efficiency (10x cheaper than GPT-4)
         messages: messages,
         temperature: 0.8,
         max_tokens: 150
