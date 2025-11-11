@@ -209,18 +209,156 @@
             gap: 12px;
         }
 
-        /* Incoming Call Card */
-        .incoming-call-card {
+        /* Info Button */
+        .info-btn {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: white;
+            border: 2px solid #2D5BFF;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            box-shadow: 0 4px 12px rgba(45, 91, 255, 0.2);
+            transition: all 0.3s ease;
+            color: #2D5BFF;
+            font-size: 20px;
+            font-weight: 700;
+        }
+
+        .info-btn:hover {
+            transform: scale(1.1);
+            background: #2D5BFF;
+            color: white;
+            box-shadow: 0 6px 16px rgba(45, 91, 255, 0.3);
+        }
+
+        /* Info Modal */
+        .info-modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            display: none;
+            align-items: center;
+            justify-content: center;
+            z-index: 2000;
+            backdrop-filter: blur(4px);
+        }
+
+        .info-modal.show {
+            display: flex;
+        }
+
+        .info-modal-content {
             background: white;
             border-radius: 20px;
-            padding: 24px;
-            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+            padding: 32px;
+            max-width: 500px;
+            width: 90%;
+            max-height: 80vh;
+            overflow-y: auto;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            animation: modalFadeIn 0.3s ease-out;
+        }
+
+        @keyframes modalFadeIn {
+            from {
+                opacity: 0;
+                transform: scale(0.9) translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1) translateY(0);
+            }
+        }
+
+        .info-modal-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .info-modal-title {
+            font-size: 24px;
+            font-weight: 700;
+            color: #1a1a1a;
+        }
+
+        .info-modal-close {
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            background: #f5f5f5;
+            border: none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            font-size: 20px;
+            color: #666;
+            transition: all 0.2s;
+        }
+
+        .info-modal-close:hover {
+            background: #e0e0e0;
+            color: #1a1a1a;
+        }
+
+        .info-modal-body {
+            color: #4a4a4a;
+            line-height: 1.6;
+        }
+
+        .info-modal-body h3 {
+            font-size: 18px;
+            font-weight: 600;
+            color: #1a1a1a;
+            margin: 20px 0 12px;
+        }
+
+        .info-modal-body h3:first-child {
+            margin-top: 0;
+        }
+
+        .info-modal-body p {
+            margin-bottom: 12px;
+        }
+
+        .info-modal-body ul {
+            padding-left: 20px;
+            margin-bottom: 16px;
+        }
+
+        .info-modal-body li {
+            margin-bottom: 8px;
+        }
+
+        .info-highlight {
+            background: #f0f4ff;
+            padding: 16px;
+            border-radius: 12px;
+            border-left: 4px solid #2D5BFF;
+            margin: 16px 0;
+        }
+
+        /* Incoming Call Card - Phone Call Style */
+        .incoming-call-card {
+            background: linear-gradient(135deg, #2D5BFF 0%, #1E40FF 100%);
+            border-radius: 24px;
+            padding: 32px 24px;
+            box-shadow: 0 15px 50px rgba(45, 91, 255, 0.4);
             display: none;
             flex-direction: column;
             align-items: center;
-            gap: 16px;
-            min-width: 280px;
+            gap: 20px;
+            min-width: 300px;
             animation: slideUp 0.4s ease-out;
+            border: 3px solid rgba(255, 255, 255, 0.2);
         }
 
         .incoming-call-card.show {
@@ -232,43 +370,93 @@
         }
 
         .incoming-call-title {
-            font-size: 16px;
-            font-weight: 600;
-            color: #1a1a1a;
+            font-size: 14px;
+            font-weight: 500;
+            color: rgba(255, 255, 255, 0.9);
+            margin-bottom: 8px;
+            letter-spacing: 0.5px;
+        }
+
+        .incoming-call-name {
+            font-size: 24px;
+            font-weight: 700;
+            color: white;
             margin-bottom: 4px;
         }
 
         .incoming-call-subtitle {
-            font-size: 13px;
-            color: #666;
+            font-size: 14px;
+            color: rgba(255, 255, 255, 0.7);
         }
 
-        .ringer-animation {
-            width: 60px;
-            height: 60px;
+        /* Caller Avatar/Icon */
+        .caller-avatar {
+            width: 80px;
+            height: 80px;
             border-radius: 50%;
-            background: linear-gradient(135deg, #2D5BFF 0%, #1E40FF 100%);
+            background: white;
             display: flex;
             align-items: center;
             justify-content: center;
+            font-size: 36px;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
             animation: softRing 1.5s ease-in-out infinite;
             position: relative;
         }
 
-        .ringer-animation::before,
-        .ringer-animation::after {
+        .caller-avatar::before,
+        .caller-avatar::after {
             content: '';
             position: absolute;
             width: 100%;
             height: 100%;
             border-radius: 50%;
-            border: 2px solid #2D5BFF;
+            border: 3px solid white;
             opacity: 0;
             animation: ripple 1.5s ease-out infinite;
         }
 
-        .ringer-animation::after {
+        .caller-avatar::after {
             animation-delay: 0.5s;
+        }
+
+        /* Call Actions */
+        .call-actions {
+            display: flex;
+            gap: 24px;
+            margin-top: 8px;
+        }
+
+        .call-action-btn {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            border: none;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+        }
+
+        .call-action-btn.accept {
+            background: #34C759;
+        }
+
+        .call-action-btn.accept:hover {
+            background: #2db350;
+            transform: scale(1.1);
+        }
+
+        .call-action-btn.decline {
+            background: #FF3B30;
+        }
+
+        .call-action-btn.decline:hover {
+            background: #e6352a;
+            transform: scale(1.1);
         }
 
         @keyframes softRing {
@@ -903,6 +1091,28 @@
 
     <!-- Floating Voice Bot -->
     <div class="voice-bot-container">
+        <!-- Incoming Call Card -->
+        <div class="incoming-call-card" id="incomingCallCard">
+            <div class="incoming-call-header">
+                <div class="incoming-call-title">Incoming Call</div>
+                <div class="incoming-call-name">Nova - AI Assistant</div>
+                <div class="incoming-call-subtitle">Even Hospital Healthcare</div>
+            </div>
+
+            <div class="caller-avatar">
+                🤖
+            </div>
+
+            <div class="call-actions">
+                <button class="call-action-btn decline" id="declineCallBtn" title="Decline">
+                    ✖
+                </button>
+                <button class="call-action-btn accept" id="acceptCallBtn" title="Answer">
+                    📞
+                </button>
+            </div>
+        </div>
+
         <!-- Status Indicator -->
         <div class="status-indicator" id="statusIndicator">
             <div class="status-dot"></div>
@@ -918,6 +1128,11 @@
         <!-- End Call Label -->
         <div class="voice-btn-label" id="voiceBtnLabel">End Call</div>
 
+        <!-- Info Button -->
+        <button class="info-btn" id="infoBtn" title="About AI Assistant">
+            ℹ️
+        </button>
+
         <!-- Voice Button -->
         <button class="voice-btn" id="voiceBtn" title="Talk to Me">
             <div class="voice-wave">
@@ -929,6 +1144,54 @@
             </div>
         </button>
         <div class="voice-tooltip" id="voiceTooltip">Talk to Me</div>
+    </div>
+
+    <!-- Info Modal -->
+    <div class="info-modal" id="infoModal">
+        <div class="info-modal-content">
+            <div class="info-modal-header">
+                <h2 class="info-modal-title">About Nova - Your AI Health Assistant</h2>
+                <button class="info-modal-close" id="infoModalClose">✕</button>
+            </div>
+            <div class="info-modal-body">
+                <div class="info-highlight">
+                    <strong>Nova is powered by AI</strong> to help you book specialist appointments through natural voice conversation.
+                </div>
+
+                <h3>How It Works</h3>
+                <ul>
+                    <li>Click the voice button to start a conversation</li>
+                    <li>Tell Nova about your symptoms or health concerns</li>
+                    <li>Get matched with the right specialist doctor</li>
+                    <li>Check availability and book your appointment instantly</li>
+                </ul>
+
+                <h3>What Nova Can Help With</h3>
+                <ul>
+                    <li>🔍 Finding specialist doctors based on symptoms</li>
+                    <li>📅 Checking doctor availability in real-time</li>
+                    <li>📝 Booking appointments with your preferred time</li>
+                    <li>🚨 Emergency situation assessment and routing</li>
+                    <li>🌐 Support in multiple languages</li>
+                </ul>
+
+                <h3>Technology Behind Nova</h3>
+                <p>Nova uses advanced AI (GPT-4) combined with RAG (Retrieval-Augmented Generation) to:</p>
+                <ul>
+                    <li>Understand your symptoms in natural language</li>
+                    <li>Search through 50+ specialist doctors</li>
+                    <li>Provide intelligent recommendations</li>
+                    <li>Maintain conversation context throughout your call</li>
+                </ul>
+
+                <div class="info-highlight">
+                    <strong>Privacy:</strong> Your conversations are processed securely and used only to help you find the right healthcare provider.
+                </div>
+
+                <h3>Getting Started</h3>
+                <p>Simply click the blue voice button and say "Hello" to start. Nova will guide you through the rest!</p>
+            </div>
+        </div>
     </div>
 
     <!-- Import VAPI SDK -->
@@ -958,6 +1221,69 @@
         const voiceBtnLabel = document.getElementById('voiceBtnLabel');
         const statusIndicator = document.getElementById('statusIndicator');
         const statusText = statusIndicator.querySelector('.status-text');
+        const infoBtn = document.getElementById('infoBtn');
+        const infoModal = document.getElementById('infoModal');
+        const infoModalClose = document.getElementById('infoModalClose');
+        const incomingCallCard = document.getElementById('incomingCallCard');
+        const acceptCallBtn = document.getElementById('acceptCallBtn');
+        const declineCallBtn = document.getElementById('declineCallBtn');
+
+        // Info Button Handler
+        infoBtn.addEventListener('click', () => {
+            infoModal.classList.add('show');
+        });
+
+        // Close Info Modal
+        infoModalClose.addEventListener('click', () => {
+            infoModal.classList.remove('show');
+        });
+
+        // Close modal when clicking outside
+        infoModal.addEventListener('click', (e) => {
+            if (e.target === infoModal) {
+                infoModal.classList.remove('show');
+            }
+        });
+
+        // Show incoming call card and tooltip when voice button is hovered (before first call)
+        let callCardTimeout;
+        voiceBtn.addEventListener('mouseenter', () => {
+            if (!isCallActive && !isConnecting) {
+                incomingCallCard.classList.add('show');
+                voiceTooltip.classList.add('show');
+            }
+        });
+
+        voiceBtn.addEventListener('mouseleave', () => {
+            voiceTooltip.classList.remove('show');
+            // Hide call card after a delay
+            clearTimeout(callCardTimeout);
+            callCardTimeout = setTimeout(() => {
+                if (!isCallActive && !isConnecting) {
+                    incomingCallCard.classList.remove('show');
+                }
+            }, 300);
+        });
+
+        // Keep call card visible when hovering over it
+        incomingCallCard.addEventListener('mouseenter', () => {
+            clearTimeout(callCardTimeout);
+        });
+
+        incomingCallCard.addEventListener('mouseleave', () => {
+            incomingCallCard.classList.remove('show');
+        });
+
+        // Accept Call Button
+        acceptCallBtn.addEventListener('click', () => {
+            incomingCallCard.classList.remove('show');
+            voiceBtn.click(); // Trigger the voice button
+        });
+
+        // Decline Call Button
+        declineCallBtn.addEventListener('click', () => {
+            incomingCallCard.classList.remove('show');
+        });
 
         // Initialize VAPI
         try {
@@ -1058,16 +1384,6 @@
             }
         });
 
-        // Show tooltip on hover (only when inactive)
-        voiceBtn.addEventListener('mouseenter', () => {
-            if (!isCallActive && !isConnecting) {
-                voiceTooltip.classList.add('show');
-            }
-        });
-
-        voiceBtn.addEventListener('mouseleave', () => {
-            voiceTooltip.classList.remove('show');
-        });
 
         // Update UI based on call state
         function updateUI(state) {
